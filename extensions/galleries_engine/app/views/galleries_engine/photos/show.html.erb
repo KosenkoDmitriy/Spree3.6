@@ -1,0 +1,9 @@
+<%= link_to "Back to #{@gallery.title} »", gallery_url(@gallery), :class => "back_link more" %>
+
+<div id="photo_holder">
+	<%= image_tag @photo.file.url(:large), :id => "photo_large" %>
+	<%= link_to "›", [@gallery, @next_photo], :class => "next_photo" if @next_photo %>
+	<%= link_to "‹", [@gallery, @previous_photo], :class => "prev_photo" if @previous_photo %>
+</div>
+
+<p class="photo_caption"><%= @photo.caption %></p>

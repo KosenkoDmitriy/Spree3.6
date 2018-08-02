@@ -1,0 +1,9 @@
+<%
+    param_prefix = "payment_source[#{payment_method.id}]"
+%>
+
+<fieldset>
+  <p>This will only register that payment will be via HSBC. You will still need to manually capture the payment on the HSBC Merchant Admin.</p>
+  <%= hidden_field_tag "#{param_prefix}[purchase_currency]", "826" %>
+
+</fieldset>

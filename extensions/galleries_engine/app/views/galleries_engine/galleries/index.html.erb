@@ -1,0 +1,17 @@
+<h1>SoulPad's Photo Galleries</h1>
+
+<% @galleries.group_by(&:category).each do |category,galleries|%>
+    <h3><%= category %></h3>
+    <ul class="gallery_list">
+       <% galleries.each do |gallery| %>
+          <li class="<%= cycle('first', 'second', 'third', 'fourth', 'fifth', 'sixth', name: "order") %>">
+            <%= link_to image_tag(gallery.photos.first.file.url(:small), :alt => gallery.title), gallery, :class => "image" %>
+            <h4><%= link_to gallery.title, gallery %></h4>
+            <p><strong><%= gallery.photos.count %></strong> <%= gallery.photos.count == 1 ? "photo" : "photos" %> </p>
+          </li>
+       <% end %>
+      </ul>
+    <% reset_cycle("order") %>
+<% end %>
+
+

@@ -1,0 +1,16 @@
+<h1></h1>
+
+<%= form_for [:admin, @post] do |f| %>
+
+  <div class="row">
+    <%= render :partial => "form", :locals => { :f => f } %>
+  </div>
+
+  <div class="row">
+    <fieldset class="submit">
+      <%= f.submit %>
+      <%= link_to "Cancel", admin_posts_url %>
+    </fieldset>
+  </div>
+
+<% end %>

@@ -1,0 +1,8 @@
+<div id="page_nav">
+	<ul>
+		<li class="title">Filter by...</li>
+		<li><%= link_to "News", news_engine.posts_url, :class => ((controller.action_name == "news") || (@post && @post.news?) ? "active" : "") %></li>
+		<li><%= link_to "Articles", news_engine.articles_url, :class => ((controller.action_name == "articles") || (@post && @post.articles?) ? "active" : "" ) %></li>
+		<li><%= link_to "Newsletter", news_engine.newsletter_signup_url, :class => (controller.action_name == "signup" ? "active" : ""), :title => "Newsletter" %></li>
+	</ul>
+</div>

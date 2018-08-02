@@ -1,0 +1,41 @@
+<% content_for :page_title do %>
+  <%= @feature.title %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <li><%= button_link_to "List", admin_features_url, :icon => 'list' %></li>
+  <li><%= button_link_to "Edit Feature", edit_admin_feature_url(@feature), :icon => 'edit' %></li>
+<% end %>
+
+<table>
+  <tbody>
+  <tr>
+	<th>Enabled</th>
+	<td><%= @feature.enabled ? "Yes" : "No" %></td>
+  </tr>
+
+  <tr>
+	<th>Content</th>
+	<td><strong><%= @feature.title %></strong><br/>
+	  <%= @feature.description %></td>
+  </tr>
+
+  <tr>
+	<th>Linked to Product:</th>
+	<td><%= @product %></td>
+  </tr>
+
+  <tr>
+	<th>Home Page?</th>
+	<td><%= @feature.enabled ? "Yes" : "No"  %></td>
+  </tr>
+
+  <tr>
+	<th>Shop Page?</th>
+	<td><%= @feature.home_enabled %></td>
+  </tr>
+  </tbody>
+</table>
+
+<%= image_tag @feature.attachment.url(:main) %>
+

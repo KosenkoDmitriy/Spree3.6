@@ -1,0 +1,31 @@
+<% content_for :page_title do %>
+  <%= @post.title %>
+<% end %>
+
+<% content_for :page_actions do %>
+<li><%= button_link_to "List", admin_posts_url, :icon => 'list' %></li>
+  <li><%= button_link_to "Edit", edit_admin_post_url(@post), :icon => 'edit' %></li>
+<% end %>
+
+<dl>
+	<dt>Permalink</dt>
+	<% case @post.post_type
+	   when Post::POST_TYPES[:news] %>
+		<dd><%= link_to post_url(:id => @post), post_url(:id => @post) %></dd>
+	<% when Post::POST_TYPES[:articles] %>
+		<dd><%= link_to article_url(:id => @post), article_url(:id => @post) %></dd>
+	<% when Post::POST_TYPES[:faqs] %>
+		<dd><%= link_to faq_url(:id => @post), faq_url(:id => @post) %></dd>
+	<% end %>
+	
+	<dt>Published</dt>
+	<dd><%= @post.published? ? @post.published_on : "-" %></dd>
+	<dt>Post Type</dt>
+	<dd><%= @post.post_type %></dd>
+</dl>
+
+<hr />
+
+<div>
+	<%= raw @post.body %>
+</div>

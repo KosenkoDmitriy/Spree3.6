@@ -1,0 +1,13 @@
+<div class="field">
+	<%= f.label :caption %><br />
+	<%= f.text_field :caption %>
+</div>
+
+<div class="field">
+	<% if f.object.new_record? %>
+		<%= f.label :file %><br />
+	<% else %>
+		<%= f.label :file, "Replace photo" %><br />
+	<% end %>
+	<%= f.file_field :file %>
+</div>

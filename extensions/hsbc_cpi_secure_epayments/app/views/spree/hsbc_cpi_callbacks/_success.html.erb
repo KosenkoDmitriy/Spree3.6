@@ -1,0 +1,11 @@
+<h2>Order details</h2>
+
+<div class="order_meta">
+  Ref: <strong><%= @order.number %></strong> <span>|</span>
+  <%= @order.completed_at.to_s :long %>
+</div>
+
+<p><%= Spree.t('thank_you_for_your_order') %></p>
+<p><%= Spree.t('thank_you_email_confirmation') %></p>
+
+<%= render 'shared/order_details', :order => @order %>

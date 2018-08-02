@@ -1,0 +1,8 @@
+<%
+    param_prefix = "payment_source[#{payment_method.id}]"
+%>
+<fieldset>
+  <p>This will register the payment as a cheque. You will need to manually capture the payment before shipping the order.</p>
+  <%= hidden_field_tag "#{param_prefix}[purchase_currency]", "826" %>
+
+</fieldset>

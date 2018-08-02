@@ -1,0 +1,44 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:features)%>
+<% end %>
+
+<% content_for :page_actions do %>
+  <li>
+    <%= button_link_to Spree.t(:new_feature), new_admin_feature_url, :icon => 'icon-plus', :id => 'admin_new_feature' %>
+  </li>
+<% end %>
+
+<%= paginate @features %>
+
+<table id="features">
+	<thead>
+		<tr>
+			<th style="width:25%">Home Page / Shop Page & Location</th>
+		  	<th><%= sort_link @q, :title, "Title", {:default_order =>:asc} %> / <%= sort_link @q,:description, "Description"%></th>
+		    <th><%= sort_link @q,:spree_product_name, "Product" %></th>
+			<th class="actions"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @features.each do |feature| %>
+
+            <tr  class="even">
+              <td colspan="3" style="padding-top:20px;">
+                <% size = size || nil %> <%= image_tag feature.attachment.url(size || :main), :alt => feature.display_title %>
+              </td>
+            </tr>
+
+			<tr class="odd">
+				<td>Home Page: <%= feature.enabled ? "Yes" : "No" %><br>Shop Page: <%= feature.home_enabled %></td>
+			    <td><strong><%= feature.title %></strong><br><%= truncate_html feature.description, :length => 60, :omission => " ... " %></td>
+			    <td><%= link_to feature.product_name, spree.product_url(feature.spree_product), :class => "more" if feature.links_to_product? %></td>
+				<td class="actions">
+				  <%= link_to "", edit_admin_feature_url(feature), :class=>"edit icon_link with-tip icon-edit no-text" %>&nbsp;
+				  <%= link_to "", admin_feature_url(feature), :class=>"delete-resource icon_link with-tip icon-trash no-text", :method => :delete, :confirm => "Are you sure you want to delete this feature?" %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<%= paginate @features %>

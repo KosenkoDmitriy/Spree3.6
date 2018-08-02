@@ -1,0 +1,23 @@
+<div id="hsbc_payments">
+	
+	<%= image_tag("site/hsbc_epayments.png", :alt => "HSBC ePayments") %>
+	
+	<%= image_tag("site/ajax-loader.gif", :alt => "Loading...") %>
+
+	<p>Please wait while we redirect you to HSBC ePayments.</p>
+
+	<form action="<%= @hsbc_transaction.cpi_gateway_url %>" method="POST" id="direct_payment_to_provider">
+
+		<fieldset class="hsbc_cpi_data">
+			<% @hsbc_transaction.cpi_post_data(:include_order_hash => true).each do |k,v| %>
+				<%= hidden_field_tag k, v %>
+			<% end %>
+		</fieldset>
+
+		<label>If you're not redirected after 5 seconds, please hit the button.</label>
+		
+		<input type="submit">
+
+	</form>
+	
+</div>

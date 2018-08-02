@@ -1,0 +1,18 @@
+<div class="column w220">
+	<%= render :partial => "news_menu" %>
+</div>
+
+<div id="news_feed" class="column w700">
+	<h1>Latest News</h1>
+	<ul class="hfeed">
+		<% @posts.each do |post| %>
+		<li class="hentry">
+			<h2 class="entry-title"><%= link_to post.title, news_engine.post_url(:id => post), :rel => "bookmark" %></h2>
+			<abbr class="published"><%= post.published_on.to_s(:long) %></abbr>
+			<div class="entry-content"><%= raw post.body %></div>
+			<p><%= link_to "Read more »", news_engine.post_url(:id => post), :class => "more", :rel => "bookmark" %>
+		</li>
+		<% end %>
+	</ul>
+	<%= paginate @posts %>
+</div>

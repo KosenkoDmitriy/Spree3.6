@@ -1,0 +1,21 @@
+<div class="column w220">
+  <%= render :partial => "news_menu" %>
+</div>
+
+<div class="column w700">
+
+  <h1><%= title_without_site_name %></h1>
+
+  <p>By adding your details you'll be kept up to date with our latest news, products and special offers.</p>
+
+  <% if aus? %>
+    <%= render 'signup_form_aus' %>
+  <% elsif us? %>
+    <%= render 'signup_form_usa' %>
+  <% else %>
+    <%= render 'signup_form_uk' %>
+  <% end %>
+
+  <%= DynamicDatum.render_by_tag "signup" %>
+
+</div>

@@ -1,0 +1,16 @@
+<h1>Dynamic Data</h1>
+
+<div class='toolbar'>
+  <ul class='actions'>
+    <li>
+      <%= button_link_to "Edit", edit_admin_dynamic_datum_url(@dynamic_datum), :icon => 'edit' %>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
+
+<p>TAG: <%= @dynamic_datum.tag %></p>
+
+<div>
+	<%= raw @dynamic_datum.data %>
+</div>

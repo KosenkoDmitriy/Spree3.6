@@ -1,0 +1,16 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:edit_photo) %>
+<% end %>
+
+<%= form_for [:admin, @gallery, @photo], :html => {:multipart => true} do |f| %>
+
+	<%= render "spree/shared/error_messages", :target => @photo %>
+	<fieldset class="no-border-top">
+	  <%= render :partial => "form", :locals => { :f => f } %>
+      <div class="form-buttons filter-actions actions" data-hook="buttons">
+        <%= f.submit %>
+        <span class="or"><%= Spree.t(:or) %></span>
+        <%= link_to "Cancel", admin_gallery_photo_url(@gallery, @photo),  :class => 'button' %>
+      </div>
+    </fieldset>
+<% end %>

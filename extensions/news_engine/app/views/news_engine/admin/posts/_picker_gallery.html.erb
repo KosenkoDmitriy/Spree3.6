@@ -1,0 +1,6 @@
+<a href="#" id="without_watermarks">Show without watermark</a>
+<ul>
+	<% (@gallery || gallery).photos.each do |photo| %>
+	<li><%= image_tag photo.file(:large) %></li>
+	<% end %>
+</ul>

@@ -1,0 +1,7 @@
+<div id="index_map">
+  <h6><%= link_to object.title, offer_path(object.slug) %></h6>
+  <p><%= object.description_text %></p>
+  <% unless object.offer.empty? %>
+    <p>Mention SoulPad when booking for <%= object.offer %></p>
+  <% end %>
+</div>

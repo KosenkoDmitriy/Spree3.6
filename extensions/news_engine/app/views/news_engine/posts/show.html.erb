@@ -1,0 +1,22 @@
+<div class="column w220">
+	<%= render :partial => "news_menu" %>
+</div>
+
+<div id="news_feed" class="column w700">
+	
+	<div class="hentry">
+		
+		<% if @post.news? %>
+			<%= link_to "Return to news »", news_engine.posts_url, :class => "back_link more" %>
+		<% elsif @post.articles? %>
+			<%= link_to "Return to articles »", articles_url, :class => "back_link more" %>
+		<% end %>
+		
+		<h1><%= @post.title %></h1>
+		<abbr class="published"><%= @post.published_on.to_s(:long) %></abbr>
+		<%= raw @post.body %>
+		
+		<%= raw @post.body_extended %>
+	</div>
+	
+</div>

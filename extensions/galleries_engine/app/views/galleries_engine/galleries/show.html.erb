@@ -1,0 +1,15 @@
+<%= link_to "Back to galleries »", galleries_url, :class => "back_link more" %>
+
+<h1><%= @gallery.title %></h1>
+
+<%= raw @gallery.description %>
+
+<ul class="photo_list">
+	<% @gallery.photos.each do |photo| %>
+		<li class="<%= cycle('first', 'second', 'third', 'fourth', 'fifth', 'sixth') %>">
+			<%= link_to [@gallery, photo], :class => "image" do %>
+				<%= image_tag photo.file.url(:small), :alt => photo.caption %>
+			<% end %>
+		</li>
+	<% end %>
+</ul>

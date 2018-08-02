@@ -1,0 +1,16 @@
+<h1>Create Dynamic Datum</h1>
+
+<%= form_for [:admin, @dynamic_datum] do |f| %>
+
+  <div class="row">
+    <%= render :partial => "form", :locals => { :f => f } %>
+  </div>
+
+  <div class="row">
+    <fieldset class="submit">
+      <%= submit_tag "Create" %>
+      <%= link_to "Cancel", admin_dynamic_data_url %>
+    </fieldset>
+  </div>
+
+<% end %>

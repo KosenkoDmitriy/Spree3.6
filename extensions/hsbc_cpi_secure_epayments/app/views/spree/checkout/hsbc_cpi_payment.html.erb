@@ -1,0 +1,22 @@
+<div id="hsbc_payments">
+	
+	<%= image_tag("site/logo_global_iris.jpg", :alt => "Global Iris") %>
+	<%= image_tag("site/ajax-loader.gif", :alt => "Loading...") %>
+
+	<p>Please wait while we redirect you to Global Iris.</p>
+
+	<form action="<%= @hsbc_transaction.gateway_url %>" method="POST" id="direct_payment_to_provider">
+
+		<fieldset class="hsbc_cpi_data">
+			<% @hsbc_transaction.gateway_data.each do |k,v| %>
+				<%= hidden_field_tag k, v %>
+			<% end %>
+		</fieldset>
+
+		<label>If you're not redirected after 5 seconds, please hit the button.</label>
+		
+		<input type="submit">
+
+	</form>
+	
+</div>

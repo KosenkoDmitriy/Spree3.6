@@ -1,0 +1,73 @@
+<fieldset class="ten columns">
+	
+	<div>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+	</div>
+	
+	<% unless f.object.new_record? %>
+		<div>
+			<%= f.label :permalink %>
+			<%= f.text_field :permalink %>
+		</div>
+	<% end %>
+	
+	<div>
+		<%= f.label :body %>
+		<%= f.text_area :body, :class => "tinymce" %>
+	</div>
+	
+	<div>
+		<%= f.label :body_extended %>
+		<%= f.text_area :body_extended, :class => "tinymce" %>
+	</div>
+  <%= tinymce %>
+	
+	<div>
+		<%= f.label :post_type, "Type" %>
+		<%= f.select :post_type, Post::POST_TYPES.collect{|k,v| v } %>
+	</div>
+	
+	<div>
+		<%= f.label :published_on %>
+		<%= f.date_select :published_on, :include_blank => true %>
+	</div>
+	
+</fieldset>
+
+<fieldset id="photo_picker" class="four columns">
+	<%= select_tag "picker_index", options_for_select(Gallery.find(:all, :order => "title").collect{|g| [g.title, g.id]}) %>
+	<div id="picker_gallery">
+		<%= render :partial => "picker_gallery", :locals => {:gallery => Gallery.find(:first, :order => "title")} %>
+	</div>
+	<p>To include photos in new articles, just drag the photo into the textarea editing boxes</p>
+	
+	<script>
+
+		
+
+		var addNoWatermarkHandler = function(){
+			$("#picker_gallery>a").click(function(){
+				$("#picker_gallery>ul>li>img").attr({
+					src: function(){
+						return $(this).attr('src').replace(/\/large\//,'/large_no_watermark/')
+					}
+				})
+				//
+				$(this).remove();
+				return false
+			})
+		};
+
+		addNoWatermarkHandler();
+
+		$("#picker_index").change(function(){
+			 $.get("/admin/posts/picker_gallery/" + $(this).val(), function(data){
+				$("#picker_gallery").empty().append(data);
+				addNoWatermarkHandler();
+			});
+		});
+		
+	</script>
+	
+</fieldset>

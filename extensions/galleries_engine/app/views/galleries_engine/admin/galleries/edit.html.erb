@@ -1,0 +1,18 @@
+<% content_for :page_title do %>
+ <h1>Edit <%= @gallery.title %></h1>
+<% end %>
+
+
+<%= form_for [:admin, @gallery] do |f| %>
+
+	<%= render "/spree/shared/error_messages", :target => @gallery %>
+  <%= render :partial => "form", :locals => { :f => f } %>
+	<fieldset class="no-border-top">
+      <div class="form-buttons filter-actions actions" data-hook="buttons">
+		  <%= f.submit %>
+         <span class="or"><%= Spree.t(:or) %></span>
+
+  		  <%= link_to "Cancel", admin_gallery_url(@gallery), :class => 'button' %>
+      </div>
+	</fieldset>
+<% end %>

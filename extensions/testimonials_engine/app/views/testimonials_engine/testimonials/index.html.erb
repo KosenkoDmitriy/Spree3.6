@@ -1,0 +1,19 @@
+<div class="column w220">
+	<%= render :partial => "base/page_menu" %>
+</div>
+
+<div class="column w700">
+
+	<h1>Testimonials</h1>
+	<p><%= DynamicDatum.render_by_tag "testimonials" %></p>
+
+	<% @testimonials.each do |testimonial| %>
+		<blockquote>
+			<p><%= testimonial.body %></p>
+			<p class="author"><cite><%= testimonial.name %></cite></p>
+		</blockquote>
+	<% end %>
+
+	<%= paginate @testimonials %>
+
+</div>

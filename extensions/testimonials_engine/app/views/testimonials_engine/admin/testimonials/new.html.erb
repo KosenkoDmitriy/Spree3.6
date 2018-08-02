@@ -1,0 +1,17 @@
+<% content_for :page_title do %>
+  <h1>New testimonial</h1>
+<% end %>
+
+
+<%= form_for [:admin, @testimonial] do |f| %>
+
+  <%= render :partial => "form", :locals => { :f => f } %>
+   <fieldset class="no-border-top">
+        <div class="form-buttons filter-actions actions" data-hook="buttons">
+        <%= f.submit %>
+        <span class="or"><%= Spree.t(:or) %></span>
+
+        <%= link_to "Cancel", admin_testimonials_url, :class => 'button' %>
+       </div>
+  </fieldset>
+<% end %>

@@ -1,0 +1,17 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:new_gallery) %>
+<% end %>
+
+
+<%= form_for [:admin, @gallery] do |f| %>
+
+  <%= render :partial => "form", :locals => { :f => f } %>
+	 <fieldset class="no-border-top">
+        <div class="form-buttons filter-actions actions" data-hook="buttons">
+  		  <%= f.submit %>
+        <span class="or"><%= Spree.t(:or) %></span>
+
+  		  <%= link_to "Cancel", admin_galleries_url, :class => 'button' %>
+       </div>
+	</fieldset>
+<% end %>

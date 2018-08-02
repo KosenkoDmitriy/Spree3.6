@@ -1,0 +1,18 @@
+<% content_for :page_title do %>
+Edit Home Page Feature
+<% end %>
+
+<%= form_for @feature, :url => admin_feature_url(@feature), :html => {:multipart => true} do |f| %>
+	
+	<%= render :partial => "form", :locals => {:f => f} %>
+	
+  <fieldset class="no-border-top">
+       <div class="form-buttons filter-actions actions" data-hook="buttons">
+       <%= f.submit %>
+       <span class="or"><%= Spree.t(:or) %></span>
+
+       <%= link_to "Cancel", admin_features_url, :class => 'button' %>
+      </div>
+ </fieldset>
+	
+<% end %>
