@@ -65,3 +65,49 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'spree', '~> 3.6.1'
 gem 'spree_auth_devise', '~> 3.3'
 gem 'spree_gateway', '~> 3.3'
+
+
+
+
+# custom spree extensions
+# # - external
+# gem 'spree_features', github: 'DynamoMTL/spree_features' # for spree > 2.3
+# gem 'spree_affiliate', github: 'spree-contrib/spree_affiliate', branch: '2-2-stable'
+# gem 'spree_watermark'      # https://github.com/azimuth/spree_watermark
+# gem 'better_spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express', branch: '3-0-stable'
+# gem 'spree_last_address'    # https://github.com/TylerRick/spree_last_address
+# gem 'spree_sales', github: 'ronzalo/spree_sales', branch: '3-1-stable' # https://github.com/ronzalo/spree_sales
+# # -- start spree_static_content for Spree >= 3.1 (we need them all because of broken dependency on globalize)
+# gem 'globalize', github: 'globalize/globalize'
+# gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
+# gem 'spree_globalize', github: 'spree-contrib/spree_globalize', branch: 'master'
+# gem 'spree_static_content', github: 'spree-contrib/spree_static_content'
+# # -- end spree_static_content
+# # - end external
+
+# start local/internal
+# TODO: resolve dependency for features_engine gem
+# gem "features_engine", :require => "features_engine", :path => "extensions/features_engine" # https://github.com/DynamoMTL/spree_features
+# TODO: resolve dependency for affiliate_engine gem
+# gem "affiliate_engine", :require => "affiliate_engine", :path => "extensions/affiliate_engine" # https://github.com/spree-contrib/spree_affiliate
+gem 'watermark_engine', :require => "watermark_engine", :path => "extensions/watermark_engine" # https://github.com/azimuth/spree_watermark
+
+# TODO will change to better_spree_paypal_express gem
+# gem "spree_paypal_express", :require => "spree_paypal_express", :path => "extensions/spree_paypal_express" # https://github.com/spree/spree_paypal_express
+#gem 'spree_paypal_express', :git => 'git://github.com/spree/spree_paypal_express.git', :branch => "1-3-stable" # latest 2-0-stable
+
+# TODO: resolve dependency for spree_last_address gem
+# gem 'spree_last_address', :require => "spree_last_address", :path => "extensions/spree-last-address"
+# gem 'spree_last_address', :require => "spree_last_address", :path => "extensions/spree_last_address" # git://github.com/TylerRick/spree_last_address.git
+
+gem "sales_prices_engine", :require => "sales_prices_engine", :path => "extensions/sales_prices_engine"
+# TODO: resolve dependency for spree_static_content gem
+# gem 'spree_static_content', github: 'spree/spree_static_content', branch: '2-0-stable'
+gem 'spree_static_content', github: 'spree-contrib/spree_static_content'#, branch: '3-0-stable' # for spree 3.0 and 2.x only
+
+gem "dynamic_content_management_engine", :require => "dynamic_content_management_engine", :path => "extensions/dynamic_content_management_engine"
+# end local/internal
+
+# # we will use third party services such as Wordpress and Flick
+# gem "news_engine", :require => "news_engine", :path => "extensions/news_engine"
+# gem "galleries_engine", :require => "galleries_engine", :path => "extensions/galleries_engine"
