@@ -12,12 +12,6 @@ PATH
     dynamic_content_management_engine (1.0.0)
       spree_core (>= 0.40.2)
 
-PATH
-  remote: extensions/sales_prices_engine
-  specs:
-    sales_prices_engine (0.50.2)
-      spree_core (>= 0.50.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -409,7 +403,6 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   puma (~> 3.11)
   rails (~> 5.2.0)
-  sales_prices_engine!
   sass-rails (~> 5.0)
   selenium-webdriver
   spree (~> 3.6.1)
