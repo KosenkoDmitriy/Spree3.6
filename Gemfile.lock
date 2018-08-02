@@ -44,12 +44,6 @@ GIT
       spree_core (>= 3.1.0, < 4.0)
       spree_extension
 
-PATH
-  remote: extensions/dynamic_content_management_engine
-  specs:
-    dynamic_content_management_engine (1.0.0)
-      spree_core (>= 0.40.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -450,7 +444,6 @@ DEPENDENCIES
   capybara (>= 2.15, < 4.0)
   chromedriver-helper
   coffee-rails (~> 4.2)
-  dynamic_content_management_engine!
   globalize!
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)

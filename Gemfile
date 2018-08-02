@@ -113,8 +113,8 @@ gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
 gem 'spree_globalize', github: 'spree-contrib/spree_globalize', branch: 'master'
 gem 'spree_static_content', github: 'spree-contrib/spree_static_content'
 # -- end spree_static_content
-
-gem "dynamic_content_management_engine", :require => "dynamic_content_management_engine", :path => "extensions/dynamic_content_management_engine"
+# TODO will fix in admin panel: undefined local variable or method `dynamic_content_management_engine'
+# gem "dynamic_content_management_engine", :require => "dynamic_content_management_engine", :path => "extensions/dynamic_content_management_engine"
 # end local/internal
 
 # # we will use third party services such as Wordpress and Flick
