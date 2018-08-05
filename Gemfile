@@ -86,6 +86,9 @@ gem 'spree_gateway', '~> 3.3'
 # # - end external
 
 # start local/internal
+# TODO fix undefined local variable or method `testimonials_engine' in admin panel
+# gem "testimonials_engine", :require => "testimonials_engine", :path => "extensions/testimonials_engine"
+
 # TODO: resolve dependency for features_engine gem
 # gem "features_engine", :require => "features_engine", :path => "extensions/features_engine" # https://github.com/DynamoMTL/spree_features
 # TODO: resolve dependency for affiliate_engine gem
