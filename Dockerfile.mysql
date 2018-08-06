@@ -1,0 +1,19 @@
+FROM nicklinnell/ruby:1.9.3
+MAINTAINER Nick Linnell <nicklinnell@gmail.com>
+
+RUN apt-get update -qq \
+			&& apt-get install -y g++ git libmysqlclient-dev mysql-client libsqlite3-dev imagemagick libmagickcore-dev libmagickwand-dev \
+			&& rm -rf /var/lib/apt/lists/*
+
+RUN mkdir -p /app
+WORKDIR /app
+
+COPY Gemfile /app/
+COPY Gemfile.lock /app/
+COPY extensions/ /app/extensions
+
+RUN bundle install
+
+ADD . /app
+
+EXPOSE 3000

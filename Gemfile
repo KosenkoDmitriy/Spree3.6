@@ -106,8 +106,8 @@ gem 'spree_gateway', '~> 3.3'
 
 # TODO: will fix `method_missing': undefined method `attr_accessible'
 # gem "sales_prices_engine", :require => "sales_prices_engine", :path => "extensions/sales_prices_engine"
-# TODO: resolve dependency for spree_static_content gem
 
+# TODO: resolve dependency for spree_static_content gem
 # gem 'spree_static_content', github: 'spree/spree_static_content', branch: '2-0-stable'
 # gem 'spree_static_content', github: 'spree-contrib/spree_static_content'#, branch: '3-0-stable' # for spree 3.0 and 2.x only
 # -- start spree_static_content for Spree >= 3.1 (we need them all because of broken dependency on globalize)

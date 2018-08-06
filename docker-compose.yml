@@ -1,0 +1,18 @@
+db:
+  image: mysql:5.6
+  ports:
+    - "49160:3306"
+  environment:
+    MYSQL_ROOT_PASSWORD: password
+    MYSQLD_ARGS: --bind-address=0.0.0.0
+web:
+  build: .
+  command: foreman start
+  volumes:
+    - .:/app
+    #- ~/.ssh/id_rsa:/root/.ssh/id_rsa
+    #- ~/.ssh/kyan_deploy:/root/.ssh/kyan_deploy
+  ports:
+    - "3000:5000"
+  links:
+    - db
