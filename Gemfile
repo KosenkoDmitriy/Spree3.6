@@ -94,7 +94,7 @@ gem 'spree_gateway', '~> 3.3'
 # TODO: resolve dependency for affiliate_engine gem
 # gem "affiliate_engine", :require => "affiliate_engine", :path => "extensions/affiliate_engine" # https://github.com/spree-contrib/spree_affiliate
 # TODO: will fix a NameError: uninitialized constant Photo
-# gem 'watermark_engine', :require => "watermark_engine", :path => "extensions/watermark_engine" # https://github.com/azimuth/spree_watermark
+gem 'watermark_engine', require: "watermark_engine", path: "extensions/watermark_engine" # https://github.com/azimuth/spree_watermark
 
 # TODO will change to better_spree_paypal_express gem
 # gem "spree_paypal_express", :require => "spree_paypal_express", :path => "extensions/spree_paypal_express" # https://github.com/spree/spree_paypal_express
