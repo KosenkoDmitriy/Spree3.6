@@ -3,7 +3,8 @@
     <div class="container">
       <div class="row">
         <figure id="logo" class="col-md-4 col-sm-3" data-hook>
-          <%= logo %>
+          <%#= logo #%>
+          <%= link_to image_tag("site/soulpad_logo.png", :alt => "SoulPad"), "/", :id => "logo" %>
         </figure>
         <%= render partial: 'spree/shared/nav_bar' %>
       </div>
