@@ -1,11 +1,9 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-3">
-      <%= render :partial => "page_menu" %>
-    </div>
-    <div class="col-xs-7">
-      <h1><%=@page.title%></h1>
-      <%=@page.body%>
-    </div>
+<div class="row">
+  <div class="col-xs-4">
+    <%= render :partial => "page_menu" %>
+  </div>
+  <div class="col-xs-8">
+    <h1><%=@page.title%></h1>
+    <%=@page.body%>
   </div>
 </div>

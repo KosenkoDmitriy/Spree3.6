@@ -8,9 +8,11 @@ body {
   font: 'Droid serif', Georgia, Times, 'Times New Roman', serif;
   background: #f5f0e9 url(/assets/site/body_background.png);
 }
+
 .container {
   background: #fff;
 }
+
 // -- Spree Custom Header and Footer ---------------------
 #spree-header {
   // background-color: $brand-primary;
@@ -51,7 +53,7 @@ body {
       color: #fff;
     }
   }
-  
+
   .navbar {
     border: 0;
     margin-bottom: 0;
