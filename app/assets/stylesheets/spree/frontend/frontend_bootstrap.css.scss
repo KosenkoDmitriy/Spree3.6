@@ -6,15 +6,18 @@
 body {
   color: #585652;
   font: 'Droid serif', Georgia, Times, 'Times New Roman', serif;
+  background: #f5f0e9 url(/assets/site/body_background.png);
+}
+.container {
+  background: #fff;
 }
 // -- Spree Custom Header and Footer ---------------------
 #spree-header {
-  background-color: $brand-primary;
+  // background-color: $brand-primary;
   margin-bottom: $line-height-computed;
-  padding-top: 0.25em;
 
   #header {
-    background: rgba($gray-darker, 0.4);
+    // background-color: rgba($gray-darker, 0.4);
     padding: $line-height-computed 0;
   }
 
@@ -48,7 +51,7 @@ body {
       color: #fff;
     }
   }
-
+  
   .navbar {
     border: 0;
     margin-bottom: 0;
@@ -59,7 +62,9 @@ body {
     border-color: $btn;
     // padding: 5px 15px;
   }
+
 }
+
 
 #spree-footer {
   background: $gray-dark;
