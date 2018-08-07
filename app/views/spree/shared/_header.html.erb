@@ -1,12 +1,39 @@
+<style scoped>
+#spree-header #header {
+  background: #fff;
+  padding: 20px 0;
+}
+/* .logo {
+  max-width: 100%;
+  height: auto;
+}
+#spree-header #logo img {
+  max-width: 100%;
+  height: auto;
+} */
+</style>
 <div id="spree-header">
+  <div class="row">
+    <%= render partial: 'spree/shared/nav_bar' %>
+  </div>
   <header id="header" data-hook>
     <div class="container">
       <div class="row">
-        <figure id="logo" class="col-md-4 col-sm-3" data-hook>
+        <!-- <figure id="logo" class="col-xs-6" data-hook>
           <%#= logo #%>
-          <%= link_to image_tag("site/soulpad_logo.png", :alt => "SoulPad"), "/", :id => "logo" %>
-        </figure>
-        <%= render partial: 'spree/shared/nav_bar' %>
+        </figure> -->
+        <div class="col-xs-12 col-sm-6">
+          <a href="/" id="">
+            <%= image_tag("site/soulpad_logo.png", alt: "SoulPad", class: 'img-fluid') %>
+          </a>
+          <% link_to image_tag("site/soulpad_logo.png", alt: "SoulPad", class: 'img-fluid logo'), "/", id: "logo" %>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <%= link_to image_tag("site/soulpad_description_since_2007.jpg", class: 'img-fluid', alt: "Stylish bell tents that are kind to your soul."), "/", id: "logo2" %>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          
+        </div>
       </div>
     </div>
   </header>
