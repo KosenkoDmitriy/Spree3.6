@@ -48,7 +48,7 @@ body {
   .nav a {
     color: $nav_a_link;
     background-color: #dbdac4;
-    &:hover, &:focus {
+    &:hover, &:focus, &:active {
       // background: rgba($gray-darker, 0.4);
       background: #f47402;
       color: #fff;

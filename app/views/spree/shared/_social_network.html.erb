@@ -1,0 +1,52 @@
+<div id="social_network">
+
+	<div id="social_facebook">
+
+		<h3>Facebook</h3>
+
+		<ul>
+			<% #FacebookMessage.find(:all, :limit => 20, :order => "fb_created_at DESC").each do |item| #%>
+      <%# next if item.message.blank? && item.link.blank? && item.picture.blank?# %>
+				<li>
+					<%#= link_to(image_tag(item.picture), item.link, {:target => "_blank"}) if item.fb_type == "photo" && item.picture.present? #%>
+					<%#= link_to(item.from, "http://www.facebook.com/profile.php?id=#{item.from_fb_id}", {:target => "_blank"}) #%> <%#= item.message #%>
+				</li>
+				<%# end #%>
+		</ul>
+
+		<%= link_to("Join us on Facebook", "http://www.facebook.com/pages/SoulPad/7845355665", {:class => "button", :target => "_blank"}) %>
+
+	</div>
+
+	<div id="social_twitter">
+
+		<h3>Twitter</h3>
+
+		<ul>
+			<% #TwitterMessage.find(:all, :limit => 9, :order => "twitter_created_at DESC").each do |tweet| #%>
+			<li>
+				<%#= raw tweet.message %>
+				<span class="date"><%#= tweet.twitter_created_at.to_s :long #%></span>
+			</li>
+			<% #end# %>
+		</ul>
+
+		<%= link_to("Follow us on Twitter", "http://twitter.com/#!/soulpad", {:class => "button", :target => "_blank"}) %>
+
+	</div>
+
+	<div id="social_insta">
+
+		<h3>Instagram</h3>
+
+		<ul>
+			<% #InstaPhoto.find(:all, :limit => 9, :order => "uploaded_at DESC").each do |photo| %>
+				<li><%#= link_to(image_tag(photo.thumb, :alt=>"#{photo.title}"), photo.link, {:target => "_blank"}) %></li>
+			<% #end %>
+		</ul>
+
+		<%= link_to("Our Instagram", "https://www.instagram.com/soulpadtents/", {:class => "button", :target => "_blank"}) %>
+
+	</div>
+
+</div>

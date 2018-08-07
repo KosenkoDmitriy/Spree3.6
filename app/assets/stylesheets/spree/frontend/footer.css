@@ -1,0 +1,29 @@
+#footer {
+  background-color: #585652;
+  border-top: 4px solid #f47402;
+  color: #fff;
+  font-size: 1em;
+  margin: 20px -15px auto;
+  padding: 20px;
+}
+
+#footer ul.pages {
+    /* font-size:32px; */
+    padding-left: 0px;
+}
+#footer p {
+    /* font-size:18px; */
+    padding: 0px;
+}
+#footer .contact {
+    /* top:270px; */
+    /* left:0; */
+}
+#footer ul.pages li {
+  /* font-size: .6em; */
+  font-size:18px;
+  display: inline;
+  font-family: 'Droid Sans', 'Helvetica Neue', Helvetica, arial, sans-serif;
+  margin: 0 15px 0 0;
+  text-transform: uppercase;
+}
