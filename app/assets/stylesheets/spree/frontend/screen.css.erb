@@ -1,0 +1,21 @@
+/* body												{ background:#f5f0e9 url(<%= asset_path "site/body_background.png" %>); } */
+
+/* Shared items across the site */
+.tel,.brochure,
+.email											{ background-position:0 50%;background-repeat:no-repeat;display:inline-block;font-family:'Droid Sans', 'Helvetica Neue', Helvetica, arial, sans-serif;font-size:1.25em;font-weight:bold;padding:1px 0 1px 30px; }
+.tel 											{ background-image: url(<%= asset_path "site/icon_phone.png" %>); }
+.email 											{ background-image: url(<%= asset_path "site/icon_email.png" %>); }
+.brochure 										{ background-image: url(<%= asset_path "site/icon_brochure.png" %>); }
+
+.strike { text-decoration: line-through; font-weight: normal}
+
+/* header contact  */
+.contact li {
+  list-style: none;
+}
+
+/* Link styles */
+a:hover, a:active 			{ outline:none; }
+a, a:active, a:visited 	{ color:#f47402;text-decoration:none; }
+a:hover 								{ color:#ca6103;text-decoration:underline;-webkit-transition: 0.3s ease;-moz-transition: 0.3s ease; }
+a.more									{ font-family:'Droid Sans', 'Helvetica Neue', Helvetica, arial, sans-serif;text-transform:uppercase; }

@@ -3,7 +3,10 @@
 @import "bootstrap-sprockets";
 @import "variables";
 @import "bootstrap";
-
+body {
+  color: #585652;
+  font: 'Droid serif', Georgia, Times, 'Times New Roman', serif;
+}
 // -- Spree Custom Header and Footer ---------------------
 #spree-header {
   background-color: $brand-primary;
