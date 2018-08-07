@@ -47,6 +47,10 @@ body {
     font-family: 'Droid Sans', 'Helvetica Neue', Helvetica, arial, sans-serif;
     text-transform: uppercase;
   }
+  .nav li.current a {
+    background: #f47402;
+    color: #fff;
+  }
   .nav a {
     color: $nav_a_link;
     background-color: #dbdac4;
