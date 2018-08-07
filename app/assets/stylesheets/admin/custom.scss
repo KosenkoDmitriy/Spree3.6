@@ -1,0 +1,81 @@
+// Admin menu tweaks
+
+#admin-menu ul { display: block; }
+#admin-menu li {
+  display: inline-block;
+  min-width: 90px;
+  a { padding: 25px 0px; }
+  // remove icons
+  a:before { content: none; }
+  a>span {
+    padding: 0 10px;
+  }
+}
+
+#admin-menu li .dropdown {
+  margin-left: -50px;
+}
+#admin-menu li .dropdown li {
+  display: block;
+}
+
+// Photos section
+
+.photo_list_admin {
+  padding-top: 20px;
+  zoom: 1;
+  list-style: none;
+  padding: 0;
+  clear: both;
+  margin-left: -20px;
+  &:before,
+  &:after { content: ""; display: table; }
+  &:after { clear: both; }
+  li {
+    float: left;
+    list-style: none;
+    margin-left: 20px;
+    width: 140px;
+    position: relative;
+    >a {
+      display: block;
+    }
+    margin-bottom: 20px;
+  }
+  img {
+    margin-bottom: 5px;
+    width: 100%;
+    display: block;
+  }
+  .row_leader {
+    margin-left: 0;
+  }
+}
+
+#photo_show {
+  img {
+    margin-bottom: 20px;
+  }
+}
+
+#photo_picker {
+    float: right;
+    margin-left: 14px;
+    width: 30%;
+}
+#photo_picker li {
+    display: inline;
+    list-style: none outside none;
+}
+#photo_picker li img {
+    height: 42px;
+}
+
+// Misc general amends
+
+#wrapper>.container {
+  margin-top: 30px;
+}
+
+table img { width: 100%;}
+table img.features { width: 100%;}

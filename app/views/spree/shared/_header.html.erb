@@ -1,8 +1,8 @@
 <style scoped>
-#spree-header #header {
+/* #spree-header #header {
   background: #fff;
   padding: 20px 0;
-}
+} */
 /* .logo {
   max-width: 100%;
   height: auto;
@@ -12,9 +12,20 @@
   height: auto;
 } */
 </style>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <% render partial: 'spree/shared/bar'%>
+    </div>
+  </div>
+</div>
 <div id="spree-header">
   <div class="row">
     <%= render partial: 'spree/shared/nav_bar' %>
+
+  <ul id="sites">
+    <% site_selector(I18n.default_locale).html_safe %>
+  </ul>
   </div>
   <header id="header" data-hook>
     <div class="container">
@@ -32,7 +43,7 @@
           <%= link_to image_tag("site/soulpad_description_since_2007.jpg", class: 'img-fluid', alt: "Stylish bell tents that are kind to your soul."), "/", id: "logo2" %>
         </div>
         <div class="col-xs-12 col-sm-6">
-          
+
         </div>
       </div>
     </div>

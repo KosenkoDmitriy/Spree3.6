@@ -1,0 +1,7 @@
+#form_note {font-size: 0.90em; position: relative;   margin: -15px 0px 0px 170px;}
+
+.friendly_form {background-color:#eeeee3; }
+
+.contact_form{margin-top:0;}
+
+.contact_form .honeypot                     { position: absolute; left:-9999px;}
