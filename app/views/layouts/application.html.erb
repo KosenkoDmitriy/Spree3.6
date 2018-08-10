@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="<%= I18n.locale %>">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <%= raw meta_data_tags %>
-
-    <link rel="shortcut icon" href="/favicon.ico">
-    <title><%= title %></title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <head data-hook="inside_head">
+    <%= render partial: 'spree/shared/head' %>
   </head>
+  <body id="soulpad">
+  <div id="container">
+    <%#= render partial: 'spree/shared/header' #%>
 
-  <body>
-    <%= yield %>
+    <div class="container">
+      <div class="row" data-hook>
+        <%= spree_breadcrumbs(@taxon) %>
+
+        <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
+
+        <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook>
+          <%= flash_messages %>
+          <%= yield %>
+        </div>
+
+        <%= yield :templates %>
+      </div>
+    </div>
+    <%= render "/shared/footer" %>
+  </div>
+  <!-- <body>
+    <%= yield %> -->
   </body>
 </html>
