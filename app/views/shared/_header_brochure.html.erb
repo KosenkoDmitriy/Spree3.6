@@ -1,0 +1,7 @@
+<% if uk? %>
+    <li><span class="brochure"><%= link_to t(:brochure), "http://soulpad.co.uk/brochure", :alt => "Download Our Brochure" %></span></li>
+<% elsif aus? %>
+    <li><span class="brochure"><%= link_to t(:brochure), "http://soulpad.com.au/brochure", :alt => "Download Our Brochure" %></span></li>
+<% elsif us? %>
+    <li><span class="brochure"><%= link_to t(:brochure), "http://soulpad.com/brochure", :alt => "Download Our Brochure" %></span></li>
+<% end %>
