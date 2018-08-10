@@ -1,19 +1,21 @@
-en:
-  telephone: '0800 389 9193'
-  contact_email: enquiries@soulpad.co.uk
-  no_of_posts_on_index: 3
-  company_name: SoulPad Ltd
-  vat_number: "VAT Reg: 934 3166 28"
-  street_address: Unit 7, Dolphin Business Park,
-  street_address_1: "Unit 7"
-  street_address_2: "Dolphin Business Park"
-  street_address_3: "Shadwell"
-  street_address_4: "Thetford Forest"
-  locality: Shadwell, Thetford,
-  region: Norfolk
-  postal_code: IP24 2RY. UK
-  registered_trademarks: SOULPAD and the SoulPad logo are registered trademarks of SoulPad Ltd.
-  registered_number: "Registered Number: 6385503."
+en-US:
+  telephone: '(302) 669-9099'
+  contact_email: enquiries@soulpad.com
+  brochure: brochure
+  no_of_posts_on_index: 2
+  company_name: SoulPad Inc
+  vat_number: ""
+  street_address: 2035 Sunset Lake Road Suite B2
+  locality: Newark, New Castle
+  region: Delaware
+  postal_code: 19702
+  country: USA
+  street_address_1: "2035 Sunset Lake Road Suite B2"
+  street_address_2: "Newark, New Castle"
+  street_address_3: "Delaware"
+  street_address_4: "19702. USA"
+  registered_trademarks: SOULPAD and the SoulPad logo are registered trademarks.
+  registered_number: ""
   excluded_taxons:
     - SoulPad Camping Pods
   included_taxons:
@@ -30,6 +32,11 @@ en:
     - Accessories
     - Spares
     - Gift Vouchers
+  state_exclusion_text: Shipping to CA, LA, MA, MI, MN, NJ, NY or Canada?
+  state_exclusion_article_link: ../articles/what-s-the-deal-when-shipping-to-canada-ca-la-ma-mi-mn-nj-and-ny
+  payment_header: Confirmation & Payment
+  payment_options: Please check your order details then complete the payment form.
+  po_box_note: We cannot deliver to PO Box addresses.
   activerecord:
     attributes:
       spree/address:
@@ -40,8 +47,8 @@ en:
         firstname: First Name
         lastname: Last Name
         phone: Phone
-        state: County
-        zipcode: Post Code
+        state: State
+        zipcode: Zip Code
       spree/country:
         iso: ISO
         iso3: ISO3
@@ -49,14 +56,14 @@ en:
         name: Name
         numcode: ISO Code
       spree/credit_card:
-        base:
+        base: ''
         cc_type: Type
         month: Month
-        number: Number
-        verification_value: Verification Value
+        number: Card Number
+        verification_value: Security Code
         year: Year
       spree/inventory_unit:
-        state: County
+        state: State
       spree/line_item:
         price: Price
         quantity: Quantity
@@ -83,16 +90,16 @@ en:
         firstname: Billing address first name
         lastname: Billing address last name
         phone: Billing address phone
-        state: Billing address county
-        zipcode: Billing address post code
+        state: Billing address state
+        zipcode: Billing address zip code
       spree/order/ship_address:
         address1: Shipping address street
         city: Shipping address city
         firstname: Shipping address first name
         lastname: Shipping address last name
         phone: Shipping address phone
-        state: Shipping address county
-        zipcode: Shipping address post code
+        state: Shipping address state
+        zipcode: Shipping address zip code
       spree/payment:
         amount: Amount
       spree/payment_method:
@@ -164,6 +171,7 @@ en:
           attributes:
             base:
               card_expired: Card has expired
+              expiry_invalid: "Card expiration is invalid"
     models:
       spree/address:
         one: Address
@@ -198,8 +206,8 @@ en:
         one: Prototype
         other: Prototypes
       spree/return_authorization:
-        one: Return Authorisation
-        other: Return Authorisations
+        one: Return Authorization
+        other: Return Authorizations
       spree/role:
         one: Roles
         other: Roles
@@ -211,8 +219,8 @@ en:
         other: Shipping Categories
       spree/shipping_method:
       spree/state:
-        one: County
-        other: Counties
+        one: State
+        other: States
       spree/stock_location:
       spree/stock_transfer:
       spree/tax_category:
@@ -257,8 +265,8 @@ en:
       unlock_instructions:
         subject: Unlock Instructions
     oauth_callbacks:
-      failure: Could not authorise you from %{kind} because "%{reason}".
-      success: Successfully authorised from %{kind} account.
+      failure: Could not authorize you from %{kind} because "%{reason}".
+      success: Successfully authorized from %{kind} account.
     unlocks:
       send_instructions: You will receive an email with instructions about how to unlock your account in a few minutes.
       unlocked: Your account was successfully unlocked. You are now signed in.
@@ -370,7 +378,7 @@ en:
     attachment_path: Attachments Path
     attachment_styles: Paperclip Styles
     attachment_url: Attachments URL
-    authorization_failure: Authorisation Failure
+    authorization_failure: Authorization Failure
     available_on: Available On
     back: Back
     back_end: Back End
@@ -686,7 +694,7 @@ en:
     new_promotion: New Promotion
     new_property: New Property
     new_prototype: New Prototype
-    new_return_authorization: New Return Authorisation
+    new_return_authorization: New Return Authorization
     new_shipping_category: New Shipping Category
     new_shipping_method: New Shipping Method
     new_state: New State
@@ -912,9 +920,9 @@ en:
     resume: resume
     resumed: Resumed
     return: return
-    return_authorization: Return Authorisation
-    return_authorization_updated: Return authorisation updated
-    return_authorizations: Return Authorisations
+    return_authorization: Return Authorization
+    return_authorization_updated: Return authorization updated
+    return_authorizations: Return Authorizations
     return_quantity: Return Quantity
     returned: Returned
     review: Review
@@ -931,7 +939,6 @@ en:
     sales_total: Sales Total
     sales_total_description: Sales Total For All Orders
     sales_totals: Sales Totals
-    sales_totals_inc_vat: Sales Totals Including VAT
     save_and_continue: Save and Continue
     say_no: 'No'
     say_yes: 'Yes'
@@ -1010,10 +1017,10 @@ en:
     spree_gateway_error_flash_for_checkout: There was a problem with your payment information. Please check your information and try again.
     start: Start
     start_date: Valid from
-    state: County
+    state: State
     state_based: State Based
-    states: Counties
-    states_required: County Required
+    states: States
+    states_required: State Required
     status: Status
     stock_location: Stock Location
     stock_location_info: Stock location info
@@ -1088,7 +1095,7 @@ en:
     use_new_cc: Use a new card
     use_s3: Use Amazon S3 For Images
     user: User
-    user_emails:  Registered Users
+    user_email_problem_html: There was a problem with your email address. Please use a different email.
     user_rule:
       choose_users: Choose users
     users: Users
@@ -1113,8 +1120,8 @@ en:
     you_have_no_orders_yet: You have no orders yet.
     your_cart_is_empty: Your basket is empty
     your_order_is_empty_add_product: Your order is empty, please search for and add a product above
-    zip: Post Code
-    zipcode: Post Code
+    zip: Zip Code
+    zipcode: Zip Code
     zone: Zone
     zones: Zones
   date:
@@ -1264,7 +1271,7 @@ en:
             separator: .
             significant: false
             strip_insignificant_zeros: false
-            unit: £
+            unit: $
         format:
           delimiter: ! ','
           precision: 3

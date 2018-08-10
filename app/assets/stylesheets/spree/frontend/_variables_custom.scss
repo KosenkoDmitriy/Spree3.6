@@ -1,2 +1,9 @@
 $body-bg: #f5f0e9;
 $body-bg-img: '/assets/site/body_background.png';
+
+//** Global textual link color.
+$link-color:            #f47402;
+//** Link hover color set via `darken()` function.
+$link-hover-color:      darken($link-color, 15%) !default; //#ca6103
+//** Link hover decoration.
+$link-hover-decoration: underline !default;

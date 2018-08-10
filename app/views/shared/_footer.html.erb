@@ -1,34 +1,35 @@
 <%#= image_tag "site/daisy_image.jpg", :alt => "" #%>
 
 <div id="footer">
+<div class="row">
+	<div class="col-xs-12 col-sm-8">
+		<ul class="pages">
+			<li><%= link_to "Terms", main_app.terms_url, :title => "Terms & Conditions" %></li>
+			<li><%= link_to "Privacy Policy", main_app.privacy_policy_url, :title => "Privacy Policy" %></li>
+			<li><%= link_to "Warranty", main_app.warranty_url, :title => "Warranty" %></li>
+			<li><%= link_to "Shipping", main_app.shipping_url, :title => "Shipping" %></li>
+			<li><%= link_to "Returns", main_app.returns_url, :title => "Returns" %></li>
+		</ul>
 
-	<ul class="pages">
-		<li><%= link_to "Terms", main_app.terms_url, :title => "Terms & Conditions" %></li>
-		<li><%= link_to "Privacy Policy", main_app.privacy_policy_url, :title => "Privacy Policy" %></li>
-		<li><%= link_to "Warranty", main_app.warranty_url, :title => "Warranty" %></li>
-		<li><%= link_to "Shipping", main_app.shipping_url, :title => "Shipping" %></li>
-		<li><%= link_to "Returns", main_app.returns_url, :title => "Returns" %></li>
-	</ul>
-
-	<div class="vcard">
-
-		<p><%= t :registered_trademarks %></p>
-		<p>&copy; <span class="org"><%= t :company_name %></span>. <%= Time.now.year %>, All Rights Reserved. <%= t :registered_number %></p>
-		<span class="adr">
-			<span><%= t :company_name %>,</span>
-			<span class="street-address"><%= t :street_address %>, </span>
-			<span class="locality"><%= t :locality %>, </span>
-			<span class="region"><%= t :region %>, </span>
-			<span class="postal-code"><%= t :postal_code %>, </span>
-      <span class="country"><%= t :country %></span>
-		</span>
-
+		<div class="vcard">
+			<p><%= t :registered_trademarks %></p>
+			<p>&copy; <span class="org"><%= t :company_name %></span>. <%= Time.now.year %>, All Rights Reserved. <%= t :registered_number %></p>
+			<span class="adr">
+				<span><%= t :company_name %>,</span>
+				<span class="street-address"><%= t :street_address %>, </span>
+				<span class="locality"><%= t :locality %>, </span>
+				<span class="region"><%= t :region %>, </span>
+				<span class="postal-code"><%= t :postal_code %>, </span>
+		    <span class="country"><%= t :country %></span>
+			</span>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-4">
 		<ul class="contact">
 			<li><span class="tel"><%= t :telephone %></span></li>
 			<li><a class="email" href="mailto:<%= t :contact_email %>" title="Email <%= t :contact_email %>" target="_blank"><%= t :contact_email %></a></li>
 		</ul>
-
 	</div>
-
+</div>
 </div>
 <%= render 'spree/shared/google_analytics' %>
