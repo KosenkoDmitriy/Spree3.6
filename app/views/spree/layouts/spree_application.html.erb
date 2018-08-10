@@ -7,7 +7,8 @@
   <head data-hook="inside_head">
     <%= render partial: 'spree/shared/head' %>
   </head>
-  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+  <body class="<%= body_class %>" id="<%= @body_id || 'soulpad' %>" data-hook="body">
+  <div id="container">
     <%= render partial: 'spree/shared/header' %>
 
     <div class="container">
@@ -24,5 +25,6 @@
         <%= yield :templates %>
       </div>
     </div>
+  </div>
   </body>
 </html>

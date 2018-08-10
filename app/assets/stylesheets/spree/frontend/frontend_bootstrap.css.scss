@@ -5,6 +5,23 @@
 @import "variables_custom";
 @import "bootstrap";
 
+body {
+  color: #585652;
+  // font: 81.3%/1.5 'Droid serif', Georgia, Times, 'Times New Roman', serif;
+  background: #f5f0e9 url($body-bg-img);
+}
+
+#soulpad {
+  #container {
+    background-color: #fff;
+    border-top: 10px solid #585652;
+    margin: 30px;
+    box-shadow: 0 0 5px #909090;
+    -webkit-box-shadow: 0 0 5px #909090;
+    -moz-box-shadow: 0 0 5px #909090;
+  }
+}
+
 // -- Spree Custom Header and Footer ---------------------
 #spree-header {
   background-color: $brand-primary;
