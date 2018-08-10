@@ -1,0 +1,22 @@
+#header {
+  #nav {
+    li {
+      display: inline;
+      text-transform: uppercase;
+      width: 85px;
+    }
+    a {
+      color: #f47402;
+      text-decoration: none;
+    }
+    a.parent {
+      background-color: #dbdac4;
+      color: #585652;
+      padding: 8px 0;
+    }
+    a.active {
+      background-color: #f47402;
+      color: #fff;
+    }
+  }
+}
