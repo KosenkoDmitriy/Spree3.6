@@ -1,7 +1,8 @@
 //Add your custom bootstrap variables here, see https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss for full list of variables.
 
 @import "bootstrap-sprockets";
-@import "variables";
+// @import "variables";
+@import "variables_custom";
 @import "bootstrap";
 
 // -- Spree Custom Header and Footer ---------------------
