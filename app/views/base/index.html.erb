@@ -1,0 +1,75 @@
+<div id="product_banner">
+	<% if @features.try(:empty?) %>
+		<%= image_tag "site/feature_holder.jpg", :alt => "" %>
+	<% else %>
+		<ul>
+		<% @features.try(:each) do |feature| %>
+			<%= render :partial => "feature", :locals => {:feature => feature} %>
+		<% end %>
+		</ul>
+	<% end %>
+	</ul>
+</div>
+
+<div id="about">
+	<h2>About SoulPad</h2>
+	<%= truncate_html DynamicDatum.render_by_tag("about_soulpad"), :length => 320, :omission => " ... " + link_to("read more", main_app.about_url) %>
+</div>
+
+<div id="video">
+	<%= link_to "http://www.youtube.com/user/soulpadtents", :target => "_blank" do %>
+      <div id="video-title">How to put up a SoulPad&reg; tent</div>
+	   <%= image_tag("site/you_tube.jpg", :alt => "") -%>
+		 <span>Our YouTube Channel »</span>
+	<% end %>
+</div>
+
+<div id="testimonials">
+    <% if @testimonial %>
+    <blockquote>
+      <p><%= truncate_html @testimonial.body,  :length => 310, :omission => " ... " + link_to("read more", testimonials_engine.testimonials_url) %></p>
+      <p><cite><%= @testimonial.name %></cite></p>
+    </blockquote>
+    <% end %>
+    <%= link_to "See more testimonials »", testimonials_engine.testimonials_url, :class => "more" %>
+</div>
+
+<br class="clear"/>
+
+<div id="products">
+  <%= link_to "See all products »", products_url, :class => "more" %>
+
+  <h3>Products</h3>
+
+ <% get_taxonomies.each do |taxonomy| %>
+   <ul>
+      <% taxonomy.root.children.each do |taxon| %>
+        <% next unless include_taxon?(taxon) %>
+        <li><%= link_to seo_url(taxon) do %>
+          <% if image = taxon.image.try(:file).try(:url, :category) %>
+          <%= image_tag(image, :alt => "#{taxon.name}") %>
+          <% elsif false %>
+            <%= image_tag("site/soulpad_logo.png", :width => 200, :height => 127, :alt => "#{taxon.name}") %>
+          <% end %><span><%= taxon.name %></span>
+        <% end %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+<div id="news">
+	<%= link_to "Read more news »", news_engine.posts_url, :class => "more" %>
+
+	<h3>News</h3>
+
+	<ul class="hfeed">
+		<% @posts.each do |post| %>
+			<li class="hentry">
+				<h2 class="entry-title"><%= link_to post.title, news_engine.post_url(:id => post), :rel => "bookmark" %></h2>
+				<abbr class="published"><%= post.published_on.to_s(:long) %></abbr>
+				<div class="entry-content"><%= raw truncate(post.body, :length => 180) %></div>
+				<p><%= link_to "Read more »", news_engine.post_url(:id => post), :class => "more", :rel => "bookmark" %>
+			</li>
+		<% end %>
+	</ul>
+</div>

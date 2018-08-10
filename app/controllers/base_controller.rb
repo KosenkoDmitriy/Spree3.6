@@ -4,9 +4,9 @@ class BaseController < Spree::BaseController
 
 	def index
 		self.title = "Welcome"
-		@features = Feature.enabled.sort_by{rand}
-		@testimonial = Testimonial.find(:first, :order => "RAND()")
-		@posts = Post.news.published.limit(I18n.t(:no_of_posts_on_index)).order("posts.published_on DESC")
+		# @features = Feature.enabled.sort_by{rand}
+		# @testimonial = Testimonial.find(:first, :order => "RAND()")
+		# @posts = Post.news.published.limit(I18n.t(:no_of_posts_on_index)).order("posts.published_on DESC")
     respond_to do |format|
       format.html
       format.xml { render :xml => "<welcome>Welcome to Soulpad</welcome>"}

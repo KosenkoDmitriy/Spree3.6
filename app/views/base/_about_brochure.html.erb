@@ -1,0 +1,9 @@
+<%= content_tag :li do %>
+    <%= link_to "Brochure", "http://soulpad.co.uk/brochure", :class => (title_without_site_name == "Download the SoulPad Brochure" ? "active" : ""), :title => "Download the SoulPad Brochure" %></li>
+<% end if uk? %>
+<%= content_tag :li do %>
+    <%= link_to "Brochure", "http://soulpad.com.au/brochure", :class => (title_without_site_name == "Download the SoulPad Brochure" ? "active" : ""), :title => "Download the SoulPad Brochure" %></li>
+<% end if aus? %>
+<%= content_tag :li do %>
+    <%= link_to "Brochure", "http://soulpad.com/brochure", :class => (title_without_site_name == "Download the SoulPad Brochure" ? "active" : ""), :title => "Download the SoulPad Brochure" %></li>
+<% end if us? %>

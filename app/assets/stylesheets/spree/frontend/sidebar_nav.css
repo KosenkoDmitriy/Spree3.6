@@ -1,0 +1,12 @@
+#page_nav {
+  ul {
+    margin: 0;
+  }
+  li {
+    list-style: none;
+  }
+  li.title {
+    background-color: #585652;
+    color: #fff;
+  }
+}
