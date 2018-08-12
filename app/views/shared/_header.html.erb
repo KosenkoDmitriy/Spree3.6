@@ -25,10 +25,10 @@
   <% end %>
 </div>
 <div id="header">
-  <div class="container">
+  <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 col-sm-4">
-      <%= link_to image_tag("site/soulpad_logo.png", :alt => "SoulPad"), "/", :id => "logo" %>
+      <%= link_to image_tag("site/soulpad_logo.png", :alt => "SoulPad", class: ""), "/", :id => "logo" %>
     </div>
     <div class="col-xs-12 col-sm-4">
       <% if (controller.controller_name == "base" && controller.action_name == "index") %>
@@ -46,17 +46,18 @@
     </div>
     <div class="col-xs-12 col-sm-1">
       <% if uk? %>
-        <%= link_to image_tag("site/free_delivery.png", :alt => "Free UK Delivery", :class => "png"), main_app.shipping_url, class: 'delivery', title: 'Free UK Delivery' %>
+        <%= link_to image_tag("site/free_delivery.png", :alt => "Free UK Delivery", :class => "center-block"), main_app.shipping_url, class: 'delivery', title: 'Free UK Delivery' %>
       <% elsif aus? %>
-        <%= link_to image_tag("site/free_delivery_aus.png", :alt => "Free delivery to most of Australia", :class => "png"), main_app.shipping_url, class: 'delivery', title: 'Free delivery to most of Australia' %>
+        <%= link_to image_tag("site/free_delivery_aus.png", :alt => "Free delivery to most of Australia", :class => "center-block"), main_app.shipping_url, class: 'delivery', title: 'Free delivery to most of Australia' %>
       <% elsif us? %>
-        <%= link_to image_tag("site/free_delivery_usa.png", :alt => "Free delivery to most of USA", :class => "png"), main_app.shipping_url, class: 'delivery', title: 'Free delivery to most of USA' %>
+        <%= link_to image_tag("site/free_delivery_usa.png", :alt => "Free delivery to most of USA", :class => "center-block"), main_app.shipping_url, class: 'delivery', title: 'Free delivery to most of USA' %>
       <% end %>
     </div>
   </div>
+  <%= render :partial => "/shared/nav"  %>
+
   <div class="row">
     <!-- <div class="col-xs-12"> -->
-      <%= render :partial => "/shared/nav"  %>
     <!-- </div> -->
   </div>
 </div>

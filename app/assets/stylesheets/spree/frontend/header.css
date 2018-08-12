@@ -1,9 +1,17 @@
 #header {
-  #nav {
+  .nav {
     li {
       display: inline;
       text-transform: uppercase;
-      width: 85px;
+    }
+    li#basket_summary {
+      background: #585652 url(/dev-assets/site/cart_arrow_header.png) no-repeat 215px 13px;
+      color: #fff;
+      span {
+        background: url(/dev-assets/site/cart_icon_header.png) no-repeat 10px 50%;
+        display: block;
+        padding-left: 40px;
+      }
     }
     a {
       color: #f47402;
@@ -12,11 +20,16 @@
     a.parent {
       background-color: #dbdac4;
       color: #585652;
-      padding: 8px 0;
     }
-    a.active {
+    a.active, a.hover {
       background-color: #f47402;
       color: #fff;
     }
   }
+
+  #navbar-toggle {
+    background-color: #f47402;
+  }
+
+
 }
