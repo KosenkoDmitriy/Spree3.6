@@ -60,6 +60,8 @@
 
   ul.contact {
     list-style: none;
+    margin-top: 25px;
+    margin-bottom: 25px;
   }
   .contact {
     font-weight: bold;
@@ -77,5 +79,10 @@
   }
   .email {
     background-image: url($ic-contact-email);
+  }
+
+  .delivery img {
+    margin-top: 25px;
+    margin-bottom: 25px;
   }
 }
