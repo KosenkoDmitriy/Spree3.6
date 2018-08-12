@@ -1,64 +1,38 @@
-<div id="bar">
-  <ul id="user_bar">
-  <% if spree_current_user %>
-    <li><%= link_to Spree.t('my_account'), spree.account_path %></li>
-    <li><%= link_to Spree.t('logout'), spree.destroy_spree_user_session_path %></li>
-  <% else %>
-    <li><%= link_to Spree.t('log_in'), spree.login_path %></li>
-  <% end %>
-  </ul>
+<%= render partial: "shared/header_search" %>
+<%#= render partial: 'spree/shared/nav_bar' #%>
 
-  <ul id="sites">
-    <%= site_selector(I18n.default_locale).try(:html_safe) %>
-  </ul>
-
-  <% @taxons = @taxon && @taxon.parent ? @taxon.parent.children : Spree::Taxon.roots  %>
-  <%= form_tag spree.products_url, :method => :get do %>
-    <fieldset>
-      <!-- <%= select_tag :taxon,
-            options_for_select([[t(:all_departments), '']] +
-                                  @taxons.map {|t| [t.name, t.id]},
-                                @taxon ? @taxon.id : params[:taxon]) %> -->
-      <%= search_field_tag :keywords, params[:keywords] %>
-      <%= submit_tag Spree.t(:search), :name => nil, :title => "Search SoulPad" %>
-    </fieldset>
-  <% end %>
-</div>
 <div id="header">
   <div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <%= link_to image_tag("site/soulpad_logo.png", :alt => "SoulPad", class: ""), "/", :id => "logo" %>
+    <div class="row">
     </div>
-    <div class="col-xs-12 col-sm-4">
-      <% if (controller.controller_name == "base" && controller.action_name == "index") %>
-        <h1>Stylish bell tents that are kind to your soul.</h1>
-      <% else %>
-        <h2>Stylish bell tents that are kind to your soul.</h2>
-      <% end %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <%= link_to image_tag("site/soulpad_logo.png", :alt => "SoulPad", class: ""), "/", :id => "logo" %>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <% if (controller.controller_name == "base" && controller.action_name == "index") %>
+          <h1>Stylish bell tents that are kind to your soul.</h1>
+        <% else %>
+          <h2>Stylish bell tents that are kind to your soul.</h2>
+        <% end %>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <ul class="contact">
+          <li><%= mail_to t(:contact_email), nil, class: 'email', target: '_blank' %></li>
+          <li><span class="tel"><%= t :telephone %></span></li>
+          <%= render :partial => "/shared/header_brochure" %>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-sm-1">
+        <% if uk? %>
+          <%= link_to image_tag("site/free_delivery.png", :alt => "Free UK Delivery", :class => "center-block"), main_app.shipping_url, class: 'delivery', title: 'Free UK Delivery' %>
+        <% elsif aus? %>
+          <%= link_to image_tag("site/free_delivery_aus.png", :alt => "Free delivery to most of Australia", :class => "center-block"), main_app.shipping_url, class: 'delivery', title: 'Free delivery to most of Australia' %>
+        <% elsif us? %>
+          <%= link_to image_tag("site/free_delivery_usa.png", :alt => "Free delivery to most of USA", :class => "center-block"), main_app.shipping_url, class: 'delivery', title: 'Free delivery to most of USA' %>
+        <% end %>
+      </div>
     </div>
-    <div class="col-xs-12 col-sm-3">
-      <ul class="contact">
-        <li><%= mail_to t(:contact_email), nil, class: 'email', target: '_blank' %></li>
-        <li><span class="tel"><%= t :telephone %></span></li>
-        <%= render :partial => "/shared/header_brochure" %>
-      </ul>
-    </div>
-    <div class="col-xs-12 col-sm-1">
-      <% if uk? %>
-        <%= link_to image_tag("site/free_delivery.png", :alt => "Free UK Delivery", :class => "center-block"), main_app.shipping_url, class: 'delivery', title: 'Free UK Delivery' %>
-      <% elsif aus? %>
-        <%= link_to image_tag("site/free_delivery_aus.png", :alt => "Free delivery to most of Australia", :class => "center-block"), main_app.shipping_url, class: 'delivery', title: 'Free delivery to most of Australia' %>
-      <% elsif us? %>
-        <%= link_to image_tag("site/free_delivery_usa.png", :alt => "Free delivery to most of USA", :class => "center-block"), main_app.shipping_url, class: 'delivery', title: 'Free delivery to most of USA' %>
-      <% end %>
-    </div>
+    <%= render :partial => "/shared/nav"  %>
   </div>
-  <%= render :partial => "/shared/nav"  %>
-
-  <div class="row">
-    <!-- <div class="col-xs-12"> -->
-    <!-- </div> -->
-  </div>
-</div>
 </div>
