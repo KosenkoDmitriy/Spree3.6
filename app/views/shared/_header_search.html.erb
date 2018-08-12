@@ -1,30 +1,35 @@
+<div class="container-fluid bar">
 <div class="row">
-  <div class="col-xs-12 ">
-<nav class="navbar">
-<% @taxons = @taxon && @taxon.parent ? @taxon.parent.children : Spree::Taxon.roots  %>
-<%= form_tag spree.products_url, :method => :get, :class => "navbar-form navbar-right" do %>
-  <fieldset>
-    <!-- <%= select_tag :taxon,
-          options_for_select([[t(:all_departments), '']] +
-                                @taxons.map {|t| [t.name, t.id]},
-                              @taxon ? @taxon.id : params[:taxon]) %> -->
-    <%= search_field_tag :keywords, params[:keywords] %>
-    <%= submit_tag Spree.t(:search), :name => nil, :title => "Search SoulPad" %>
-  </fieldset>
-<% end %>
+  <div class="col-xs-12">
+    <nav class="navbar">
+      <% @taxons = @taxon && @taxon.parent ? @taxon.parent.children : Spree::Taxon.roots  %>
 
-<ul id="user_bar" class="nav navbar-nav navbar-right">
-<% if spree_current_user %>
-  <li><%= link_to Spree.t('my_account'), spree.account_path %></li>
-  <li><%= link_to Spree.t('logout'), spree.destroy_spree_user_session_path %></li>
-<% else %>
-  <li><%= link_to Spree.t('log_in'), spree.login_path %></li>
-<% end %>
-</ul>
-
-<ul id="sites" class="nav navbar-right">
-  <%= site_selector(I18n.default_locale).try(:html_safe) %>
-</ul>
-</nav>
+      <ul id="user_bar" class="nav navbar-nav navbar-right">
+      <% if spree_current_user %>
+        <li><%= link_to Spree.t('my_account'), spree.account_path, class: "" %></li>
+        <li><%= link_to Spree.t('logout'), spree.destroy_spree_user_session_path, class: "" %></li>
+      <% else %>
+        <li><%= link_to Spree.t('log_in'), spree.login_path %></li>
+      <% end %>
+      <li>
+        <ul id="sites" class="nav navbar-right">
+          <%= site_selector(I18n.default_locale).try(:html_safe) %>
+        </ul>
+      </li>
+      <li id="search-bar">
+        <%= form_tag spree.products_url, :method => :get, :class => "navbar-form navbar-right" do %>
+          <div class="form-group">
+            <!-- <%= select_tag :taxon,
+                  options_for_select([[t(:all_departments), '']] +
+                                        @taxons.map {|t| [t.name, t.id]},
+                                      @taxon ? @taxon.id : params[:taxon]) %> -->
+            <%= search_field_tag :keywords, params[:keywords], class: "form-control" %>
+            <%= submit_tag Spree.t(:search), name: nil, title: "Search SoulPad", class: "form-control" %>
+          </div>
+        <% end %>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </div>
 </div>

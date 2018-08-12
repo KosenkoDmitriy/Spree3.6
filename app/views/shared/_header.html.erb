@@ -1,10 +1,9 @@
-<%= render partial: "shared/header_search" %>
-<%#= render partial: 'spree/shared/nav_bar' #%>
 
 <div id="header">
+  <%= render partial: "shared/header_search" %>
+
   <div class="container-fluid">
-    <div class="row">
-    </div>
+      <%#= render partial: 'spree/shared/nav_bar' #%>
     <div class="row">
       <div class="col-xs-12 col-sm-4">
         <%= link_to image_tag("site/soulpad_logo.png", :alt => "SoulPad", class: ""), "/", :id => "logo" %>

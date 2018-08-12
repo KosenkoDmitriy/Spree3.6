@@ -3,29 +3,35 @@
     /* padding-left: 0;
     padding-left: 0; */
   }
+  .bar {
+    background-color: #eeeee3;
+    padding: 5px 20px;
+  }
   .nav {
     li {
       display: inline;
       text-transform: uppercase;
+      margin: 0 1px 0 0;
     }
     li#basket_summary {
       background: #585652 url(/dev-assets/site/cart_arrow_header.png) no-repeat 215px 13px;
       color: #fff;
       span {
         background: url(/dev-assets/site/cart_icon_header.png) no-repeat 10px 50%;
-        display: block;
-        padding-left: 40px;
+        /* display: block; */
+        /* padding-left: 40px; */
       }
     }
     a {
-      color: #f47402;
+      background-color: #585652;
+      color: #fff;
       text-decoration: none;
     }
     a.parent {
       background-color: #dbdac4;
       color: #585652;
     }
-    a.active, a.hover {
+    a.active, a.hover, a.focus {
       background-color: #f47402;
       color: #fff;
     }
@@ -35,5 +41,10 @@
     background-color: #f47402;
   }
 
+  input[type="submit"] {
+      background-color: #585652;
+      color: #fff;
+      text-transform: uppercase;
+  }
 
 }
