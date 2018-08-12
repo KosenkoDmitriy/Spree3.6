@@ -11,7 +11,6 @@
     li {
       display: inline;
       text-transform: uppercase;
-      margin: 0 1px 0 0;
     }
     li#basket_summary {
       background: #585652 url(/dev-assets/site/cart_arrow_header.png) no-repeat 215px 13px;
@@ -26,6 +25,7 @@
       background-color: #585652;
       color: #fff;
       text-decoration: none;
+      margin-right: 1px;
     }
     a.parent {
       background-color: #dbdac4;
@@ -39,6 +39,13 @@
 
   #navbar-toggle {
     background-color: #f47402;
+  }
+
+  .navbar-toggle {
+    border-color: #585652;
+    .icon-bar {
+      border: 1px solid #585652;
+    }
   }
 
   input[type="submit"] {
