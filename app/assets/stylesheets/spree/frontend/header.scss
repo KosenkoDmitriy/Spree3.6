@@ -13,12 +13,12 @@
       text-transform: uppercase;
     }
     li#basket_summary {
-      background: #585652 url(/dev-assets/site/cart_arrow_header.png) no-repeat 215px 13px;
+      background: #585652 url($cart_arrow_header) no-repeat 215px 13px;
       color: #fff;
       span {
-        background: url(/dev-assets/site/cart_icon_header.png) no-repeat 10px 50%;
+        background: url($cart_icon_header) no-repeat 10px 50%;
         /* display: block; */
-        /* padding-left: 40px; */
+        padding-left: 40px;
       }
     }
     a {
@@ -43,6 +43,10 @@
 
   .navbar-toggle {
     border-color: #585652;
+    background: #f47402;
+    width: 100%;
+    margin: 0;
+
     .icon-bar {
       border: 1px solid #585652;
     }
@@ -54,4 +58,24 @@
       text-transform: uppercase;
   }
 
+  ul.contact {
+    list-style: none;
+  }
+  .contact {
+    font-weight: bold;
+    font-size: 1.25em;
+  }
+  .tel, .brochure, .email {
+    padding: 1px 0 1px 30px;
+    background-repeat: no-repeat;
+  }
+  .tel {
+    background-image: url($ic-contact-phone);
+  }
+  .brochure {
+    background-image: url($ic-contact-brochure);
+  }
+  .email {
+    background-image: url($ic-contact-email);
+  }
 }
