@@ -1,5 +1,5 @@
 <li id="basket_summary">
-	<span class="glyphicon glyphicon-shopping-cart"></span>
+	<b><span class="glyphicon glyphicon-shopping-cart"></span></b>
 		Your cart:
 		<b>
 			<%= pluralize(@basket.line_items.inject(0){ |sum,item| sum + item.quantity }, "item") %>
