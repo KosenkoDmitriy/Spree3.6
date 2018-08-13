@@ -16,11 +16,10 @@
       color: #fff;
       span.basket_icon {
         background: url($cart_icon_header) no-repeat 10px 50%;
-        /* display: block; */
-        padding-left: 40px;
-        padding-right: 40px;
       }
-      span.basket_arrow {float: right;}
+      span.basket_arrow {
+        float: right;
+      }
       b {
         color: #f47402;
         font-weight: normal;
