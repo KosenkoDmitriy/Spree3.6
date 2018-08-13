@@ -1,7 +1,6 @@
 #header {
   .container-fluid {
-    /* padding-left: 0;
-    padding-left: 0; */
+
   }
   .bar {
     background-color: #eeeee3;
@@ -31,7 +30,7 @@
       background-color: #dbdac4;
       color: #585652;
     }
-    a.active, a.hover, a.focus {
+    a.parent:hover, a.active, a.hover, a.focus {
       background-color: #f47402;
       color: #fff;
     }
