@@ -1,4 +1,5 @@
 class BaseController < Spree::BaseController
+	include Spree::Core::ControllerHelpers::Order
 
 	helper "spree/products"
 
