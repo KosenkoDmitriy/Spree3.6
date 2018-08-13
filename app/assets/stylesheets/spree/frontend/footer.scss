@@ -36,11 +36,11 @@
   }
 
   .tel {
-    background-image: url(/assets/site/icon_phone.png);
+    background-image: url($ic-contact-phone);
   }
 
   .email {
-    background-image: url(/assets/site/icon_email.png);
+    background-image: url($ic-contact-email);
   }
 
   ul.contact {
