@@ -14,10 +14,16 @@
     li#basket_summary {
       background: #585652 url($cart_arrow_header) no-repeat 215px 13px;
       color: #fff;
-      span {
+      span.basket_icon {
         background: url($cart_icon_header) no-repeat 10px 50%;
         /* display: block; */
         padding-left: 40px;
+        padding-right: 40px;
+      }
+      span.basket_arrow {float: right;}
+      b {
+        color: #f47402;
+        font-weight: normal;
       }
     }
     a {
