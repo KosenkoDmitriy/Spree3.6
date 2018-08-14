@@ -3,14 +3,14 @@
   padding-top: 40px;
   padding-bottom: 20px;
   overflow: hidden;
-
-  a {
+  
+  a.btn {
     background-color: #c2c0a4;
     color: #585652;
     text-transform: uppercase;
   }
 
-  a:hover {
+  a.btn:hover {
     background-color: #f47402;
     color: #fff;
   }
@@ -26,4 +26,22 @@
     height: 315px;
     min-height: 315px;
   }
+
+  .social_insta {
+    .thumbnail {
+      padding: 0;
+      background-color: transparent;
+    }
+    .thumbnail img {
+      border: 5px solid #fff;
+      box-shadow: 3px 3px 1px #c2c0a4;
+      box-shadow: 3px 3px 1px #c2c0a4;
+      -webkit-box-shadow: 3px 3px 1px #c2c0a4;
+      -moz-box-shadow: 3px 3px 1px #c2c0a4;
+    }
+    a {
+      border: 0;
+    }
+  }
+
 }

@@ -50,11 +50,20 @@
       <h3 class="media-heading">Instagram</h3>
     </div>
   </div>
-  <ul>
+
+  <div class="row">
+    <% InstaPhoto.try(:limit, 9).try(:order, "uploaded_at DESC").each do |photo| %>
+    <div class="col-xs-6 col-sm-4 col-md-3">
+      <%= link_to(image_tag(photo.thumb, class: "", alt:"#{photo.title}"), photo.link, {:target => "_blank", class: 'thumbnail'}) %>
+    </div>
+    <% end %>
+  </div>
+
+  <!-- <ul>
 		<% InstaPhoto.try(:limit, 9).try(:order, "uploaded_at DESC").each do |photo| %>
-			<li><%= link_to(image_tag(photo.thumb, :alt=>"#{photo.title}"), photo.link, {:target => "_blank"}) %></li>
+			<li><%= link_to(image_tag(photo.thumb, class: "thumbnail", alt:"#{photo.title}"), photo.link, {:target => "_blank"}) %></li>
 		<% end %>
-	</ul>
+	</ul> -->
 
 	<%= link_to("Our Instagram", "https://www.instagram.com/soulpadtents/", {:class => "btn", :target => "_blank"}) %>
 </div>
