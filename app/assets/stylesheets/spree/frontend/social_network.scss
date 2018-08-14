@@ -1,7 +1,8 @@
 .social_network {
-  background: url($social_background) repeat-x top left;
+  background: url($social_background) repeat top left;
   padding-top: 40px;
   padding-bottom: 20px;
+  overflow: hidden;
 
   a {
     background-color: #c2c0a4;
@@ -12,5 +13,17 @@
   a:hover {
     background-color: #f47402;
     color: #fff;
+  }
+
+  ul {
+    border-bottom: 1px solid #C2C0A4;
+    height: 240px;
+    // overflow-y: scroll;
+    overflow: hidden;
+  }
+
+  .social_facebook, .social_twitter, .social_insta {
+    height: 315px;
+    min-height: 315px;
   }
 }
