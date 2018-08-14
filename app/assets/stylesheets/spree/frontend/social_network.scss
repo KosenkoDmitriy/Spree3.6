@@ -20,6 +20,7 @@
     height: 240px;
     // overflow-y: scroll;
     overflow: hidden;
+    list-style: none;
   }
 
   .social_facebook, .social_twitter, .social_insta {
@@ -47,4 +48,18 @@
     }
   }
 
+  .social_facebook {
+    .list-group li {
+      border-bottom: 1px solid #c2c0a4;
+      padding-bottom: 12px;
+      font-size: 0.846em;
+
+      img {
+        border: 5px solid #fff;
+        width: 30%;
+        float: left;
+        margin-right: 10px;
+      }
+    }
+  }
 }

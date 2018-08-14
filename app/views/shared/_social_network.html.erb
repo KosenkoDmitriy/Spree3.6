@@ -7,7 +7,7 @@
       <h3 class="media-heading">Facebook</h3>
     </div>
   </div>
-  <ul>
+  <ul class="list-group">
 		<% FacebookMessage.try(:limit, 20).try(:order, "fb_created_at DESC").try(:each) do |item| %>
     <% next if item.message.blank? && item.link.blank? && item.picture.blank? %>
 			<li>
