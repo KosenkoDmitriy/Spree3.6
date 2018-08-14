@@ -12,23 +12,25 @@
 
 		<%= link_to("Join us on Facebook", "http://www.facebook.com/pages/SoulPad/7845355665", {:class => "button", :target => "_blank"}) %>
 </div>
+
 <div class="col-xs-12 col-sm-4">
   <h3>Twitter</h3>
   <ul>
-			<% TwitterMessage.try(:limit, 9).try(:order, "twitter_created_at DESC").each do |tweet| %>
-			<li>
-				<%= raw tweet.message %>
-				<span class="date"><%= tweet.twitter_created_at.to_s :long %></span>
-			</li>
-			<% end %>
-		</ul>
+		<% TwitterMessage.try(:limit, 9).try(:order, "twitter_created_at DESC").each do |tweet| %>
+		<li>
+			<%= raw tweet.message %>
+			<span class="date"><%= tweet.twitter_created_at.to_s :long %></span>
+		</li>
+		<% end %>
+	</ul>
 
-		<%= link_to("Follow us on Twitter", "http://twitter.com/#!/soulpad", {:class => "button", :target => "_blank"}) %>
+  <%= link_to("Follow us on Twitter", "http://twitter.com/#!/soulpad", {:class => "button", :target => "_blank"}) %>
 </div>
+
 <div class="col-xs-12 col-sm-4">
   <h3>Instagram</h3>
     <ul>
-  		<% InstaPhoto.find(:all, :limit => 9, :order => "uploaded_at DESC").each do |photo| %>
+  		<% InstaPhoto.try(:limit, 9).try(:order, "uploaded_at DESC").each do |photo| %>
   			<li><%= link_to(image_tag(photo.thumb, :alt=>"#{photo.title}"), photo.link, {:target => "_blank"}) %></li>
   		<% end %>
   	</ul>
