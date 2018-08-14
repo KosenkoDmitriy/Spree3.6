@@ -1,20 +1,34 @@
 <div class="col-xs-12 col-sm-4">
-  <h3>Facebook</h3>
+  <div class="media">
+    <span class="media-left">
+      <%= image_tag "/assets/site/facebook_icon.png" %>
+    </span>
+    <div class="media-body">
+      <h3 class="media-heading">Facebook</h3>
+    </div>
+  </div>
   <ul>
-			<% FacebookMessage.try(:limit, 20).try(:order, "fb_created_at DESC").try(:each) do |item| %>
-      <% next if item.message.blank? && item.link.blank? && item.picture.blank? %>
-				<li>
-					<%= link_to(image_tag(item.picture), item.link, {:target => "_blank"}) if item.fb_type == "photo" && item.picture.present? %>
-					<%= link_to(item.from, "http://www.facebook.com/profile.php?id=#{item.from_fb_id}", {:target => "_blank"}) %> <%= item.message %>
-				</li>
-			<% end %>
-		</ul>
+		<% FacebookMessage.try(:limit, 20).try(:order, "fb_created_at DESC").try(:each) do |item| %>
+    <% next if item.message.blank? && item.link.blank? && item.picture.blank? %>
+			<li>
+				<%= link_to(image_tag(item.picture), item.link, {:target => "_blank"}) if item.fb_type == "photo" && item.picture.present? %>
+				<%= link_to(item.from, "http://www.facebook.com/profile.php?id=#{item.from_fb_id}", {:target => "_blank"}) %> <%= item.message %>
+			</li>
+		<% end %>
+	</ul>
 
-		<%= link_to("Join us on Facebook", "http://www.facebook.com/pages/SoulPad/7845355665", {:class => "btn", :target => "_blank"}) %>
+	<%= link_to("Join us on Facebook", "http://www.facebook.com/pages/SoulPad/7845355665", {:class => "btn", :target => "_blank"}) %>
 </div>
 
 <div class="col-xs-12 col-sm-4">
-  <h3>Twitter</h3>
+  <div class="media">
+    <span class="media-left">
+      <%= image_tag "/assets/site/twitter_icon.png" %>
+    </span>
+    <div class="media-body">
+      <h3 class="media-heading">Twitter</h3>
+    </div>
+  </div>
   <ul>
 		<% TwitterMessage.try(:limit, 9).try(:order, "twitter_created_at DESC").each do |tweet| %>
 		<li>
@@ -28,12 +42,19 @@
 </div>
 
 <div class="col-xs-12 col-sm-4">
-  <h3>Instagram</h3>
-    <ul>
-  		<% InstaPhoto.try(:limit, 9).try(:order, "uploaded_at DESC").each do |photo| %>
-  			<li><%= link_to(image_tag(photo.thumb, :alt=>"#{photo.title}"), photo.link, {:target => "_blank"}) %></li>
-  		<% end %>
-  	</ul>
+  <div class="media">
+    <span class="media-left">
+      <%= image_tag "/assets/site/insta_icon.png" %>
+    </span>
+    <div class="media-body">
+      <h3 class="media-heading">Instagram</h3>
+    </div>
+  </div>
+  <ul>
+		<% InstaPhoto.try(:limit, 9).try(:order, "uploaded_at DESC").each do |photo| %>
+			<li><%= link_to(image_tag(photo.thumb, :alt=>"#{photo.title}"), photo.link, {:target => "_blank"}) %></li>
+		<% end %>
+	</ul>
 
-  	<%= link_to("Our Instagram", "https://www.instagram.com/soulpadtents/", {:class => "btn", :target => "_blank"}) %>
+	<%= link_to("Our Instagram", "https://www.instagram.com/soulpadtents/", {:class => "btn", :target => "_blank"}) %>
 </div>

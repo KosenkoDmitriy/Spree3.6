@@ -1,14 +1,14 @@
 .social_network {
   background: url($social_background) repeat-x top left;
-  // overflow: hidden;
-  padding-top: 15px;
+  padding-top: 40px;
+  padding-bottom: 20px;
 
   a {
     background-color: #c2c0a4;
     color: #585652;
     text-transform: uppercase;
   }
-  
+
   a:hover {
     background-color: #f47402;
     color: #fff;
