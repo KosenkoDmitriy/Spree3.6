@@ -20,7 +20,7 @@
 	<%= link_to("Join us on Facebook", "http://www.facebook.com/pages/SoulPad/7845355665", {:class => "btn", :target => "_blank"}) %>
 </div>
 
-<div class="social_facebook col-xs-12 col-sm-4">
+<div class="social_twitter col-xs-12 col-sm-4">
   <div class="media">
     <span class="media-left">
       <%= image_tag "/assets/site/twitter_icon.png" %>
@@ -29,7 +29,7 @@
       <h3 class="media-heading">Twitter</h3>
     </div>
   </div>
-  <ul>
+  <ul class="list-group">
 		<% TwitterMessage.try(:limit, 9).try(:order, "twitter_created_at DESC").each do |tweet| %>
 		<li>
 			<%= raw tweet.message %>
@@ -54,7 +54,7 @@
   <div class="social_content row">
     <% InstaPhoto.try(:limit, 9).try(:order, "uploaded_at DESC").each do |photo| %>
     <div class="col-xs-6 col-sm-4 col-md-3">
-      <%= link_to(image_tag(photo.thumb, class: "", alt:"#{photo.title}"), photo.link, {:target => "_blank", class: 'thumbnail'}) %>
+      <%= link_to(image_tag(photo.thumb, class: "", alt: "#{photo.title}"), photo.link, {:target => "_blank", class: 'thumbnail'}) %>
     </div>
     <% end %>
   </div>

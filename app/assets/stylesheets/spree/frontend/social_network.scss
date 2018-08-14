@@ -4,6 +4,10 @@
   padding-bottom: 20px;
   overflow: hidden;
 
+  h3.media-heading {
+    margin-bottom: 15px;
+  }
+
   a.btn {
     background-color: #c2c0a4;
     color: #585652;
@@ -24,13 +28,13 @@
   }
 
   .social_facebook, .social_twitter, .social_insta {
-    height: 315px;
-    min-height: 315px;
+    height: 340px;
+    min-height: 340px;
   }
 
   .social_insta {
     .btn {
-      margin-top: 10px;
+      margin-top: 20px;
     }
     .thumbnail {
       padding: 0;
@@ -48,18 +52,26 @@
     }
   }
 
-  .social_facebook {
-    .list-group li {
-      border-bottom: 1px solid #c2c0a4;
-      padding-bottom: 12px;
-      font-size: 0.846em;
+  .list-group li {
+    border-bottom: 1px solid #c2c0a4;
+    padding-bottom: 12px;
+    font-size: 0.846em;
+  }
 
-      img {
-        border: 5px solid #fff;
-        width: 30%;
-        float: left;
-        margin-right: 10px;
-      }
+  .social_facebook {
+    .list-group li img {
+      border: 5px solid #fff;
+      width: 30%;
+      float: left;
+      margin-right: 10px;
+    }
+  }
+
+  .social_twitter {
+    .date {
+      color: #a4aa97;
+      text-transform: uppercase;
+      display: block;
     }
   }
 }
