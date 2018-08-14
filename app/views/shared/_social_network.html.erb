@@ -27,5 +27,11 @@
 </div>
 <div class="col-xs-12 col-sm-4">
   <h3>Instagram</h3>
+    <ul>
+  		<% InstaPhoto.find(:all, :limit => 9, :order => "uploaded_at DESC").each do |photo| %>
+  			<li><%= link_to(image_tag(photo.thumb, :alt=>"#{photo.title}"), photo.link, {:target => "_blank"}) %></li>
+  		<% end %>
+  	</ul>
 
+  	<%= link_to("Our Instagram", "https://www.instagram.com/soulpadtents/", {:class => "button", :target => "_blank"}) %>
 </div>

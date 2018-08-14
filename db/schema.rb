@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_14_080354) do
+ActiveRecord::Schema.define(version: 2018_08_14_081556) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -63,6 +63,16 @@ ActiveRecord::Schema.define(version: 2018_08_14_080354) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
+  create_table "insta_photos", force: :cascade do |t|
+    t.string "insta_id"
+    t.datetime "uploaded_at"
+    t.string "title"
+    t.string "link"
+    t.string "thumb"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "spree_addresses", force: :cascade do |t|

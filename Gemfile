@@ -68,8 +68,9 @@ gem 'spree_gateway', '~> 3.3'
 
 # Spree extensions
 # social_network
-gem 'twitter'
-gem 'koala' # For Facebook https://github.com/arsduo/koala
+gem 'twitter', '5.8.0'
+gem 'koala', '1.9.0' # For Facebook https://github.com/arsduo/koala
+gem 'instagram', '1.1.6'
 
 
 
