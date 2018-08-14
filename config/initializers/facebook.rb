@@ -1,0 +1,1 @@
+# Spree::Config.set :soulpap_facebook_id => "7845355665"

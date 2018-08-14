@@ -1,0 +1,21 @@
+<div class="col-xs-12 col-sm-4">
+  <h3>Facebook</h3>
+  <ul>
+			<% FacebookMessage.try(:limit, 20).try(:order, "fb_created_at DESC").try(:each) do |item| %>
+      <% next if item.message.blank? && item.link.blank? && item.picture.blank? %>
+				<li>
+					<%= link_to(image_tag(item.picture), item.link, {:target => "_blank"}) if item.fb_type == "photo" && item.picture.present? %>
+					<%= link_to(item.from, "http://www.facebook.com/profile.php?id=#{item.from_fb_id}", {:target => "_blank"}) %> <%= item.message %>
+				</li>
+			<% end %>
+		</ul>
+
+		<%= link_to("Join us on Facebook", "http://www.facebook.com/pages/SoulPad/7845355665", {:class => "button", :target => "_blank"}) %>
+</div>
+<div class="col-xs-12 col-sm-4">
+  <h3>Twitter</h3>
+</div>
+<div class="col-xs-12 col-sm-4">
+  <h3>Instagram</h3>
+
+</div>

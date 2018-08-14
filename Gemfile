@@ -66,6 +66,9 @@ gem 'spree', '~> 3.6.1'
 gem 'spree_auth_devise', '~> 3.3'
 gem 'spree_gateway', '~> 3.3'
 
+# Spree extensions
+# social_network
+gem 'koala' # For Facebook https://github.com/arsduo/koala
 
 
 
