@@ -3,7 +3,7 @@
   padding-top: 40px;
   padding-bottom: 20px;
   overflow: hidden;
-  
+
   a.btn {
     background-color: #c2c0a4;
     color: #585652;
@@ -15,7 +15,7 @@
     color: #fff;
   }
 
-  ul {
+  .social_content, ul {
     border-bottom: 1px solid #C2C0A4;
     height: 240px;
     // overflow-y: scroll;
@@ -28,6 +28,9 @@
   }
 
   .social_insta {
+    .btn {
+      margin-top: 10px;
+    }
     .thumbnail {
       padding: 0;
       background-color: transparent;
