@@ -14,6 +14,16 @@
 </div>
 <div class="col-xs-12 col-sm-4">
   <h3>Twitter</h3>
+  <ul>
+			<% TwitterMessage.try(:limit, 9).try(:order, "twitter_created_at DESC").each do |tweet| %>
+			<li>
+				<%= raw tweet.message %>
+				<span class="date"><%= tweet.twitter_created_at.to_s :long %></span>
+			</li>
+			<% end %>
+		</ul>
+
+		<%= link_to("Follow us on Twitter", "http://twitter.com/#!/soulpad", {:class => "button", :target => "_blank"}) %>
 </div>
 <div class="col-xs-12 col-sm-4">
   <h3>Instagram</h3>
