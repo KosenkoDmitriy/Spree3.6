@@ -6,6 +6,7 @@
 
   h3.media-heading {
     margin-bottom: 15px;
+    font-weight: bold;
   }
 
   a.btn {
@@ -27,6 +28,14 @@
     list-style: none;
   }
 
+  .social_content img {
+    border: 5px solid #fff;
+    box-shadow: 3px 3px 1px #c2c0a4;
+    box-shadow: 3px 3px 1px #c2c0a4;
+    -webkit-box-shadow: 3px 3px 1px #c2c0a4;
+    -moz-box-shadow: 3px 3px 1px #c2c0a4;
+  }
+
   .social_facebook, .social_twitter, .social_insta {
     height: 340px;
     min-height: 340px;
@@ -39,13 +48,6 @@
     .thumbnail {
       padding: 0;
       background-color: transparent;
-    }
-    .thumbnail img {
-      border: 5px solid #fff;
-      box-shadow: 3px 3px 1px #c2c0a4;
-      box-shadow: 3px 3px 1px #c2c0a4;
-      -webkit-box-shadow: 3px 3px 1px #c2c0a4;
-      -moz-box-shadow: 3px 3px 1px #c2c0a4;
     }
     a {
       border: 0;
@@ -60,7 +62,6 @@
 
   .social_facebook {
     .list-group li img {
-      border: 5px solid #fff;
       width: 60px;
       float: left;
       margin-right: 10px;

@@ -7,7 +7,7 @@
       <h3 class="media-heading">Facebook</h3>
     </div>
   </div>
-  <ul class="list-group">
+  <ul class="social_content list-group">
 		<% FacebookMessage.try(:limit, 20).try(:order, "fb_created_at DESC").try(:each) do |item| %>
     <% next if item.message.blank? && item.link.blank? && item.picture.blank? %>
 			<li>
@@ -29,7 +29,7 @@
       <h3 class="media-heading">Twitter</h3>
     </div>
   </div>
-  <ul class="list-group">
+  <ul class="social_content list-group">
 		<% TwitterMessage.try(:limit, 9).try(:order, "twitter_created_at DESC").each do |tweet| %>
 		<li>
 			<%= raw tweet.message %>
