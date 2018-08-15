@@ -1,58 +1,41 @@
 
+#soulpad {
+  #container {
+    background-color: #fff;
+    border-top: 10px solid #585652;
+    margin: 30px;
+    box-shadow: 0 0 5px #909090;
+    -webkit-box-shadow: 0 0 5px #909090;
+    -moz-box-shadow: 0 0 5px #909090;
+  }
 
-#header {
+  // top nav bar section
   .bar {
-    // $navbar-height: 25px;
-
     background-color: #eeeee3;
     // padding: 5px 20px;
     padding-top: 10px;
     padding-bottom: 10px;
+    li {
+      margin-right: 2px;
+      margin-left: 2px;
+      text-transform: uppercase;
+    }
     li a {
       background-color: #585652;
       color: #fff;
     }
-  }
-  .navbar-right {
-    // float: right !important;
-    // margin-right: 0;
-  }
-
-  .nav {
-    li {
-      display: inline;
-      text-transform: uppercase;
+    input[type="submit"] {
+        background-color: #585652;
+        color: #fff;
+        text-transform: uppercase;
+        border: 0px;
     }
-    li#basket_summary {
-      // background: #585652 url($cart_arrow_header) no-repeat 215px 13px;
-      // color: #fff;
-      // span.basket_icon {
-      //   background: url($cart_icon_header) no-repeat 10px 50%;
-      // }
-      span.basket_arrow {
-        float: right;
-      }
-      b {
-        color: #f47402;
-        font-weight: normal;
-      }
-    }
-    a {
-      background-color: #585652;
-      color: #fff;
-      text-decoration: none;
-      margin-right: 1px;
-    }
-    a.parent {
-      background-color: #dbdac4;
-      color: #585652;
-    }
-    a.parent:hover, a.active, a.hover, a.focus {
-      background-color: #f47402;
-      color: #fff;
+    input[type="search"] {
+      background: #fff url($ic_search) no-repeat 5px center;
     }
   }
 
+  // main nav menu section
   #navbar-toggle {
     background-color: #f47402;
   }
@@ -67,14 +50,18 @@
       border: 1px solid #585652;
     }
   }
-
-  input[type="submit"] {
-      background-color: #585652;
-      color: #fff;
-      text-transform: uppercase;
-      border: 0px;
+  // main nav menu toggle
+  .navbar-collapse {
+    margin-right: 0;
+    margin-left: -15px;
   }
 
+  .navbar-collapse.in {
+    overflow-y: auto;
+    margin-left: 0;
+  }
+
+  // header > contacts
   ul.contact {
     list-style: none;
     margin-top: 25px;
@@ -102,4 +89,5 @@
     margin-top: 25px;
     margin-bottom: 25px;
   }
+
 }
