@@ -21,7 +21,7 @@
               options_for_select([[t(:all_departments), '']] +
                                     @taxons.map {|t| [t.name, t.id]},
                                   @taxon ? @taxon.id : params[:taxon]) %> -->
-        <%= search_field_tag :keywords, params[:keywords], class: "form-control" %>
+        <%= search_field_tag :keywords, params[:keywords], class: "form-control", placeholder: "" %>
         <%= submit_tag Spree.t(:search), name: nil, title: "Search SoulPad", class: "form-control" %>
       </div>
     <% end %>

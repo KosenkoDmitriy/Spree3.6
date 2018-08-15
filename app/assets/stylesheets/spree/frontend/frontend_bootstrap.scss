@@ -43,6 +43,9 @@ body {
         text-transform: uppercase;
         border: 0px;
     }
+    input[type="search"] {
+      background: #fff url(/assets/site/search.png) no-repeat 5px center;
+    }
   }
 
   // menu
