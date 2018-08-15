@@ -58,6 +58,7 @@ body {
   // }
   .nav li {
     margin-right: 1px;
+    text-transform: uppercase;
   }
   #link-to-cart a.cart-info {
     background-color: #585652;
@@ -70,7 +71,8 @@ body {
 
     &:hover, &:focus {
       // background: rgba($gray-darker, 0.4);
-
+      background-color: #f47402;
+      color: #fff;
     }
   }
 
