@@ -1,7 +1,5 @@
-<nav class="navbar">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-12">
+<nav class="navbar col-sm-12" id="top-nav-bar">
+
         <% @taxons = @taxon && @taxon.parent ? @taxon.parent.children : Spree::Taxon.roots  %>
 
         <ul id="user_bar" class="nav navbar-nav navbar-right">
@@ -29,7 +27,5 @@
           <% end %>
           </li>
         </ul>
-      </div>
-    </div>
-  </div>
+
 </nav>
