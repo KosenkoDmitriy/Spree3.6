@@ -8,10 +8,21 @@
       <div id="spree-header">
         <%= render "custom/spree_header" %>
         <% render partial: 'shared/header' %>
-
       </div>
       <div class="container">
-        <%= render "custom/spree_container" %>
+        <div class="row" data-hook="">
+          <%#= render "custom/spree_container" #%>
+          <%= spree_breadcrumbs(@taxon) %>
+
+          <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
+
+          <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook>
+            <%= flash_messages %>
+            <%= yield %>
+          </div>
+
+          <%= yield :templates %>
+        </div>
       </div>
       <div class="container-fluid social_network">
         <div class="row">
