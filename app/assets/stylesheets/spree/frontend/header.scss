@@ -1,15 +1,17 @@
+
+
 #header {
-  .container-fluid {
-
-  }
   .bar {
-    background-color: #eeeee3;
-    padding: 5px 20px;
-  }
+    $navbar-height: 25px;
 
+    background-color: #eeeee3;
+    // padding: 5px 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
   .navbar-right {
     // float: right !important;
-    margin-right: 0;
+    // margin-right: 0;
   }
 
   .nav {
@@ -66,6 +68,7 @@
       background-color: #585652;
       color: #fff;
       text-transform: uppercase;
+      border: 0px;
   }
 
   ul.contact {

@@ -1,7 +1,6 @@
 //Add your custom bootstrap variables here, see https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss for full list of variables.
-@import "variables_custom";
 @import "bootstrap-sprockets";
-// @import "variables";
+@import "variables_custom";
 
 @import "bootstrap";
 @import "header";
@@ -29,13 +28,13 @@ body {
 
 // -- Spree Custom Header and Footer ---------------------
 #spree-header {
-  background-color: $brand-primary;
+  // background-color: $brand-primary;
   margin-bottom: $line-height-computed;
-  padding-top: 0.25em;
+  // padding-top: 0.25em;
 
   #header {
-    background: rgba($gray-darker, 0.4);
-    padding: $line-height-computed 0;
+    // background: rgba($gray-darker, 0.4);
+    // padding: $line-height-computed 0;
   }
 
   #logo {
@@ -54,12 +53,24 @@ body {
       line-height: $line-height-computed;
     }
   }
-
+  // a {
+  //   color: #f47402;
+  // }
+  .nav li {
+    margin-right: 1px;
+  }
+  #link-to-cart a.cart-info {
+    background-color: #585652;
+    color: #fff;
+  }
   .nav a {
-    color: white;
+    background-color: #dbdac4;
+    color: #585652;
+    // color: white;
 
     &:hover, &:focus {
-      background: rgba($gray-darker, 0.4);
+      // background: rgba($gray-darker, 0.4);
+
     }
   }
 

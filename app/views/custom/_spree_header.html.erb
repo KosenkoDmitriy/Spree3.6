@@ -1,0 +1,54 @@
+<header id="header" data-hook="">
+  <div class="container-fluid">
+    <div class="bar row">
+      <nav class="navbar col-sm-12" id="top-nav-bar">
+        <ul id="nav-bar" class="nav navbar-nav navbar-right" data-hook="">
+        <li><a href="/spree/account">My Account</a></li>
+        <li><a href="/spree/logout">Logout</a></li>
+      <li id="search-bar" data-hook="">
+            <form class="navbar-form" action="/spree/products" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+        <div class="form-group">
+            <select name="taxon" id="taxon" aria-label="Taxon" class="form-control"><option value="">All departments</option>
+      <option value="1">Categories</option>
+      <option value="2">Brands</option></select>
+        </div>
+        <div class="form-group">
+          <input name="keywords" id="keywords" placeholder="Search" class="form-control" type="search">
+        </div>
+        <input value="Search" class="btn btn-success" data-disable-with="Search" type="submit">
+      </form>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+    <div class="row">
+      <figure id="logo" class="col-sm-12" data-hook="">
+        <a href="/spree/"><img src="/assets/logo/spree_50-0ae687ccd486b63b01687b1df9e5394430f6fce3ab40c28250b179be4363ddc1.png"></a>
+      </figure>
+
+            </div>
+          </div>
+        </header>
+        <div class="container-fluid">
+          <nav class="col-md-12">
+        <div id="main-nav-bar" class="navbar">
+          <ul class="nav navbar-nav" data-hook="">
+            <li id="home-link" data-hook=""><a href="/spree/">Home</a></li>
+            <li class=""><a href="/spree/spree/about">Spree About</a></li>
+        <li class=""><a href="/spree/shop">shop</a></li>
+        <li class=""><a href="/spree/news">news</a></li>
+        <li class=""><a href="/spree/gallery">gallery</a></li>
+        <li class=""><a href="/spree/projects">projects</a></li>
+        <li class=""><a href="/spree/contact">contact</a></li>
+
+      </ul>
+        <ul class="nav navbar-nav navbar-right" data-hook="">
+        <li id="link-to-cart" data-hook=""><a class="cart-info full" href="/spree/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Basket: (1)  <span class="amount">$15.99</span></a></li>
+        <script>Spree.fetch_cart()</script>
+
+      </ul>
+    </div>
+  </nav>
+
+</div>
