@@ -43,6 +43,52 @@ body {
         border: 0px;
     }
   }
+
+  // menu
+  #navbar-toggle {
+    background-color: #f47402;
+  }
+
+  .navbar-toggle {
+    border-color: #585652;
+    background: #f47402;
+    width: 100%;
+    margin: 0;
+
+    .icon-bar {
+      border: 1px solid #585652;
+    }
+  }
+  // end menu
+
+  ul.contact {
+    list-style: none;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  .contact {
+    font-weight: bold;
+    font-size: 1.25em;
+  }
+  .tel, .brochure, .email {
+    padding: 1px 0 1px 30px;
+    background-repeat: no-repeat;
+  }
+  .tel {
+    background-image: url($ic-contact-phone);
+  }
+  .brochure {
+    background-image: url($ic-contact-brochure);
+  }
+  .email {
+    background-image: url($ic-contact-email);
+  }
+
+  .delivery img {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
 }
 
 // -- Spree Custom Header and Footer ---------------------
@@ -66,6 +112,7 @@ body {
   }
 
   @media (max-width: 767px) {
+
     .navbar-nav > li > a {
       padding-top: 0;
       padding-bottom: 10px;
