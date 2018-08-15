@@ -65,9 +65,9 @@
   ul.contact {
     list-style: none;
     margin-top: 25px;
-    margin-bottom: 25px;
   }
-  .contact {
+  .contact li {
+    margin-top: 5px;
     font-weight: bold;
     font-size: 1.25em;
   }
