@@ -57,6 +57,9 @@
     ul#sites {
       background: #fff url(/assets/site/sites_arrow.png) no-repeat 110px 16px;
       cursor: pointer;
+      // position: absolute;
+      // z-index: 1;
+      // right: 10px;
       li {
         background-repeat: no-repeat;
         background-position: 5px 10px;
