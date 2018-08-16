@@ -25,6 +25,9 @@
       }
 
     }
+    .sites .dropdown {
+      border-color: transparent;
+    }
     ul#sites {
       background: #fff url(/assets/site/sites_arrow.png) no-repeat 110px 16px;
       cursor: pointer;
@@ -57,7 +60,7 @@
       }
       li:not(:first-child) {
         background-color: #eeeee3;
-        margin: 5px 0 5px;
+        margin: -5px 0 0;
         display: none;
       }
     }
