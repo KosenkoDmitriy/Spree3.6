@@ -1,24 +1,24 @@
 <fieldset class="ten columns">
-	
+
 	<div>
 		<%= f.label :tag %>
 		<%= f.text_field :tag %>
 	</div>
-	
+
 	<div>
 		<%= f.text_area :data, :class => "tinymce" %>
     <%= tinymce %>
 	</div>
-	
+
 </fieldset>
 
 <fieldset id="photo_picker" class="four columns">
-	<%= select_tag "picker_index", options_for_select(Gallery.find(:all, :order => "title").collect{|g| [g.title, g.id]}) %>
+	<%#= select_tag "picker_index", options_for_select(Gallery.find(:all, :order => "title").collect{|g| [g.title, g.id]}) #%>
 	<div id="picker_gallery">
-		<%= render :partial => "picker_gallery", :locals => {:gallery => Gallery.find(:first, :order => "title")} %>
+		<%#= render :partial => "picker_gallery", :locals => {:gallery => Gallery.find(:first, :order => "title")} #%>
 	</div>
 	<p>To include photos in new articles, just drag the photo into the textarea editing boxes</p>
-	
+
 	<script>
 
     var addNoWatermarkHandler = function(){
@@ -43,7 +43,5 @@
 			});
 		});
 	</script>
-	
+
 </fieldset>
-
-
