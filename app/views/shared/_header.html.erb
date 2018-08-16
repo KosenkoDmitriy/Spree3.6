@@ -9,7 +9,7 @@
       <div class="col-xs-12 col-sm-3">
         <%= link_to image_tag("site/soulpad_logo.png", :alt => "SoulPad", class: "center-block"), "/", :id => "logo" %>
       </div>
-      <div class="col-xs-12 col-sm-4">
+      <div class="hidden-xs col-sm-4">
         <% if (controller.controller_name == "base" && controller.action_name == "index") %>
           <h1 class="text-center">Stylish bell tents that are kind to your soul.</h1>
         <% else %>
@@ -23,7 +23,7 @@
           <%= render :partial => "/shared/header_brochure" %>
         </ul>
       </div>
-      <div class="col-xs-12 col-sm-1">
+      <div class="hidden-xs col-sm-1">
         <% if uk? %>
           <%= link_to image_tag("site/free_delivery.png", :alt => "Free UK Delivery", :class => "center-block"), main_app.shipping_url, class: 'delivery', title: 'Free UK Delivery' %>
         <% elsif aus? %>

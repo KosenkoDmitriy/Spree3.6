@@ -9,13 +9,13 @@
   <% else %>
     <li><%= link_to Spree.t('log_in'), spree.login_path %></li>
   <% end %>
-  <li>
-    <ul id="sites" class="nav navbar-right">
-      <%#= site_selector_pre_spree3(I18n.default_locale).try(:html_safe) #%>
-    </ul>
+    <li>
+    <%= site_selector(I18n.default_locale).try(:html_safe) %>
   </li>
   <li>
-    <%= site_selector(I18n.default_locale).try(:html_safe) %>
+    <ul id="sites" class="nav navbar-right">
+      <%= site_selector_pre_spree3(I18n.default_locale).try(:html_safe) %>
+    </ul>
   </li>
   <li id="search-bar" data-hook="">
     <%= form_tag spree.products_url, :method => :get, :class => "navbar-form" do %>
