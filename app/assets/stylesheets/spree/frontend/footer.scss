@@ -29,7 +29,9 @@
 
   .tel, .brochure, .email {
     background-repeat: no-repeat;
-    padding: 1px 0 1px 30px;
+    // padding: 1px 10px 1px 30px;
+    padding-right: 30px;
+    background-position: left;
     font-family: 'Droid Sans', 'Helvetica Neue', Helvetica, arial, sans-serif;
     font-size: 1.25em;
     font-weight: bold;
@@ -44,7 +46,8 @@
   }
 
   ul.contact {
-    margin-left: -40px;
+    // margin-left: -40px;
+    margin-top: 0px;
   }
 
   .contact li {
