@@ -9,27 +9,14 @@
   <% else %>
     <li><%= link_to Spree.t('log_in'), spree.login_path %></li>
   <% end %>
-  <!-- <li>
+  <li>
     <ul id="sites" class="nav navbar-right">
       <%#= site_selector_pre_spree3(I18n.default_locale).try(:html_safe) #%>
     </ul>
-  </li> -->
+  </li>
   <li>
     <%= site_selector(I18n.default_locale).try(:html_safe) %>
   </li>
-  <!-- <li>
-    <div class="dropdown sites">
-      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        <%= image_tag "/assets/site/au.png" %>
-        UK
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="#">Lang 1</a></li>
-        <li><a href="#">Lang 2</a></li>
-      </ul>
-    </div>
-  </li> -->
   <li id="search-bar" data-hook="">
     <%= form_tag spree.products_url, :method => :get, :class => "navbar-form" do %>
       <div class="form-group">

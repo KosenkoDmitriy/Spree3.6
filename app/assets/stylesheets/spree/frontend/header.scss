@@ -28,6 +28,8 @@
     // for new site_selector helper
     .dropdown > .btn {
       border-color: transparent;
+      min-width: 160px;
+      width: 100%;
     }
     ul.dropdown-menu {
       background-color: #eeeee3;
