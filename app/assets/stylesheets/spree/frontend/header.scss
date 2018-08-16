@@ -25,9 +25,28 @@
       }
 
     }
-    .sites .dropdown {
+    // for new site_selector helper
+    .dropdown > .btn {
       border-color: transparent;
     }
+    ul.dropdown-menu {
+      background-color: #eeeee3;
+      li {
+        background-color: #eeeee3;
+        &:hover {
+          background-color: #d2d1bb;
+        }
+      }
+      a {
+        color: #585652;
+        background: transparent;
+        text-decoration: none;
+      }
+      img {
+        padding: 4px;
+      }
+    }
+    // for old site_selector_pre_spree3 helper
     ul#sites {
       background: #fff url(/assets/site/sites_arrow.png) no-repeat 110px 16px;
       cursor: pointer;

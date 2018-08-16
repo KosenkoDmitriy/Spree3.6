@@ -59,8 +59,6 @@ module ApplicationHelper
     when 'en-GB'
       "<li id=\"us\"><span>#{lang_icon('en-US')} #{link_to 'United States', 'http://soulpad.com'}</span></li>
       <li id=\"au\"><span>#{lang_icon('en-AU')} #{link_to 'Australia', 'http://soulpad.com.au'}</span></li>"
-      # "<li id=\"us\"><a href='http://soulpad.com'>#{lang_icon('en-US')} #{lang_label('en-US')} </a></li>
-      # <li id=\"au\"><a href='http://soulpad.com.au'>#{lang_icon('en-AU')} #{lang_label('en-AU')} </a></li>"
     when 'en-AU'
       "<li id=\"uk\"><span>#{lang_icon('en-GB')} #{link_to 'UK', 'http://soulpad.co.uk'}<span></li>
       <li id=\"us\"><span>#{lang_icon('en-US')} #{link_to 'United States', 'http://soulpad.com'}<span></li>"
