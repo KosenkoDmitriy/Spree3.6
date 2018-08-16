@@ -19,10 +19,47 @@
       margin-right: 2px;
       margin-left: 2px;
       text-transform: uppercase;
+      a {
+         background-color: #585652;
+         color: #fff;
+      }
+
     }
-    li a {
-      background-color: #585652;
-      color: #fff;
+    ul#sites {
+      background: #fff url(/assets/site/sites_arrow.png) no-repeat 110px 16px;
+      cursor: pointer;
+      li {
+        background-repeat: no-repeat;
+        background-position: 5px 10px;
+        padding: 8px 0 0 40px;
+        text-transform: none;
+        min-width: 120px;
+        height: 35px;
+
+        &:first-child {
+          display: block;
+        }
+        a {
+          color: #585652;
+          margin: 0;
+          padding: 0;
+          background: transparent;
+        }
+        &#uk {
+          background-image: url(/assets/site/uk.png);
+        }
+        &#us {
+          background-image: url(/assets/site/us.png);
+        }
+        &#au {
+          background-image: url(/assets/site/au.png);
+        }
+      }
+      li:not(:first-child) {
+        background-color: #eeeee3;
+        margin: 5px 0 5px;
+        display: none;
+      }
     }
     input[type="submit"] {
         background-color: #585652;
