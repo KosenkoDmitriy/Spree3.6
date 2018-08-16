@@ -14,7 +14,7 @@ class DynamicContentManagementEngine::Admin::DynamicDataController < Spree::Admi
   end
 
   def create
-    @dynamic_datum = DynamicDatum.new(params[:dynamic_datum])
+    @dynamic_datum = DynamicDatum.new(permitted_params)
 
     respond_to do |format|
       if @dynamic_datum.save
@@ -66,4 +66,8 @@ class DynamicContentManagementEngine::Admin::DynamicDataController < Spree::Admi
     end
   end
 
+  private
+  def permitted_params
+    params.permit(:dynamic_datum).permit(:tag, :data)
+  end
 end
