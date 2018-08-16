@@ -12,11 +12,11 @@
     <li>
       <%= site_selector(I18n.default_locale).try(:html_safe) %>
     </li>
-  <li>
+  <!-- <li>
      <ul id="sites" class="nav navbar-right">
       <%#= site_selector_pre_spree3(I18n.default_locale).try(:html_safe) #%>
     </ul>
-  </li>
+  </li> -->
   <li id="search-bar" data-hook="">
     <%= form_tag spree.products_url, :method => :get, :class => "navbar-form" do %>
       <div class="form-group">
