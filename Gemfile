@@ -123,6 +123,8 @@ gem 'spree_static_content', github: 'spree-contrib/spree_static_content'
 # -- end spree_static_content
 # TODO will fix in admin panel: undefined local variable or method `dynamic_content_management_engine'
 gem "dynamic_content_management_engine", :require => "dynamic_content_management_engine", :path => "extensions/dynamic_content_management_engine"
+gem 'tinymce-rails', '~> 3.5.8.3'
+
 # end local/internal
 
 # # we will use third party services such as Wordpress and Flick
