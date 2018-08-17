@@ -57,7 +57,8 @@ plugins:
   - textcolor
   #- advimage
   - contextmenu
-
+image_dimensions: false,
+image_class_list: [ {title: 'Responsive', value: 'img-responsive'} ]
 #theme_advanced_statusbar_location: bottom
 #theme_advanced_buttons3_add:
 #  - tablecontrols
