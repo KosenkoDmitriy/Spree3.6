@@ -19,9 +19,11 @@
 		<% @dynamic_data.each do |dynamic_datum| %>
 			<tr>
 				<td><%= dynamic_datum.tag %></td>
-				<td><%= raw truncate(dynamic_datum.data, :length => 100, :omission => "...") %></td>
-				<td><%= link_to "Edit", edit_admin_dynamic_datum_url(dynamic_datum), :class=>"edit icon_link with-tip icon-edit no-text"  %></td>
-				<td><%= link_to "Delete", admin_dynamic_datum_url(dynamic_datum), :class=>"delete-resource icon_link with-tip icon-trash no-text", :method => :delete, :confirm => "Are you sure you want to delete this tag?" %></td>
+				<td><%= raw truncate(dynamic_datum.data, length: 100, omission: '...') %></td>
+				<!-- <td><%= link_to "Edit", edit_admin_dynamic_datum_url(dynamic_datum), icon: 'edit', class: 'btn btn-primary btn-sm icon icon-edit icon_link with-tip no-text'  %></td>
+				<td><%= link_to "Delete", admin_dynamic_datum_url(dynamic_datum), class: 'btn btn-danger btn-sm delete-resource icon icon-delete with-tip no-text', method: :delete, confirm: "Are you sure you want to delete this tag?" %></td> -->
+        <td><%= button_link_to Spree.t('actions.edit'), edit_admin_dynamic_datum_url(dynamic_datum), icon: 'edit', class: 'btn btn-primary btn-sm with-tip' %></td>
+        <td><%= button_link_to Spree.t('actions.delete'), admin_dynamic_datum_url(dynamic_datum), icon: 'remove', class: 'btn btn-danger btn-sm with-tip', method: :delete, confirm: "Are you sure you want to delete this tag?" %></td>
 			</tr>
 		<% end %>
 	</tbody>

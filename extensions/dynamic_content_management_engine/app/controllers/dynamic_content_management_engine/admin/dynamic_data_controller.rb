@@ -68,6 +68,6 @@ class DynamicContentManagementEngine::Admin::DynamicDataController < Spree::Admi
 
   private
   def dynamic_datum_params
-    params.require(:dynamic_datum).permit(:tag, :data)
+    params.require(:dynamic_datum).permit(:id, :tag, :data)
   end
 end
