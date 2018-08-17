@@ -36,6 +36,7 @@ Rails.application.routes.draw do
 
   root :to => 'base#index'
 
+  mount DynamicContentManagementEngine::Engine, :at => "/"
   mount Spree::Core::Engine, at: '/spree', as: :spree
   # mount Spree::Core::Engine, at: '/'
 
