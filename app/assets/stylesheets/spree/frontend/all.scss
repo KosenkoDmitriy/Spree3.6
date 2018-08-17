@@ -1,1 +1,11 @@
-@import 'spree/frontend';
+// @import "bootstrap-sprockets";
+@import "variables_custom";
+
+@import "bootstrap";
+@import "spree_custom";
+
+@import "header";
+@import "main_content";
+@import "sidebar_nav";
+@import "social_network";
+@import "footer";
