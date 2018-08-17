@@ -4,6 +4,7 @@
 
 @import "bootstrap";
 @import "header";
+@import "main_content";
 @import "sidebar_nav";
 @import "social_network";
 @import "footer";
@@ -94,9 +95,9 @@ body {
   margin-top: $line-height-computed;
 }
 
-h1 {
-  margin-bottom: 30px;
-}
+// h1 {
+//   margin-bottom: 30px;
+// }
 
 // Center cart line items
 table {
