@@ -14,10 +14,10 @@ class DynamicContentManagementEngine::Admin::DynamicDataController < Spree::Admi
   end
 
   def create
-    @dynamic_datum = DynamicDatum.new(permitted_params)
-
+    @dynamic_datum = DynamicDatum.new(dynamic_datum_params)
     respond_to do |format|
       if @dynamic_datum.save
+
         format.html  { redirect_to(admin_dynamic_data_url,
                                    :notice => 'Dynamic Content was successfully created.') }
         #format.json  { render :json => @dynamic_datum,
@@ -42,7 +42,7 @@ class DynamicContentManagementEngine::Admin::DynamicDataController < Spree::Admi
     @dynamic_datum = DynamicDatum.find(params[:id])
 
     respond_to do |format|
-      if @dynamic_datum.update_attributes(params[:dynamic_datum])
+      if @dynamic_datum.update_attributes(dynamic_datum_params)
         format.html  { redirect_to(admin_dynamic_data_url,
                                    :notice => 'DynamicDatum was successfully updated.') }
         #format.json  { head :no_content }
@@ -67,7 +67,7 @@ class DynamicContentManagementEngine::Admin::DynamicDataController < Spree::Admi
   end
 
   private
-  def permitted_params
-    params.permit(:dynamic_datum).permit(:tag, :data)
+  def dynamic_datum_params
+    params.require(:dynamic_datum).permit(:tag, :data)
   end
 end
