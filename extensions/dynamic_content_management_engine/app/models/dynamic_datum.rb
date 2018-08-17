@@ -1,7 +1,5 @@
 class DynamicDatum < ActiveRecord::Base
 
-	attr_accessor :tag, :data
-
 	#extend ActionView::Helpers::RawOutputHelper
 	extend ActionView::Helpers::TagHelper
 
