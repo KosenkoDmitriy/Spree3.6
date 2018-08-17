@@ -1,5 +1,5 @@
 <% content_for :page_title do %>
-Edit
+  <%= Spree.t(:editing_resource, resource: DynamicDatum.model_name.human) %>
 <% end %>
 
 <%= form_for [:admin, @dynamic_datum] do |f| %>
@@ -8,14 +8,6 @@ Edit
     <%= render :partial => "form", :locals => { :f => f } %>
   </div>
 
-  <!-- <fieldset class="no-border-top">
-       <div class="form-buttons filter-actions actions" data-hook="buttons">
-       <%= f.submit %>
-       <span class="or"><%= Spree.t(:or) %></span>
-
-       <%= link_to "Cancel", admin_dynamic_data_url, class: 'btn btn-default', icon: 'delete' %>
-      </div>
- </fieldset> -->
  <div class="form-actions" data-hook="buttons">
    <%= button Spree.t('actions.update'), 'refresh', 'submit', {class: 'btn-success', data: { disable_with: "#{ Spree.t(:saving) }..." }} %>
    <span class="or"><%= Spree.t(:or) %></span>

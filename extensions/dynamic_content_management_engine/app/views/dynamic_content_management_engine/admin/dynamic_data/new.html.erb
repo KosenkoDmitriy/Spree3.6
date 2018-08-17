@@ -1,4 +1,6 @@
-<h1>Create Dynamic Datum</h1>
+<% content_for :page_title do %>
+  <%= Spree.t(:new_resource, resource: DynamicDatum.model_name.human) %>
+<% end %>
 
 <%= form_for [:admin, @dynamic_datum] do |f| %>
 
