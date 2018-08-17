@@ -40,6 +40,8 @@ module ApplicationHelper
       'Australia'
     when 'en-US'
       'United States'
+    else
+      'United States'
     end
   end
 
@@ -50,6 +52,8 @@ module ApplicationHelper
     when 'en-AU'
       image_tag("/assets/site/au.png")
     when 'en-US'
+      image_tag("/assets/site/us.png")
+    else # en-US locale by default
       image_tag("/assets/site/us.png")
     end
   end
@@ -63,6 +67,9 @@ module ApplicationHelper
       "<li id=\"uk\"><span>#{lang_icon('en-GB')} #{link_to 'UK', 'http://soulpad.co.uk'}<span></li>
       <li id=\"us\"><span>#{lang_icon('en-US')} #{link_to 'United States', 'http://soulpad.com'}<span></li>"
     when 'en-US'
+      "<li id=\"uk\"><span>#{lang_icon('en-GB')} #{link_to 'UK', 'http://soulpad.co.uk'}<span></li>
+      <li id=\"au\"><span>#{lang_icon('en-AU')} #{link_to 'Australia', 'http://soulpad.com.au'}<span></li>"
+    else # en-US locale by default
       "<li id=\"uk\"><span>#{lang_icon('en-GB')} #{link_to 'UK', 'http://soulpad.co.uk'}<span></li>
       <li id=\"au\"><span>#{lang_icon('en-AU')} #{link_to 'Australia', 'http://soulpad.com.au'}<span></li>"
     end
