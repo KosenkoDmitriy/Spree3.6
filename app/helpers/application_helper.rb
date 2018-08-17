@@ -69,15 +69,16 @@ module ApplicationHelper
   end
 
   def site_selector(locale)
+    lang_label = lang_label(locale)
     "<div class='dropdown sites'>
       <button class='btn btn-default dropdown-toggle' type='button' id='dropdownLangMenu' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>
-      #{lang_icon(locale)} #{lang_label(locale)}
+      #{lang_icon(locale)} #{lang_label}
       <span class='caret'></span>
       </button>
       <ul class='dropdown-menu' aria-labelledby='dropdownLangMenu'>
       #{lang_others(locale)}
       </ul>
-    </div>"
+    </div>" if lang_label.present?
   end
 
 	def site_selector_pre_spree3(locale)
