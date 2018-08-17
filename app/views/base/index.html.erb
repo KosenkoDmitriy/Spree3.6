@@ -30,8 +30,9 @@
       <p><%= truncate_html @testimonial.body,  :length => 310, :omission => " ... " + link_to("read more", testimonials_engine.testimonials_url) %></p>
       <p><cite><%= @testimonial.name %></cite></p>
     </blockquote>
-    <% end %>
+
     <%= link_to "See more testimonials »", testimonials_engine.testimonials_url, :class => "more" %>
+		<% end %>
 </div>
 
 <br class="clear"/>
@@ -58,11 +59,12 @@
 </div>
 
 <div id="news">
-	<%= link_to "Read more news »", news_engine.posts_url, :class => "more" %>
+	<%#= link_to "Read more news »", news_engine.posts_url, :class => "more" #%>
 
 	<h3>News</h3>
 
 	<ul class="hfeed">
+		<% if @posts.present? %>
 		<% @posts.each do |post| %>
 			<li class="hentry">
 				<h2 class="entry-title"><%= link_to post.title, news_engine.post_url(:id => post), :rel => "bookmark" %></h2>
@@ -70,6 +72,9 @@
 				<div class="entry-content"><%= raw truncate(post.body, :length => 180) %></div>
 				<p><%= link_to "Read more »", news_engine.post_url(:id => post), :class => "more", :rel => "bookmark" %>
 			</li>
+		<% end %>
+		<% else %>
+			<li>posts are not found</li>
 		<% end %>
 	</ul>
 </div>
