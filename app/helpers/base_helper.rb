@@ -1,5 +1,7 @@
 module BaseHelper
-
+  def get_taxonomies
+    @taxonomies ||= Spree::Taxonomy.includes(:root => :children)
+  end
   def meta_data_tags
 
     Rails.logger.debug "@@@@@@@ Meta Data!"

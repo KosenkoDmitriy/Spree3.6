@@ -1,5 +1,5 @@
 class BaseController < Spree::BaseController
-	include Spree::Core::ControllerHelpers::Order
+	include Spree::Core::ControllerHelpers::Order # for link_to_cart
 
 	helper "spree/products"
 
