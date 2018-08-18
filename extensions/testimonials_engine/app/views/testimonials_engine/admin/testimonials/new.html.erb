@@ -1,5 +1,6 @@
 <% content_for :page_title do %>
-  <h1>New testimonial</h1>
+  <%= link_to Spree.t(:testimonials), admin_testimonials_url %> /
+  <%= Spree.t(:new_testimonial) %>
 <% end %>
 
 
