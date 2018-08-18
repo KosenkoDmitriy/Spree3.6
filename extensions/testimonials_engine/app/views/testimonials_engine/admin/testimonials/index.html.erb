@@ -26,10 +26,14 @@
 				<td><%= testimonial.body.truncate(120) %></td>
 			    <td><%= testimonial.yesno %></td>
 			    <td><%= testimonial.created_at.strftime("%d-%m-%Y %H:%M") %></td>
-				<td class="actions">
+
+          <td><%= button_link_to Spree.t('actions.edit'), edit_admin_testimonial_url(testimonial), icon: 'edit', class: 'btn btn-primary btn-sm with-tip' %></td>
+          <td><%= button_link_to Spree.t('actions.delete'), admin_testimonial_url(testimonial), icon: 'remove', class: 'btn btn-danger btn-sm with-tip', method: :delete, confirm: "Are you sure you want to delete this tag?" %></td>
+
+				<!-- <td class="actions">
 				  <%= link_to "edit", edit_admin_testimonial_url(testimonial), :class=>"edit icon_link with-tip icon-edit no-text" %>&nbsp;
 				  <%= link_to "delete", admin_testimonial_url(testimonial), :class=>"delete-resource icon_link with-tip icon-trash no-text", :method => :delete, :confirm => "Are you sure you want to delete this testimonial?" %>
-				</td>
+				</td> -->
 			</tr>
 		<% end %>
 	</tbody>

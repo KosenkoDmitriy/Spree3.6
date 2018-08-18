@@ -64,7 +64,7 @@ class TestimonialsEngine::Admin::TestimonialsController < Spree::Admin::BaseCont
 			if @testimonial.destroy
 				format.html { redirect_to admin_testimonials_url, :notice => "Testimonial was successfully deleted." }
 			else
-				format.html { redirect_to admin_testimonial_url(@testimonial), :error => "Testimonial was not deleted." }
+				format.html { redirect_to admin_testimonials_url, :error => "Testimonial was not deleted." }
 			end
 		end
 	end
