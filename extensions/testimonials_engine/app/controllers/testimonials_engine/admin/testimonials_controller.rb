@@ -1,11 +1,10 @@
 class TestimonialsEngine::Admin::TestimonialsController < Spree::Admin::BaseController
-	
+
 	def index
 		@testimonials = Testimonial.
 			order("created_at DESC").
 			page(params[:page]).
 			per(Spree::Config[:admin_products_per_page])
-			
 	end
 
 	def new
@@ -16,9 +15,10 @@ class TestimonialsEngine::Admin::TestimonialsController < Spree::Admin::BaseCont
 		    #format.json  { render :json => @testimonial }
 		end
 	end
+
 	def create
-		@testimonial = Testimonial.new(params[:testimonial])
- 
+		@testimonial = Testimonial.new(testimonial_params)
+
 		respond_to do |format|
 			if @testimonial.save
 				format.html  { redirect_to(admin_testimonials_url,
@@ -40,11 +40,12 @@ class TestimonialsEngine::Admin::TestimonialsController < Spree::Admin::BaseCont
 		    format.html  # new.html.erb
 		end
 	end
+
 	def update
 		@testimonial = Testimonial.find(params[:id])
 
 		respond_to do |format|
-			if @testimonial.update_attributes(params[:testimonial])
+			if @testimonial.update_attributes(testimonial_params)
 				format.html  { redirect_to(admin_testimonials_url,
 					:notice => 'Testimonial was successfully updated.') }
 				#format.json  { head :no_content }
@@ -67,5 +68,9 @@ class TestimonialsEngine::Admin::TestimonialsController < Spree::Admin::BaseCont
 			end
 		end
 	end
-	
+
+	private
+	def testimonial_params
+		params.require(:testimonial).permit(:enabled, :name, :body)
+	end
 end

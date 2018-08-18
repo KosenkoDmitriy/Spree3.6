@@ -6,7 +6,7 @@
   <%= button_link_to Spree.t(:new_testimonial), new_admin_testimonial_url, class: "btn-success", icon: 'add', id: 'admin_new_testimonial' %>
 <% end if can? :create, Spree::user_class %>
 
-<% if @testimonials2.present? && @testimonials2.any? %>
+<% if @testimonials.present? && @testimonials.any? %>
 <%= paginate @testimonials %>
 
 <table id="testimonials" class="table">
