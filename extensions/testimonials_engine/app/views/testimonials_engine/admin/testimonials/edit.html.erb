@@ -1,16 +1,16 @@
 <% content_for :page_title do %>
-  <h1>Edit testimonial by <%= @testimonial.name %></h1>
+  <%= link_to Spree.t(:testimonials), admin_testimonials_url %> /
+  <%= Spree.t(:edit_testimonial_by) %> <%= @testimonial.name %>
 <% end %>
 
 <%= form_for [:admin, @testimonial] do |f| %>
 
   <%= render :partial => "form", :locals => { :f => f } %>
-   <fieldset class="no-border-top">
-        <div class="form-buttons filter-actions actions" data-hook="buttons">
-        <%= f.submit %>
-        <span class="or"><%= Spree.t(:or) %></span>
 
-        <%= link_to "Cancel", admin_testimonials_url, :class => 'button' %>
-       </div>
-  </fieldset>
+  <div class="form-actions" data-hook="buttons">
+    <%= button Spree.t('actions.update'), 'update', 'submit', {class: 'btn-success', data: { disable_with: "#{ Spree.t(:saving) }..." }} %>
+    <span class="or"><%= Spree.t(:or) %></span>
+    <%= button_link_to Spree.t('actions.cancel'), admin_testimonials_url, icon: 'remove' %>
+  </div>
+
 <% end %>
