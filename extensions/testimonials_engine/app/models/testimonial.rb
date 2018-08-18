@@ -1,6 +1,6 @@
 class Testimonial < ActiveRecord::Base
 
-	attr_accessible :name, :body, :enabled
+	# attr_accessible :name, :body, :enabled
   scope :enabled, -> { where(enabled: true) }
 
   def yesno

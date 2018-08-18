@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_16_182320) do
+ActiveRecord::Schema.define(version: 2018_08_18_060157) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -1274,6 +1274,14 @@ ActiveRecord::Schema.define(version: 2018_08_16_182320) do
     t.string "kind"
     t.index ["default_tax"], name: "index_spree_zones_on_default_tax"
     t.index ["kind"], name: "index_spree_zones_on_kind"
+  end
+
+  create_table "testimonials", force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string "name"
+    t.text "body"
+    t.boolean "enabled"
   end
 
   create_table "twitter_messages", force: :cascade do |t|
