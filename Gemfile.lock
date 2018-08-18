@@ -50,6 +50,12 @@ PATH
     dynamic_content_management_engine (1.0.0)
       spree_core (>= 0.40.2)
 
+PATH
+  remote: extensions/testimonials_engine
+  specs:
+    testimonials_engine (1.0.0)
+      spree_core (>= 0.40.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -508,6 +514,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
+  testimonials_engine!
   tinymce-rails (~> 4.1.10)
   truncate_html (= 0.9.3)
   turbolinks (~> 5)

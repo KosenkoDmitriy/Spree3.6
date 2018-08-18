@@ -92,7 +92,7 @@ gem 'instagram', '1.1.6'
 
 # start local/internal
 # TODO fix undefined local variable or method `testimonials_engine' in admin panel
-# gem "testimonials_engine", :require => "testimonials_engine", :path => "extensions/testimonials_engine"
+gem 'testimonials_engine', require: 'testimonials_engine', path: 'extensions/testimonials_engine'
 
 # TODO: resolve dependency for features_engine gem
 # gem "features_engine", :require => "features_engine", :path => "extensions/features_engine" # https://github.com/DynamoMTL/spree_features
