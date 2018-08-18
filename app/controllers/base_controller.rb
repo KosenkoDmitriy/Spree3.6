@@ -8,7 +8,6 @@ class BaseController < Spree::BaseController
 		# @features = Feature.enabled.sort_by{rand}
 		# @testimonial = Testimonial.find(:first, :order => "RAND()")	# for mysql
 		# @testimonial = Testimonial.find(:first, :order => "RANDOM()") # for sqlite and pgsql
-		# @testimonial = Testimonial.find(Testimonial.pluck(:id).shuffle.first)
 		@testimonial =	Testimonial.offset(rand(Testimonial.count)).first # for any database backend
 
 		# @posts = Post.news.published.limit(I18n.t(:no_of_posts_on_index)).order("posts.published_on DESC")
