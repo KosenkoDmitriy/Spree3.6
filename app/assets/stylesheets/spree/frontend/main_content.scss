@@ -40,9 +40,11 @@
   color: #fff;
   blockquote {
     border: 0;
+    padding: 20px;
     background: #585652 url($quote) no-repeat 95% 90%;
     font-style: italic;
     font-size: 1em;
+    min-height: 217px;
     p {
       margin-bottom: 5px;
     }
