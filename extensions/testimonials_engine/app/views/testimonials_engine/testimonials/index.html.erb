@@ -14,8 +14,8 @@
 				<p class="author"><cite><%= testimonial.name %></cite></p>
 			</blockquote>
 		<% end %>
-
-		<%= paginate @testimonials %>
-
+		<div class='row col-xs-12 pagination_content'>
+		<%= paginate @testimonials, class: 'navbar-right' %>
+		</div>
 	</div>
 </div>

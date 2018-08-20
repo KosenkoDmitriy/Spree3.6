@@ -24,6 +24,24 @@ h1 {
       font-size: 0.8em
     }
   }
+  .pagination_content {
+    border-top: 1px solid #ebe3d9;
+    border-bottom: 1px solid #ebe3d9;
+
+    .pagination {
+      float: right;
+      a {
+        border: 0;
+      }
+      li:not(:last-child) > a:hover, li:first-child > a {
+        border-radius: 100%;
+        // background: url(/assets/site/pagination_background.png) no-repeat;
+        background-color: #f47402;
+        color: #fff;
+        border: 0;
+      }
+    }
+  }
 }
 
 // home page
