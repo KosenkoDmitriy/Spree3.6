@@ -102,6 +102,11 @@
         text-transform: uppercase;
         border: 0px;
     }
+    // search
+    .navbar-form {
+      padding-left: 0;
+      margin-left: 0;
+    }
     input[type="search"] {
       background: #fff url($ic_search) no-repeat 8px center;
     }
