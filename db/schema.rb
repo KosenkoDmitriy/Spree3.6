@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_18_060157) do
+ActiveRecord::Schema.define(version: 2018_08_20_141625) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -55,6 +55,23 @@ ActiveRecord::Schema.define(version: 2018_08_18_060157) do
     t.string "message"
     t.string "link"
     t.string "picture"
+  end
+
+  create_table "features", force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean "enabled", default: false
+    t.string "title"
+    t.text "description"
+    t.string "link"
+    t.integer "product_id"
+    t.string "attachment_content_type"
+    t.string "attachment_file_name"
+    t.integer "attachment_size"
+    t.datetime "attachment_updated_at"
+    t.integer "attachment_width"
+    t.integer "attachment_height"
+    t.string "shop_enabled"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
