@@ -3,7 +3,7 @@
 		<li role="presentation" class="title">About SoulPad</li>
 		<li role="presentation"><%= link_to "About", main_app.about_url, :class => (controller.action_name == "about" ? "active" : ""), :title => "About SoulPad" %></li>
 		<li role="presentation"><%#= link_to "FAQ", news_engine.faqs_url, :class => (["faqs", "faq", "show"].include?(controller.action_name) && (title_without_site_name != "SoulPad Showroom Details") ? "active" : ""), :title => "SoulPad FAQ" #%></li>
-		<li role="presentation"><%#= link_to "Testimonials", testimonials_engine.testimonials_url, :class => (controller.controller_name == "testimonials" ? "active" : ""), :title => "Read our testimonials" #%></li>
+		<li role="presentation"><%= link_to "Testimonials", testimonials_engine.testimonials_url, :class => (controller.controller_name == "testimonials" ? "active" : ""), :title => "Read our testimonials" %></li>
 
 		<%= content_tag :li, role: "presentation" do %>
 			<%= link_to "Events", main_app.events_url, role: "presentation", :class => (controller.action_name == "events" ? "active" : ""), :title => "Events" %></li>
