@@ -10,5 +10,6 @@
  {"created_at":"2011-03-17 16:42:01", "updated_at":"2011-03-17 16:42:01", "name":"Jon", "body":"Let me say how pleased I am with both your prompt service, and the quality of the components!", "enabled":0}
 ].each do |params|
   item = Testimonial.new(params)
+  item.enabled = true
   item.save ? "testimonial created: #{item}" : "testimonial error: #{item}"
 end

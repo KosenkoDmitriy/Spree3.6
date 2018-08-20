@@ -1,11 +1,32 @@
 #content {
-  h1 {
-    margin-bottom: 15px;
-    margin-top: 0px;
-    font-size: 2em;
+h1 {
+  margin-bottom: 15px;
+  margin-top: 5px;
+  font-size: 1.9em;
+  font-weight: bold;
+}
+
+// about page
+.testimonials {
+  blockquote {
+    border: 0;
+    padding: 20px 0 0 20px;
+    background: url($quote_mark) no-repeat top left;
+    font-size: 1.2em;
+    // margin-right: 30px;
+    p {
+      margin-bottom: 0px;
+    }
+    cite {
+      color: #f47402;
+      text-transform: uppercase;
+      font-style: normal;
+      font-size: 0.8em
+    }
   }
 }
 
+// home page
 #testimonials {
   background: url($speech_bubble) no-repeat 30px 99%;
   color: #fff;
@@ -27,4 +48,5 @@
     float: right;
     margin-top: -20px;
   }
+}
 }
