@@ -1,11 +1,40 @@
 #content {
+  h2, h3 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.8em;
+  }
   h1 {
     margin-bottom: 15px;
     margin-top: 0px;
     font-size: 2em;
   }
 }
+#about {
 
+}
+#video {
+  #video-title {
+    background-color: #f47402;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  #video-footer {
+    padding: 5px 10px;
+    color: #fff;
+    background: #f47402 url($ic_youtube) no-repeat 10px 100%;
+    span {
+      float: right;
+    }
+  }
+  #video-title:hover, #video-footer:hover {
+    background-color: #ca6103;
+  }
+
+}
 #testimonials {
   background: url($speech_bubble) no-repeat 30px 99%;
   color: #fff;
