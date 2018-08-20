@@ -2,8 +2,8 @@ class Feature < ActiveRecord::Base
 
   belongs_to :spree_product, :foreign_key => "product_id", :class_name => "Spree::Product"
 
-  attr_accessible :enabled, :title, :description, :link, :product_id,
-                  :attachment_content_type, :attachment_file_size, :attachment_updated_at, :attachment, :shop_enabled
+  # attr_accessible :enabled, :title, :description, :link, :product_id,
+  #                 :attachment_content_type, :attachment_file_size, :attachment_updated_at, :attachment, :shop_enabled
 
   validate :no_attachment_errors
   has_attached_file :attachment,
@@ -13,10 +13,10 @@ class Feature < ActiveRecord::Base
                     :path => ":rails_root/public/spree/features/:id/:style/:basename.:extension"
 
 
-  scope :enabled, where("enabled = ?", true)
-  scope :shop_main, where("shop_enabled = ?", 'main')
-  scope :shop_small_left, where("shop_enabled = ?", 'small_left')
-  scope :shop_small_right, where("shop_enabled = ?", 'small_right')
+  scope :enabled,   -> { where(enabled: true) }
+  scope :shop_main, -> { where("shop_enabled = ?", 'main') }
+  scope :shop_small_left, -> { where("shop_enabled = ?", 'small_left') }
+  scope :shop_small_right, -> { where("shop_enabled = ?", 'small_right') }
 
 
   def links_to_product?
