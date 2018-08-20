@@ -5,7 +5,7 @@ class BaseController < Spree::BaseController
 
 	def index
 		self.title = "Welcome"
-		# @features = Feature.enabled.sort_by{rand}
+		@features = Feature.enabled.sort_by{rand}
 		# @testimonial = Testimonial.find(:first, :order => "RAND()")	# for mysql
 		# @testimonial = Testimonial.find(:first, :order => "RANDOM()") # for sqlite and pgsql
 		@testimonial =	Testimonial.offset(rand(Testimonial.count)).first # for any database backend

@@ -51,6 +51,11 @@ PATH
       spree_core (>= 0.40.2)
 
 PATH
+  remote: extensions/features_engine
+  specs:
+    features_engine (0.0.1)
+
+PATH
   remote: extensions/testimonials_engine
   specs:
     testimonials_engine (1.0.0)
@@ -496,6 +501,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   dynamic_content_management_engine!
+  features_engine!
   globalize!
   instagram (= 1.1.6)
   jbuilder (~> 2.5)
