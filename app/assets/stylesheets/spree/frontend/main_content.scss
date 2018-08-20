@@ -5,3 +5,23 @@
     font-size: 2em;
   }
 }
+
+#testimonials {
+  background: url($speech_bubble) no-repeat 30px 98%;
+  color: #fff;
+  blockquote {
+    background: #585652 url($quote) no-repeat 95% 90%;
+    font-style: italic;
+    font-size: 1.1em;
+    cite {
+      color: #f47402;
+      text-transform: uppercase;
+      font-style: normal;
+    }
+  }
+  a.more {
+    text-transform: uppercase;
+    float: right;
+
+  }
+}
