@@ -7,12 +7,15 @@
 }
 
 #testimonials {
-  background: url($speech_bubble) no-repeat 30px 98%;
+  background: url($speech_bubble) no-repeat 30px 99%;
   color: #fff;
   blockquote {
     background: #585652 url($quote) no-repeat 95% 90%;
     font-style: italic;
-    font-size: 1.1em;
+    font-size: 1em;
+    p {
+      margin-bottom: 5px;
+    }
     cite {
       color: #f47402;
       text-transform: uppercase;
@@ -22,6 +25,6 @@
   a.more {
     text-transform: uppercase;
     float: right;
-
+    margin-top: -20px;
   }
 }
