@@ -39,6 +39,7 @@
   background: url($speech_bubble) no-repeat 30px 99%;
   color: #fff;
   blockquote {
+    border: 0;
     background: #585652 url($quote) no-repeat 95% 90%;
     font-style: italic;
     font-size: 1em;
@@ -53,7 +54,9 @@
   }
   a.more {
     text-transform: uppercase;
-    float: right;
-    margin-top: -20px;
+    margin-top: -19px;
+    font-size: 0.9em;
+    position: absolute;
+    right: 15px;
   }
 }
