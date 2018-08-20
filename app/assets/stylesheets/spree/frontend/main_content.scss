@@ -33,12 +33,15 @@ h1 {
       a {
         border: 0;
       }
-      li:not(:last-child) > a:hover, li:first-child > a {
-        border-radius: 100%;
+      li.active > a, a:hover {
         // background: url(/assets/site/pagination_background.png) no-repeat;
         background-color: #f47402;
         color: #fff;
         border: 0;
+        border-radius: 100%;
+      }
+      li.last a {
+        border-radius: 10px;
       }
     }
   }
