@@ -14,9 +14,9 @@ class Feature < ActiveRecord::Base
 
 
   scope :enabled,   -> { where(enabled: true) }
-  scope :shop_main, -> { where("shop_enabled = ?", 'main') }
-  scope :shop_small_left, -> { where("shop_enabled = ?", 'small_left') }
-  scope :shop_small_right, -> { where("shop_enabled = ?", 'small_right') }
+  scope :shop_main, -> { where(shop_enabled: 'main') }
+  scope :shop_small_left, -> { where(shop_enabled: 'small_left') }
+  scope :shop_small_right, -> { where(shop_enabled: 'small_right') }
 
 
   def links_to_product?

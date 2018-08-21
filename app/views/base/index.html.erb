@@ -1,10 +1,10 @@
 <div id="product_banner" class="col-xs-12">
 	<% if @features.try(:empty?) %>
-		<%= image_tag "site/feature_holder.jpg", :alt => "" %>
+		<%= image_tag 'site/feature_holder.jpg', alt: '' %>
 	<% else %>
 		<ul>
 		<% @features.try(:each) do |feature| %>
-			<%= render :partial => "feature", :locals => {:feature => feature} %>
+			<%= render partial: 'feature', :locals: {feature: feature} %>
 		<% end %>
 		</ul>
 	<% end %>
