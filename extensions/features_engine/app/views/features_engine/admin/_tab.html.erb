@@ -1,0 +1,5 @@
+<% if can? :admin, Feature %>
+<ul class="nav nav-sidebar">
+  <%= tab :features, url: features_engine.admin_features_url, icon: 'picture' %>
+</ul>
+<% end %>
