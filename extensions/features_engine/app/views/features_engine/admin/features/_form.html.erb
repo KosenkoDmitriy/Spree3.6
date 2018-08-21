@@ -3,18 +3,18 @@
 	  	<%= f.text_field :title, :size=>50 %>
 		<%= f.error_message_on :title %>
 	<% end %>
-			
+
 	<%= f.field_container :description do %>
 		<%= f.label :description %><br />
 		<%= f.text_area :description, {:cols => 50, :rows => 6} %>
 		<%= f.error_message_on :description %>
 	<% end %>
-	
+
 	<%= f.field_container :product_id do %>
 		<%= f.label :product_id, "Product" %>
-		<%= f.select :product_id, [[""]] + Spree::Product.available.find(:all, :order => "name ASC").collect{|p| [p.name, p.id]} %>
+		<%= f.select :product_id, [[""]] + Spree::Product.available.order(:name, :ASC).collect{|p| [p.name, p.id]} %>
 	<% end %>
-	
+
 	<%= f.field_container :attachment do %>
 		<%= f.label :attachment, 'Image' %>
 		<%= f.file_field :attachment %>
@@ -25,25 +25,24 @@
 			<%= f.label :show_image_on_home_page %>
 			<%= f.check_box :enabled %>
 		</div>
-		
+
 		<div class="checkbox">
 			<%= f.label :show_image_on_shop_page_top %>
 			<%= f.radio_button :shop_enabled, 'main' %>
 		</div>
-		
+
 		<div class="checkbox">
 			<%= f.label :show_image_on_shop_page_small_left %>
 			<%= f.radio_button :shop_enabled, 'small_left' %>
 		</div>
-		
+
 		<div class="checkbox">
 			<%= f.label :show_image_on_shop_page_small_right %>
 			<%= f.radio_button :shop_enabled, 'small_right' %>
 		</div>
-		
+
 		<div class="checkbox">
 			<%= f.label :dont_show_image_on_shop_page %>
 			<%= f.radio_button :shop_enabled, '', :default => true %>
 		</div>
 	</div>
-

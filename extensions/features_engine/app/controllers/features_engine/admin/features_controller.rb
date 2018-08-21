@@ -22,6 +22,7 @@ class FeaturesEngine::Admin::FeaturesController < Spree::Admin::BaseController
       format.html
     end
   end
+
   def create
     @feature = Feature.new(feature_params)
 
@@ -42,6 +43,7 @@ class FeaturesEngine::Admin::FeaturesController < Spree::Admin::BaseController
       format.html  # new.html.erb
     end
   end
+
   def update
     @feature = Feature.find(params[:id])
 
