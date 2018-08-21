@@ -8,11 +8,11 @@
   <%= button_link_to 'Edit Feature', edit_admin_feature_url(@feature), icon: 'edit', class: 'btn btn-primary' %>
 <% end %>
 
-<table>
+<table class="table">
   <tbody>
   <tr>
 	<th>Enabled</th>
-	<td><%= @feature.enabled ? "Yes" : "No" %></td>
+	<td><span class="label <%= @feature.enabled ? "label-success" : "label-error" %>"><%= @feature.enabled ? "Yes" : "No" %></span></td>
   </tr>
 
   <tr>
@@ -28,7 +28,7 @@
 
   <tr>
 	<th>Home Page?</th>
-	<td><%= @feature.enabled ? "Yes" : "No"  %></td>
+	<td><span class="label <%= @feature.enabled ? "label-success" : "label-error" %>"><%= @feature.enabled ? "Yes" : "No"  %></span></td>
   </tr>
 
   <tr>
