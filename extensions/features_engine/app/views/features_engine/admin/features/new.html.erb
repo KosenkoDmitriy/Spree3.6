@@ -1,18 +1,16 @@
 <% content_for :page_title do %>
-Create Feature
+  <%#= Spree.t(:create, resource: Feature.model_name.human) #%>
+	Create Feature
 <% end %>
 
 <%= form_for @feature, :url => admin_features_url, :html => {:multipart => true} do |f| %>
-	
-	<%= render :partial => "form", :locals => {:f => f} %>
-	
-  <fieldset class="no-border-top">
-       <div class="form-buttons filter-actions actions" data-hook="buttons">
-       <%= f.submit %>
-       <span class="or"><%= Spree.t(:or) %></span>
 
-       <%= link_to "Cancel", admin_features_url, :class => 'button' %>
-      </div>
- </fieldset>
-	
+	<%= render :partial => "form", :locals => {:f => f} %>
+
+	<div class="form-actions" data-hook="buttons">
+    <%= button Spree.t('actions.create'), 'ok', 'submit', {class: 'btn-success', data: { disable_with: "#{ Spree.t(:saving) }..." }} %>
+    <span class="or"><%= Spree.t(:or) %></span>
+    <%= button_link_to Spree.t('actions.cancel'), admin_features_url, icon: 'remove' %>
+  </div>
+
 <% end %>
