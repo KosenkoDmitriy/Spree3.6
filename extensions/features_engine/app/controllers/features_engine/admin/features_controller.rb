@@ -74,11 +74,11 @@ class FeaturesEngine::Admin::FeaturesController < Spree::Admin::BaseController
   def feature_params
     params.require(:feature).permit(:title, :description, :link, :product_id,
       :enabled, :shop_enabled,
-      :attachment_content_type, :attachment_file_name, :attachment_size,
-      :attachment_width, :attachment_height, :attachment_updated_at,
-      :attachment_file_size #?
+      # :attachment_content_type, :attachment_file_name, :attachment_size,
+      # :attachment_width, :attachment_height, :attachment_updated_at,
+      # :attachment_file_size #?
       #:attachment_content_type, :attachment_file_size, :attachment_updated_at,
-      # :attachment,
+      :attachment,
       # attachment: [:tempfile, :original_filename, :headers,
       #    :content_type, :file_size, :updated_at]
     )

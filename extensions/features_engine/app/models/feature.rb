@@ -3,6 +3,7 @@ class Feature < ActiveRecord::Base
   belongs_to :spree_product, :foreign_key => "product_id", :class_name => "Spree::Product"
 
   validate :no_attachment_errors
+  do_not_validate_attachment_file_type :attachment
   # validates_attachment_content_type :attachment, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
   # validates_attachment_content_type :attachment, content_type: /\Aimage\/.*\z/
   has_attached_file :attachment,
