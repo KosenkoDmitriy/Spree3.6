@@ -2,10 +2,9 @@ class Feature < ActiveRecord::Base
 
   belongs_to :spree_product, :foreign_key => "product_id", :class_name => "Spree::Product"
 
-  # attr_accessible :enabled, :title, :description, :link, :product_id,
-  #                 :attachment_content_type, :attachment_file_size, :attachment_updated_at, :attachment, :shop_enabled
-
   validate :no_attachment_errors
+  # validates_attachment_content_type :attachment, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+  # validates_attachment_content_type :attachment, content_type: /\Aimage\/.*\z/
   has_attached_file :attachment,
                     :styles => { :thumbnail => "48x48>", :main => "940x325#", :shop_main => "700x325#", :shop_small => "340X325#"},
                     :default_style => :main,

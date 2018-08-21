@@ -72,7 +72,14 @@ class FeaturesEngine::Admin::FeaturesController < Spree::Admin::BaseController
   protected
 
   def feature_params
-    params[:feature]
+    params.require(:feature).permit(:enabled, :title, :description, :link, :product_id, :shop_enabled,
+      :attachment_content_type, :attachment_file_name, :attachment_size,
+      :attachment_width, :attachment_height, :attachment_updated_at,
+      #:attachment_content_type, :attachment_file_size, :attachment_updated_at,
+      :attachment,
+      # attachment: [:tempfile, :original_filename, :headers,
+      #    :content_type, :file_size, :updated_at]
+    )
   end
 
 end
