@@ -1,10 +1,11 @@
 <% content_for :page_title do %>
-  <%= @feature.title %>
+<%= link_to Spree.t(:features), admin_features_url %> /
+<%= @feature.title %>
 <% end %>
 
 <% content_for :page_actions do %>
-  <li><%= button_link_to "List", admin_features_url, :icon => 'list' %></li>
-  <li><%= button_link_to "Edit Feature", edit_admin_feature_url(@feature), :icon => 'edit' %></li>
+  <%= button_link_to 'List', admin_features_url, icon: 'list', class: 'btn btn-success' %>
+  <%= button_link_to 'Edit Feature', edit_admin_feature_url(@feature), icon: 'edit', class: 'btn btn-primary' %>
 <% end %>
 
 <table>
@@ -38,4 +39,3 @@
 </table>
 
 <%= image_tag @feature.attachment.url(:main) %>
-
