@@ -53,7 +53,9 @@ PATH
 PATH
   remote: extensions/features_engine
   specs:
-    features_engine (0.0.1)
+    features_engine (0.0.2)
+      spree_backend (>= 3.1.0, < 4.0)
+      spree_core (>= 3.1.0, < 4.0)
 
 PATH
   remote: extensions/testimonials_engine

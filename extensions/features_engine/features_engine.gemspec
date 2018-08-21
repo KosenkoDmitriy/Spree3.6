@@ -19,5 +19,9 @@ Gem::Specification.new do |s|
   # s.add_dependency "rails", "~> 3.2.18"
   # s.add_dependency "jquery-rails"
 
+  spree_version = '>= 3.1.0', '< 4.0'
+  s.add_dependency 'spree_core', spree_version
+  s.add_dependency 'spree_backend', spree_version
+
   s.add_development_dependency "sqlite3"
 end
