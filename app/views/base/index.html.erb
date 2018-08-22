@@ -1,4 +1,51 @@
-<div id="product_banner" class="col-xs-12">
+<div class="row">
+	<div id="product_banner" class="col-xs-12">
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		  <!-- Indicators -->
+		  <ol class="carousel-indicators">
+		    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+		    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+		    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+		  </ol>
+
+		  <!-- Wrapper for slides -->
+		  <div class="carousel-inner" role="listbox">
+				<% @features.try(:each) do |feature| %>
+					<%#= render partial: 'feature', locals: {feature: feature} #%>
+
+		    <div class="item <%= @features.first == feature ? 'active' : '' %>">
+					<% size = size || nil %>
+					<%= image_tag feature.attachment.url(size || :main), class: '', alt: feature.title %>
+
+		      <div class="carousel-caption">
+						<div class="product_info">
+							<%= feature.title %>
+
+			 				<%= link_to product_price_starts_at(feature.spree_product), spree.product_url(feature.spree_product), :class => "price" if feature.links_to_product? %>
+
+							<p><%= truncate_html feature.description, length: 200, omission: " ... " %></p>
+
+							<%= link_to "Product Details »", spree.product_url(feature.spree_product), class: "more" if feature.links_to_product? %>
+						</div>
+		      </div>
+		    </div>
+				<% end %>
+		  </div>
+
+		  <!-- Controls -->
+		  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		    <span class="sr-only">Previous</span>
+		  </a>
+		  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+		    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		    <span class="sr-only">Next</span>
+		  </a>
+		</div>
+	</div>
+</div>
+
+<!-- <div id="product_banner" class="col-xs-12">
 	<% if @features.try(:empty?) %>
 		<%= image_tag 'site/feature_holder.jpg', alt: '' %>
 	<% else %>
@@ -9,7 +56,7 @@
 		</ul>
 	<% end %>
 	</ul>
-</div>
+</div> -->
 
 <div class="row">
 	<div id="about" class="col-xs-12 col-sm-4">
