@@ -1,7 +1,7 @@
 <li>
 	<% size = size || nil %>
-	<%= image_tag feature.attachment.url(size || :main), :alt => feature.title %>
-	
+	<%= image_tag feature.attachment.url(size || :main), class: 'img-responsive', alt: feature.title %>
+
 	<div class="product_info">
 		<h2><%= feature.title %></h2>
 		<%= link_to product_price_starts_at(feature.spree_product), spree.product_url(feature.spree_product), :class => "price" if feature.links_to_product? %>
@@ -10,5 +10,5 @@
 
 		<%= link_to "Product Details »", spree.product_url(feature.spree_product), :class => "more" if feature.links_to_product? %>
 	</div>
-	
+
 </li>

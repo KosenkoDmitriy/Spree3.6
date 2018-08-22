@@ -23,7 +23,7 @@
 		<% @features.each do |feature| %>
       <tr  class="even">
         <td colspan="3" style="padding-top:20px;">
-          <% size = size || nil %> <%= image_tag feature.attachment.url(size || :main), :alt => feature.display_title %>
+          <% size = size || nil %> <%= image_tag feature.attachment.url(size || :main), class: 'img-responsive', alt: feature.display_title %>
         </td>
       </tr>
 			<tr class="odd">
