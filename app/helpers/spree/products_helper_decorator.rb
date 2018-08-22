@@ -1,5 +1,5 @@
 Spree::ProductsHelper.class_eval do
-	
+
 	def product_price_starts_at(product, options={})
 		current_currency = current_currency || Spree::Config[:currency]
 	    options.assert_valid_keys(:format_as_currency, :show_vat_text)
@@ -16,7 +16,7 @@ Spree::ProductsHelper.class_eval do
 			"Price: #{Spree::Money.new price_with_taxes, {:currency => current_currency} }"
 		end
 	end
-	
+
   def price_with_tax_for_product price, product
     #Spree::TaxRate.where(tax_category_id: v.tax_category_id, zone_id: Spree::Zone.default_tax.id).first.amount.to_f + 1) * v.price
     (Spree::TaxRate.where(tax_category_id: product.tax_category_id, zone_id: Spree::Zone.default_tax.id).first.amount.to_f + 1) * price unless price.nil?
@@ -30,5 +30,5 @@ Spree::ProductsHelper.class_eval do
       Spree.t(:product_has_no_description)
     end
   end
-  
+
 end

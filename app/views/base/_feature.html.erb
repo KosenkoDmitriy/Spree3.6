@@ -4,12 +4,11 @@
 
 	<div class="product_info">
 		<h2><%= feature.title %></h2>
-		<%#TODO= link_to product_price_starts_at(feature.spree_product), spree.product_url(feature.spree_product), :class => "price" if feature.links_to_product? #%>
-		<%= link_to feature.spree_product.price, spree.product_url(feature.spree_product), :class => "price" if feature.links_to_product? %>
+		<%= link_to product_price_starts_at(feature.spree_product), spree.product_url(feature.spree_product), :class => "price" if feature.links_to_product? %>
 
-		<p><%= truncate_html feature.description, :length => 200, :omission => " ... " %></p>
+		<p><%= truncate_html feature.description, length: 200, omission: " ... " %></p>
 
-		<%= link_to "Product Details »", spree.product_url(feature.spree_product), :class => "more" if feature.links_to_product? %>
+		<%= link_to "Product Details »", spree.product_url(feature.spree_product), class: "more" if feature.links_to_product? %>
 	</div>
 
 </li>
