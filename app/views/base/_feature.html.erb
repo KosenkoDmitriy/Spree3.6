@@ -1,14 +1,16 @@
-<li>
+<div class="item <%= @features.first == feature ? 'active' : '' %>">
 	<% size = size || nil %>
-	<%= image_tag feature.attachment.url(size || :main), class: 'img-responsive', alt: feature.title %>
+	<%= image_tag feature.attachment.url(size || :main), class: '', alt: feature.title %>
 
-	<div class="product_info">
-		<h2><%= feature.title %></h2>
-		<%= link_to product_price_starts_at(feature.spree_product), spree.product_url(feature.spree_product), :class => "price" if feature.links_to_product? %>
+	<div class="carousel-caption">
+		<div class="product_info">
+			<h2><%= feature.title %></h2>
 
-		<p><%= truncate_html feature.description, length: 200, omission: " ... " %></p>
+			<%= link_to product_price_starts_at(feature.spree_product), spree.product_url(feature.spree_product), :class => "price" if feature.links_to_product? %>
 
-		<%= link_to "Product Details »", spree.product_url(feature.spree_product), class: "more" if feature.links_to_product? %>
+			<p><%= truncate_html feature.description, length: 200, omission: " ... " %></p>
+
+			<%= link_to "Product Details »", spree.product_url(feature.spree_product), class: "more" if feature.links_to_product? %>
+		</div>
 	</div>
-
-</li>
+</div>
