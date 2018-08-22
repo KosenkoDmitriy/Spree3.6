@@ -2,7 +2,7 @@
   <% if @features.try(:empty?) %>
     <%= image_tag 'site/feature_holder.jpg', class: 'img-responsive', alt: '' %>
   <% else %>
-  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>

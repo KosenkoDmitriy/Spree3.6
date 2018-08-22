@@ -27,7 +27,7 @@
       background-color: #585652;
       right: 50%;
       margin: 0;
-      padding: 0;
+      padding-top: 3px;
       top: 10px;
       bottom: unset;
       right: 10px;
@@ -42,5 +42,36 @@
       }
     }
   // }
+  .carousel-fade {
+    .carousel-inner {
+      .item {
+          transition-property: opacity;
+      }
+
+      .item,
+      .active.left,
+      .active.right {
+          opacity: 0;
+      }
+
+      .active,
+      .next.left,
+      .prev.right {
+          opacity: 1;
+      }
+
+      .next,
+      .prev,
+      .active.left,
+      .active.right {
+          left: 0;
+          transform: translate3d(0, 0, 0);
+      }
+    }
+
+    .carousel-control {
+      z-index: 2;
+    }
+  }
 
 }
