@@ -58,6 +58,9 @@ h2, h3 {
 
 }
 #video {
+  img.img-responsive {
+    min-width: 100%;
+  }
   #video-title {
     background-color: #f47402;
     color: #fff;
@@ -126,8 +129,8 @@ h2, h3 {
 
   .products {
     img {
-      display: block;
-      width: 100%;
+      // display: block;
+      min-width: 100%;
       height: 168px;
       object-fit: cover;
     }
