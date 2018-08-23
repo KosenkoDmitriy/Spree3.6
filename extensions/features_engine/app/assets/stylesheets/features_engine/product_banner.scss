@@ -1,6 +1,9 @@
 // features_engine
 #product_banner {
   margin-bottom: 20px;
+  img {
+    width: 100%;
+  }
   .carousel-caption {
     left: 1%;
     bottom: -7%;
