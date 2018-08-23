@@ -47,8 +47,8 @@
 <div class="row products">
 	<% get_taxonomies.each do |taxonomy| %>
     <% taxonomy.root.children.each do |taxon| %>
-		<div class="col-xs-12 col-sm-4 col-md-3">
-			<%= link_to seo_url(taxon) do %>
+		<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+			<%= link_to seo_url(taxon), class: '' do %>
 				<% if taxon.icon %>
 		    	<%= image_tag(main_app.url_for(taxon.try(:icon).try(:attachment)), class: 'img-responsive', alt: "#{taxon.name}") %>
 		    <% else %>
