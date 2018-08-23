@@ -106,4 +106,37 @@ h2, h3 {
     right: 15px;
   }
 }
+
+  .products_title {
+    border-top: 1px solid #ebe3d9;
+    border-bottom: 1px solid #ebe3d9;
+    padding-top: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    h3 {
+      float: left;
+    }
+    a.more {
+      float: right;
+      text-transform: uppercase;
+      margin-top: 5px;
+      font-size: 0.9em;
+    }
+  }
+
+  .products {
+    img {
+      // width: 100%;
+    }
+    p {
+      padding: 5px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #f47402;
+      &:hover {
+        background-color: #ca6103;
+      }
+    }
+
+  }
 }

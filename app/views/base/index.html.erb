@@ -33,30 +33,32 @@
 	</div>
 </div>
 
-<div class="row">
-	<div id="products" class="col-xs-12">
-	<%= link_to "See all products »", products_url, :class => "more text-right" %>
+<div class="row products_title">
+	<div class="col-xs-12">
+ 			<h3>
+				Products <span></span>
+			</h3>
+			<%= link_to 'See all products »', products_url, class: 'more' %>
 
-	<h3>Products</h3>
-	<% get_taxonomies.each do |taxonomy| %>
-	 <ul>
-	    <% taxonomy.root.children.each do |taxon| %>
-	      <%# next unless taxon.try(:icon) #%>
-					<li>
-						<%= link_to seo_url(taxon) do %>
-				    <%# if image = taxon.try(:image).try(:file).try(:url, :category) #%>
-						<% if taxon.icon %>
-				    	<%= image_tag(main_app.url_for(taxon.try(:icon).try(:attachment)), alt: "#{taxon.name}") %>
-				    <% else %>
-				      <%= image_tag("site/soulpad_logo.png", width: 200, height: 127, alt: "#{taxon.name}") %>
-				    <% end %>
-						<span><%= taxon.name %></span>
-					</li>
-				<% end %>
-	    <% end %>
-	  </ul>
-	<% end %>
 	</div>
+	<!-- <div class="col-xs-3">
+	</div> -->
+</div>
+<div class="row products">
+	<% get_taxonomies.each do |taxonomy| %>
+    <% taxonomy.root.children.each do |taxon| %>
+		<div class="col-sm-4 col-md-3">
+			<%= link_to seo_url(taxon) do %>
+				<% if taxon.icon %>
+		    	<%= image_tag(main_app.url_for(taxon.try(:icon).try(:attachment)), class: '', alt: "#{taxon.name}") %>
+		    <% else %>
+		      <%= image_tag("site/soulpad_logo.png", class: '', alt: "#{taxon.name}") %>
+		    <% end %>
+				 <p><%= taxon.name %></p>
+			<% end %>
+		</div>
+  <% end %>
+<% end %>
 </div>
 
 <!-- exclude news from home page
