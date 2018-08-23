@@ -1,4 +1,24 @@
 <div class="row">
+	<script src="https://widget.reviews.io/dropdown/dist.js"></script>
+	<div id="dropdown-240" style="width:100%; align:center;">
+		<div style="position: relative; clear: both;">
+			<!-- <iframe class="dropframe" src="https://widget.reviews.io/dropdown/widget?elementId=dropdown-240&amp;version=2&amp;&amp;store=soulpad-co-uk&amp;primaryClr=%23f47e27&amp;neutralClr=%23f4f4f4&amp;textClr=%23000&amp;height=250&amp;numReviews=8&amp;direction=down" style="z-index: 500;" title="Reviews Dropown Widget" width="100%" height="70" frameborder="0"></iframe> -->
+			<iframe class="dropframe" src="https://widget.reviews.io/dropdown/dropdown?elementId=dropdown-240&amp;version=2&amp;&amp;store=soulpad-co-uk&amp;primaryClr=%23f47e27&amp;neutralClr=%23f4f4f4&amp;textClr=%23000&amp;height=250&amp;numReviews=8&amp;direction=down" title="Reviews Dropdown Widget" style="display: none; transition: opacity 0.5s ease 0s; position: absolute; top: 60px; left: 0px; right: 0px; z-index: 999; opacity: 0;" width="100%" height="350" frameborder="0"></iframe>
+		</div>
+	</div>
+	<script>
+	  dropdownWidget('dropdown-240',{
+	    store: 'soulpad-co-uk',
+	    primaryClr: '#f47e27',
+	    neutralClr: '#f4f4f4',
+	    textClr: '#000',
+	    height: 250,
+	    numReviews: 8,
+	    direction: 'down'
+	  });
+	</script>
+</div>
+<div class="row">
 	<%= render partial: 'features_engine/features' %>
 </div>
 
