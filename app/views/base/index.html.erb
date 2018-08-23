@@ -1,6 +1,7 @@
 <div class="row">
 	<%= render partial: 'reviews_widget' %>
 </div>
+
 <div class="row">
 	<%= render partial: 'features_engine/features' %>
 </div>
@@ -30,28 +31,32 @@
 			<p>testimonials are not found</p>
 		<% end %>
 	</div>
-
 </div>
 
-<div id="products" class="col-xs-12">
-  <%= link_to "See all products »", products_url, :class => "more" %>
+<div class="row">
+	<div id="products" class="col-xs-12">
+	<%= link_to "See all products »", products_url, :class => "more text-right" %>
 
-  <h3>Products</h3>
-
- <% get_taxonomies.each do |taxonomy| %>
-   <ul>
-      <% taxonomy.root.children.each do |taxon| %>
-        <% next unless include_taxon?(taxon) %>
-        <li><%= link_to seo_url(taxon) do %>
-          <% if image = taxon.image.try(:file).try(:url, :category) %>
-          <%= image_tag(image, :alt => "#{taxon.name}") %>
-          <% elsif false %>
-            <%= image_tag("site/soulpad_logo.png", :width => 200, :height => 127, :alt => "#{taxon.name}") %>
-          <% end %><span><%= taxon.name %></span>
-        <% end %></li>
-      <% end %>
-    </ul>
-  <% end %>
+	<h3>Products</h3>
+	<% get_taxonomies.each do |taxonomy| %>
+	 <ul>
+	    <% taxonomy.root.children.each do |taxon| %>
+	      <%# next unless taxon.try(:icon) #%>
+					<li>
+						<%= link_to seo_url(taxon) do %>
+				    <%# if image = taxon.try(:image).try(:file).try(:url, :category) #%>
+						<% if taxon.icon %>
+				    	<%= image_tag(main_app.url_for(taxon.try(:icon).try(:attachment)), alt: "#{taxon.name}") %>
+				    <% else %>
+				      <%= image_tag("site/soulpad_logo.png", width: 200, height: 127, alt: "#{taxon.name}") %>
+				    <% end %>
+						<span><%= taxon.name %></span>
+					</li>
+				<% end %>
+	    <% end %>
+	  </ul>
+	<% end %>
+	</div>
 </div>
 
 <!-- exclude news from home page
