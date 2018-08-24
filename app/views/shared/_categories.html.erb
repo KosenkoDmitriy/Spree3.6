@@ -1,10 +1,10 @@
-<div id="product_nav">
+<div id="product_nav" class="page_nav">
 <% @taxon ||= @product.taxons.first if @product %>
 <% get_taxonomies.each do |taxonomy| %>
-  <ul>
+  <ul class="nav nav-pills nav-stacked">
 	<li class="title">Shop by...</li>
 	  <% taxonomy.root.children.each do |taxon| %>
-	    <li<%= " class=current" if @taxon and ([@taxon] + @taxon.ancestors).include?(taxon) %>>
+	    <li role="presentation" <%= " class=current title" if @taxon and ([@taxon] + @taxon.ancestors).include?(taxon) %>>
 				<%= link_to taxon.name, seo_url(taxon), :class => taxon.children.empty? ? "parent" : "parent sub-menu" %>
 				<% unless taxon.children.empty? %>
 					<ul class="product_nav_sub" <%= " style=display:block;" if @taxon and ([@taxon] + @taxon.ancestors).include?(taxon) %>>

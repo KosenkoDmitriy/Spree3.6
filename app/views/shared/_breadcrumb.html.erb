@@ -1,24 +1,25 @@
 <% if @product || @taxon %>
+
 <div id="breadcrumb">
-	
+
 	<ul>
 		<li><%= link_to "Home", root_url %> &raquo;</li>
-		<% 
+		<%
 			crumbs = Array.new
 			current_taxon = if @product
 				@product.taxons.first
 			elsif @taxon
 				@taxon
 			end
-				
-			
+
+
 			unless current_taxon.nil?
 				begin
 					crumbs << current_taxon
 				end while current_taxon = current_taxon.parent
 			end
 		%>
-		
+
 		<% if crumbs.empty? %>
 			<li><%= link_to "Shop", products_url %>  &raquo;</li>
 		<% else %>
@@ -31,9 +32,9 @@
 				<% end %>
 			<% end %>
 		<% end %>
-		
+
 	</ul>
-	
+
 </div>
 <% else %>
 <div id="breadcrumb">
