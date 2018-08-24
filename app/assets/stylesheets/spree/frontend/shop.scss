@@ -1,0 +1,16 @@
+.breadcrumb {
+  border-bottom: 1px solid #ece6dd;
+}
+.product_nav_sub {
+  list-style: none;
+  background: #edecda;
+  li {
+    background: #edecda !important;
+    a {
+      color: #f47402 !important;
+      background: unset;
+      color: unset;
+    }
+
+  }
+}
