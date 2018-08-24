@@ -12,14 +12,16 @@
 			<%= render partial: 'reviews_widget' %>
 		</div>
 		<div class="row">
-			<%= render :partial => "features_engine/features", :locals => {:features => @features} %>
+			<div class="col-xs-12">
+				<%= render :partial => "features_engine/features", :locals => {:features => @features} %>
+			</div>
 		</div>
 		<div class="row">
 			<div id="product_banner_shop_left" class="col-xs-6">
 				<% if !@small_left_feature %>
 					<%= image_tag "site/feature_holder_shop_small.jpg", class: 'img-responsive', alt: "" %>
 				<% else %>
-					<%= render :partial => "features_engine/feature", :locals => {:features => [@small_left_feature], :feature => @small_left_feature, :size => :shop_small} %>
+					<%= render :partial => "features_engine/features", :locals => {:features => [@small_left_feature], :feature => @small_left_feature, :size => :shop_small} %>
 				<% end %>
 			</div>
 
@@ -27,7 +29,7 @@
 				<% if !@small_right_feature %>
 					<%= image_tag "site/feature_holder_shop_small.jpg", class: 'img-responsive', alt: "" %>
 				<% else %>
-					<%= render :partial => "feature", :locals => {:feature => [@small_right_feature], :size => :shop_small} %>
+					<%= render :partial => "features_engine/features", :locals => {:features => [@small_right_feature], :feature => @small_right_feature, :size => :shop_small} %>
  				<% end %>
 			</div>
 		</div>
