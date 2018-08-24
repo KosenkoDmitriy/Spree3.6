@@ -1,5 +1,5 @@
 <div id="product_banner" class="col-xs-12">
-  <% if @features.try(:empty?) %>
+  <% if features.try(:empty?) %>
     <%= image_tag 'site/feature_holder.jpg', class: 'img-responsive', alt: '' %>
   <% else %>
   <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel">
@@ -12,8 +12,8 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-      <% @features.try(:each) do |feature| %>
-        <%= render partial: 'features_engine/feature', locals: {feature: feature} %>
+      <% features.try(:each) do |feature| %>
+        <%= render partial: 'features_engine/feature', locals: {features: features, feature: feature} %>
       <% end %>
     </div>
 

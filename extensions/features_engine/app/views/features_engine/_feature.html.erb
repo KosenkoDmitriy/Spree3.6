@@ -1,7 +1,6 @@
-<div class="item <%= @features.first == feature ? 'active' : '' %>">
+<div class="item <%= features.first == feature ? 'active' : '' %>">
 	<% size = size || nil %>
 	<%= image_tag feature.attachment.url(size || :main), class: '', alt: feature.title %>
-
 	<div class="carousel-caption">
 		<div class="product_info">
 			<h2><%= feature.title %></h2>

@@ -9,39 +9,23 @@
 
 	<div class="col-sm-9">
 		<div class="row">
-			<div id="product_banner_shop" class="col-xs-12">
-				<% if @features.empty? %>
-					<%= image_tag "site/feature_holder_shop.jpg", class: 'img-responsive', :alt => "" %>
-				<% else %>
-					<% @features.each do |feature| %>
-						<%= render :partial => "features_engine/feature", :locals => {:feature => feature, :size => :shop_main} %>
-					<% end %>
-				<% end %>
-			</div>
+			<%= render :partial => "features_engine/features", :locals => {:features => @features} %>
 		</div>
 		<div class="row">
 			<div id="product_banner_shop_left" class="col-xs-6">
 				<% if !@small_left_feature %>
 					<%= image_tag "site/feature_holder_shop_small.jpg", class: 'img-responsive', alt: "" %>
 				<% else %>
-					<ul>
-						<%= render :partial => "feature", :locals => {:feature => @small_left_feature, :size => :shop_small} %>
-					</ul>
+					<%= render :partial => "features_engine/feature", :locals => {:features => [@small_left_feature], :feature => @small_left_feature, :size => :shop_small} %>
 				<% end %>
-				</ul>
-
 			</div>
 
 			<div id="product_banner_shop_right" class="col-xs-6">
 				<% if !@small_right_feature %>
 					<%= image_tag "site/feature_holder_shop_small.jpg", class: 'img-responsive', alt: "" %>
 				<% else %>
-					<ul>
-						<%= render :partial => "feature", :locals => {:feature => @small_right_feature, :size => :shop_small} %>
-					</ul>
-				<% end %>
-				</ul>
-
+					<%= render :partial => "feature", :locals => {:feature => [@small_right_feature], :size => :shop_small} %>
+ 				<% end %>
 			</div>
 		</div>
 	</div>
