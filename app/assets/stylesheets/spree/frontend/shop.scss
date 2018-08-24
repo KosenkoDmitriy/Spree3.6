@@ -1,16 +1,36 @@
+
 .breadcrumb {
   border-bottom: 1px solid #ece6dd;
+  text-transform: uppercase;
 }
+
+#product_nav {
+   li a {
+    &.parent:hover, &:hover, &:focus {
+      background-color: #bbbaa1;
+      color: #585652;
+    }
+  }
+
+
 .product_nav_sub {
   list-style: none;
   background: #edecda;
+  padding: 0;
+
   li {
+    border-top: 2px solid #fff;
+    padding: 8px 15px;
     background: #edecda !important;
+
     a {
       color: #f47402 !important;
-      background: unset;
-      color: unset;
-    }
+      &.active, &:hover, &:focus {
+        color: #ca6103 !important;
+        background-color: unset !important;
+      }
 
+    }
   }
+}
 }
