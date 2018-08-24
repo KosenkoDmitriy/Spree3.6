@@ -6,7 +6,7 @@
 
 #product_nav {
    li a {
-    &.parent:hover, &:hover, &:focus {
+    &.current, &.parent:hover, &:hover, &:focus {
       background-color: #bbbaa1;
       color: #585652;
     }
