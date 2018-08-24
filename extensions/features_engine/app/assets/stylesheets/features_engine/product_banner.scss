@@ -3,8 +3,11 @@
   margin-bottom: 20px;
   img {
     width: 100%;
-    min-height: 331px;
+    height: 331px;
     object-fit: cover;
+  }
+  img.small {
+    height: 288px;
   }
   .carousel-caption {
     left: 1%;
@@ -78,12 +81,5 @@
     .carousel-control {
       z-index: 2;
     }
-  }
-
-}
-
-#product_banner_shop_left, #product_banner_shop_right {
-  img, img.img-responsive {
-    height: 288px;
   }
 }

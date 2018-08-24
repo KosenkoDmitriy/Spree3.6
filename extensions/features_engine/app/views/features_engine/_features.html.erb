@@ -3,21 +3,22 @@
     <%= image_tag 'site/feature_holder.jpg', class: 'img-responsive', alt: '' %>
   <% else %>
   <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel">
+    <% if features.count > 1 %>
     <!-- Indicators -->
     <ol class="carousel-indicators">
-      <% if features.count > 1 %>
         <% no = 0 %>
         <% features.try(:each) do |feature| %>
           <li data-target="#carousel-example-generic" data-slide-to="<%=no%>" class="<%= no == 0 ? 'active' : ''%>"></li>
           <% no += 1 %>
         <% end %>
-      <% end %>
     </ol>
+    <% end %>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
+      <% img_class = '' if !img_class %>
       <% features.try(:each) do |feature| %>
-        <%= render partial: 'features_engine/feature', locals: {features: features, feature: feature} %>
+        <%= render partial: 'features_engine/feature', locals: {img_class: img_class, features: features, feature: feature} %>
       <% end %>
     </div>
 
