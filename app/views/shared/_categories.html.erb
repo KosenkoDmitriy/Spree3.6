@@ -1,0 +1,38 @@
+<div id="product_nav">
+<% @taxon ||= @product.taxons.first if @product %>
+<% get_taxonomies.each do |taxonomy| %>
+  <ul>
+	<li class="title">Shop by...</li>
+	  <% taxonomy.root.children.each do |taxon| %>
+	    <li<%= " class=current" if @taxon and ([@taxon] + @taxon.ancestors).include?(taxon) %>>
+				<%= link_to taxon.name, seo_url(taxon), :class => taxon.children.empty? ? "parent" : "parent sub-menu" %>
+				<% unless taxon.children.empty? %>
+					<ul class="product_nav_sub" <%= " style=display:block;" if @taxon and ([@taxon] + @taxon.ancestors).include?(taxon) %>>
+						<% taxon.children.each do |sub_taxon| %>
+							<li<%= " class=current_sub" if @taxon and ([@taxon] + @taxon.ancestors).include?(sub_taxon) %>><%= link_to sub_taxon.name, seo_url(sub_taxon) %></li>
+						<% end %>
+					</ul>
+				<% end %>
+			</li>
+
+	  <% end %>
+
+    <% if false %>
+	  <%  Spree::ProductGroup.find_by_permalink("clearance").tap do |clearance_group| %>
+		<% unless clearance_group.products.empty? %>
+			<li id="clearance" <%= "class=current" if params[:product_group_name] == "clearance" %>>
+				<%= link_to clearance_group.name, pg_search_url(:product_group_name => clearance_group.permalink), :class => "parent" %>
+			</li>
+		<% end %>
+	<% end %>
+<% end %>
+
+	<% if Spree::Product.try(:sales) && Spree::Product.sales.count > 0 %>
+		<li id="sale" <%= "class=current" if controller.action_name == "sale" %>>
+				<%= link_to "Sale & Clearance", main_app.sale_url, :class => "parent" %>
+			</li>
+	<% end %>
+
+	</ul>
+<% end %>
+</div>

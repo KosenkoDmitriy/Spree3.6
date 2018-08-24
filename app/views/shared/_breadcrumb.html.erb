@@ -1,0 +1,51 @@
+<% if @product || @taxon %>
+<div id="breadcrumb">
+	
+	<ul>
+		<li><%= link_to "Home", root_url %> &raquo;</li>
+		<% 
+			crumbs = Array.new
+			current_taxon = if @product
+				@product.taxons.first
+			elsif @taxon
+				@taxon
+			end
+				
+			
+			unless current_taxon.nil?
+				begin
+					crumbs << current_taxon
+				end while current_taxon = current_taxon.parent
+			end
+		%>
+		
+		<% if crumbs.empty? %>
+			<li><%= link_to "Shop", products_url %>  &raquo;</li>
+		<% else %>
+			<% crumbs.reverse.each do |taxon| %>
+				<% case taxon.name %>
+				<% when "Categories" %>
+					<li><%= link_to "Shop", products_url %>  &raquo;</li>
+				<% else %>
+					<li><%= link_to taxon.name, seo_url(taxon) %> <%= raw("&raquo;") unless taxon == crumbs.first %></li>
+				<% end %>
+			<% end %>
+		<% end %>
+		
+	</ul>
+	
+</div>
+<% else %>
+<div id="breadcrumb">
+	<ul>
+		<% if params[:controller] == 'spree/products' %>
+			<li><%= link_to "Home", root_url %> &raquo;</li>
+			<li><%= link_to "Shop", main_app.shop_url %> &raquo;</li>
+			<li><%= link_to "All Products", main_app.shop_url %></li>
+		<% else %>
+			<li><%= link_to "Home", root_url %> &raquo;</li>
+			<li><%= link_to "Shop", main_app.shop_url %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
