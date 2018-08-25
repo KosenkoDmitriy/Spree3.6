@@ -12,6 +12,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= yield(:header) %>
+
   </head>
   <head data-hook="inside_head">
     <%= render partial: 'spree/shared/head' %>
@@ -51,5 +53,6 @@
       </div>
       <%= render "shared/footer" %>
     </div>
+    <%= yield(:js) %>
   </body>
 </html>
