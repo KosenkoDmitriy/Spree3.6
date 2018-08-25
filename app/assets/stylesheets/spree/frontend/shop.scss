@@ -41,6 +41,13 @@
       color: #585652;
     }
   }
+  li#sale a {
+    color: #fff;
+    background-color: #d33;
+    &:hover {
+      background-color: #c33;
+    }
+  }
   .shop_nav_sub {
     list-style: none;
     background-color: #edecda;
