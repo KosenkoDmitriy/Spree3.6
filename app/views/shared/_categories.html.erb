@@ -18,7 +18,7 @@
 	  <% end %>
 
     <% if false %>
-	  <%  Spree::ProductGroup.find_by_permalink("clearance").tap do |clearance_group| %>
+	  <%#  Spree::ProductGroup.find_by_permalink("clearance").tap do |clearance_group| #%>
 	  <%  Spree::ProductGroup.find_by(permalink: "clearance").tap do |clearance_group| %>
 		<% unless clearance_group.products.empty? %>
 			<li id="clearance" <%= "class=current" if params[:product_group_name] == "clearance" %>>
