@@ -33,21 +33,19 @@
   }
   // @media (min-width: 767px) {
     .carousel-indicators {
-      background-color: #585652;
-      right: 50%;
-      margin: 0;
-      padding-top: 3px;
       top: 10px;
       bottom: unset;
       right: 10px;
-      width: 60px;
       left: unset;
+      width: auto;
+      padding: 4px 8px 4px 8px;
+      background-color: #585652;
       li {
         border: unset;
         background-color: #737373;
-      }
-      li.active {
-        background-color: #f47402;
+        &.active {
+          background-color: #f47402;
+        }
       }
     }
   // }
