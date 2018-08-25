@@ -12,39 +12,44 @@
   li {
     background-color: #d2d1bb;
     color: #585652;
+    &.title {
+      background-color: #585652;
+      color: #fff;
+      font-size: 1.154em;
+      font-weight: bold;
+      padding: 7px 10px;
+    }
   }
-  li.title {
-    background-color: #585652;
-    color: #fff;
-    font-size: 1.154em;
-    font-weight: bold;
-    padding: 7px 10px;
-  }
+
   li a.sub-menu {
     background-image: url(/assets/site/cat_menu_green_down.png);
     background-repeat: no-repeat;
     background-position: 97% 11px;
-    &:hover {
-      background-image: url(/assets/site/cat_menu_green_up.png);
-      background-color: #bbbaa1;
-    }
+    background-color: #d2d1bb;
+    // &:hover {
+    //   background-color: #bbbaa1;
+    // }
+  }
+  li a.current {
+    background-image: url(/assets/site/cat_menu_green_up.png);
+    background-color: #bbbaa1;
   }
   li a {
     color: #585652;
-    &.current, &.parent:hover, &:hover, &:focus {
+    &:hover {
       background-color: #bbbaa1;
       color: #585652;
     }
   }
-
   .shop_nav_sub {
     list-style: none;
-    background: #edecda;
+    background-color: #edecda;
     padding: 0;
+    display: none;
     li {
       border-top: 2px solid #fff;
       padding: 8px 15px;
-      background: #edecda;
+      background-color: #edecda;
       a {
         color: #f47402;
         &.active, &:hover, &:focus {
@@ -53,19 +58,6 @@
         }
       }
     }
-
   }
-  // display submenu items on hover
-  // ul li ul {
-  //   display: none;
-  // }
-  // /* hiding or showing on second generations */
-  // li:hover ul ul, ul ul ul {
-  //   display: none !important;
-  // }
-  // li:hover ul, ul li:hover ul, ul ul li:hover ul
-  // {
-  //   display: block !important;
-  // }
 
 }
