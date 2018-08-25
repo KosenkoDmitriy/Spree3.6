@@ -9,7 +9,7 @@
 	    <li role="" <%= " class=current title" if @taxon and ([@taxon] + @taxon.ancestors).include?(taxon) %>>
 				<%= link_to taxon.name, seo_url(taxon), :class => taxon.children.empty? ? "parent" : "parent sub-menu" %>
 				<% unless taxon.children.empty? %>
-        <ul class="shop_nav_sub" <%= " " if @taxon and ([@taxon] + @taxon.ancestors).include?(taxon) %>>
+        <ul class="shop_nav_sub" <%= " style=display:block;" if @taxon and ([@taxon] + @taxon.ancestors).include?(taxon) %>>
           <!-- <ul class="shop_nav_sub" <%= " style=display:block;" if @taxon and ([@taxon] + @taxon.ancestors).include?(taxon) %>> -->
 						<% taxon.children.each do |sub_taxon| %>
 							<li<%= " class=current_sub" if @taxon and ([@taxon] + @taxon.ancestors).include?(sub_taxon) %>><%= link_to sub_taxon.name, seo_url(sub_taxon) %></li>

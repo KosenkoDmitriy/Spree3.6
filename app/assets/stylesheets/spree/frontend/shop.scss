@@ -55,18 +55,17 @@
     }
 
   }
-
-  ul li ul {
-    display: none;
-
-  }
-  /* hiding or showing on second generations */
-  li:hover ul ul, ul ul ul {
-    display: none !important;
-  }
-  li:hover ul, ul li:hover ul, ul ul li:hover ul
-  {
-    display: block !important;
-  }
+  // display submenu items on hover
+  // ul li ul {
+  //   display: none;
+  // }
+  // /* hiding or showing on second generations */
+  // li:hover ul ul, ul ul ul {
+  //   display: none !important;
+  // }
+  // li:hover ul, ul li:hover ul, ul ul li:hover ul
+  // {
+  //   display: block !important;
+  // }
 
 }
