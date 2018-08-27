@@ -1,72 +1,82 @@
 <div class="row contactus">
-  <div class="col-sm-6">
-  <h1>Contact Us</h1>
+  <div class="col-xs-12">
+    <h1>Contact Us</h1>
+  </div>
+  <div class="col-sm-5">
 
-  <div class="vcard">
-    <p class="org fn"><%= t :company_name %></p>
-    <p><%= "(#{I18n.t(:vat_number)})" if I18n.t(:vat_number).present? %></p>
-    <p class="adr">
-    <p class="street-address"><%= t :street_address %></p>
-    <p class="locality"><%= t :locality %></p>
-    <p class="region"><%= t :region %></p>
-    <p class="postal-code"><%= t :postal_code %></p>
-    <p class="country"><%= t :country %></p>
-    </p>
-    <ul class="contact">
-      <li><span class="tel"><%= t :telephone %></span></li>
-      <li><span class=""><%= mail_to t(:contact_email), nil, class: 'email', target: '_blank' %></span></li>
-    </ul>
+    <div class="vcard">
+      <p class="org fn"><%= t :company_name %></p>
+      <p><%= "(#{I18n.t(:vat_number)})" if I18n.t(:vat_number).present? %></p>
+      <p class="adr">
+      <p class="street-address"><%= t :street_address %></p>
+      <p class="locality"><%= t :locality %></p>
+      <p class="region"><%= t :region %></p>
+      <p class="postal-code"><%= t :postal_code %></p>
+      <p class="country"><%= t :country %></p>
+      </p>
+      <ul class="contact">
+        <li><span class="tel"><%= t :telephone %></span></li>
+        <li><span class=""><%= mail_to t(:contact_email), nil, class: 'email', target: '_blank' %></span></li>
+      </ul>
+    </div>
+
+    <% if aus? %>
+      <p>The SoulPad office is manned Mon, Tues and Thursday from 10am to 3pm. We are often on site outside of these hours so feel free to leave a voice mail or send a message and we'll get back to you promptly.</p>
+      <p>Please note we do not hold stock at this address.</p>
+      <p>It is not possible to collect stock from the SoulPad warehouse at this time.</p>
+    <% elsif us? %>
+      <p>Most stock is shipped directly from our warehouse at a different address.</p>
+      <p>Collections can be arranged by prior arrangement. Please make contact with us first to make sure we have particular stock available.</p>
+    <% else %>
+      <p>The SoulPad offices and <a href="http://soulpad.co.uk/faqs/soulpad-showroom-details">Showroom</a> are at the above address. We do not hold stock at this address.</p>
+      <p>The SoulPad warehouse is a 5 min drive from the Showroom at a different address.</p>
+      <p>Collections are possible from the SoulPad warehouse (by prior arrangement).</p>
+    <% end %>
   </div>
 
-  <% if aus? %>
-    <p>The SoulPad office is manned Mon, Tues and Thursday from 10am to 3pm. We are often on site outside of these hours so feel free to leave a voice mail or send a message and we'll get back to you promptly.</p>
-    <p>Please note we do not hold stock at this address.</p>
-    <p>It is not possible to collect stock from the SoulPad warehouse at this time.</p>
-  <% elsif us? %>
-    <p>Most stock is shipped directly from our warehouse at a different address.</p>
-    <p>Collections can be arranged by prior arrangement. Please make contact with us first to make sure we have particular stock available.</p>
-  <% else %>
-    <p>The SoulPad offices and <a href="http://soulpad.co.uk/faqs/soulpad-showroom-details">Showroom</a> are at the above address. We do not hold stock at this address.</p>
-    <p>The SoulPad warehouse is a 5 min drive from the Showroom at a different address.</p>
-    <p>Collections are possible from the SoulPad warehouse (by prior arrangement).</p>
-  <% end %>
-</div>
+  <div class="col-sm-7">
+    <%= form_tag(main_app.contact_url, {:class => "contact_form"}) do %>
 
-<div class="col-sm-6">
-
-  <%= form_tag(main_app.contact_url, {:class => "contact_form"}) do %>
-
-    <fieldset>
-      <div class="form-group">
-        <%= label_tag :full_name, 'Full name <span class="required">*</span>'.html_safe %>
-        <%= text_field_tag :full_name, nil, {:class => "required friendly_form form-control"} %>
+      <div class="form-group row">
+        <%= label_tag :full_name, 'Full name <span class="required">*</span>'.html_safe, class: 'col-xs-4 text-right' %>
+        <div class="col-xs-8">
+          <%= text_field_tag :full_name, nil, {:class => "required friendly_form form-control"} %>
+        </div>
       </div>
-      <div class="form-group">
-        <%= label_tag :email_address, 'Email address <span class="required">*</span>'.html_safe %>
-        <%= text_field_tag :email_address, nil, {:class => "required friendly_form form-control", :type => "email"} %>
+      <div class="form-group row">
+        <%= label_tag :email_address, 'Email address <span class="required">*</span>'.html_safe, class: 'col-xs-4 text-right' %>
+        <div class="col-xs-8">
+          <%= text_field_tag :email_address, nil, {:class => "required friendly_form form-control", :type => "email"} %>
+        </div>
       </div>
-      <div class="form-group">
-        <%= label_tag :message_subject, 'Message subject <span class="required">*</span>'.html_safe %>
-        <%= text_field_tag :message_subject, nil, {:class => "required friendly_form form-control"} %>
+      <div class="form-group row">
+        <%= label_tag :message_subject, 'Message subject <span class="required">*</span>'.html_safe, class: 'col-xs-4 text-right' %>
+        <div class="col-xs-8">
+          <%= text_field_tag :message_subject, nil, {:class => "required friendly_form form-control"} %>
+        </div>
       </div>
-      <div class="form-group">
-        <%= label_tag :message, 'Message <span class="required">*</span>'.html_safe %>
-        <%= text_area :message, nil, :class => "required friendly_form form-control" %>
+      <div class="form-group row">
+        <%= label_tag :message, 'Message <span class="required">*</span>'.html_safe, class: 'col-xs-4 text-right' %>
+        <div class="col-xs-8">
+          <%= text_area :message, nil, :rows => 6, :class => "required friendly_form form-control" %>
+        </div>
       </div>
-      <div class="honeypot">
-        <%= label_tag :content%>
-        <%= text_field_tag :content, nil, {class: 'form-control', tabindex: '-1'} %>
-        <span class="help">Do not fill in this field.</span>
+      <div class="form-group row honeypot">
+        <%= label_tag :content, nil, class: 'col-xs-4 text-right' %>
+        <div class="col-xs-8">
+          <%= text_field_tag :content, nil, {class: 'form-control', tabindex: '-1'} %>
+          <span class="help">Do not fill in this field.</span>
+        </div>
       </div>
-      <div class="form-group">
-        <%= submit_tag "Email our friendly team", {:title => "Contact Us", class: 'btn btn-success btn-block '} %>
-        <%#= button "Email our friendly team", nil, {:type => "submit", :title => "Contact Us", class: 'btn btn-lg btn-success'} #%>
+      <div class="form-group row">
+        <div class="col-sm-4 text-right"></div>
+        <div class="col-sm-8 text-right">
+          <%= submit_tag "Email our friendly team", {:title => "Contact Us", class: 'btn btn-success btn-block '} %>
+        </div>
       </div>
-    </fieldset>
-
   <% end %>
 
   <p class="required"><span>*</span> Required field</p>
 
-</div>
+  </div>
 </div>
