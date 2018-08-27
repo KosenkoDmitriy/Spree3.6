@@ -22,7 +22,7 @@ class Post < ActiveRecord::Base
 	validates_presence_of :title, :message => "can't be blank"
 	validates_presence_of :permalink, :message => "can't be blank"
 
-	make_permalink
+	# make_permalink
 
 	def to_param
 		self.permalink || self.title.parameterize
