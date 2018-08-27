@@ -91,12 +91,9 @@ gem 'instagram', '1.1.6'
 # # - end external
 
 # start local/internal
-# TODO fix undefined local variable or method `testimonials_engine' in admin panel
 gem 'testimonials_engine', require: 'testimonials_engine', path: 'extensions/testimonials_engine'
 
-# TODO: resolve dependency for features_engine gem
 gem 'features_engine', require: 'features_engine', path: 'extensions/features_engine' # https://github.com/DynamoMTL/spree_features
-# gem 'spree_features', github: 'DynamoMTL/spree_features'
 # TODO: resolve dependency for affiliate_engine gem
 # gem "affiliate_engine", :require => "affiliate_engine", :path => "extensions/affiliate_engine" # https://github.com/spree-contrib/spree_affiliate
 # TODO: will fix a NameError: uninitialized constant Photo
@@ -116,7 +113,7 @@ gem 'features_engine', require: 'features_engine', path: 'extensions/features_en
 # gem 'spree_static_content', github: 'spree/spree_static_content', branch: '2-0-stable'
 # gem 'spree_static_content', github: 'spree-contrib/spree_static_content'#, branch: '3-0-stable' # for spree 3.0 and 2.x only
 # -- start spree_static_content for Spree >= 3.1 (we need them all because of broken dependency on globalize)
-# TODO: will fix search feature
+# TODO: will fix a search feature
 # gem 'globalize', github: 'globalize/globalize'#, branch: '3-0-stable'
 # gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
 # gem 'spree_globalize', github: 'spree-contrib/spree_globalize', branch: 'master'
@@ -128,5 +125,5 @@ gem 'truncate_html', '0.9.3'
 # end local/internal
 
 # # we will use third party services such as Wordpress and Flick
-# gem "news_engine", :require => "news_engine", :path => "extensions/news_engine"
+gem 'news_engine', require: 'news_engine', path: 'extensions/news_engine' # used in about > faq
 # gem "galleries_engine", :require => "galleries_engine", :path => "extensions/galleries_engine"

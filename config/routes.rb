@@ -41,7 +41,7 @@ Rails.application.routes.draw do
   mount FeaturesEngine::Engine, at: '/';
 
   # mount GalleriesEngine::Engine, :at => "/"
-  # mount NewsEngine::Engine, :at => "/"
+  mount NewsEngine::Engine, at: '/'
   # mount AffiliateEngine::Engine, :at => "/"
 
   # mount Spree::Core::Engine, at: '/spree', as: :spree

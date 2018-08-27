@@ -12,6 +12,12 @@ PATH
       spree_core (>= 3.1.0, < 4.0)
 
 PATH
+  remote: extensions/news_engine
+  specs:
+    news_engine (1.0.0)
+      spree_core (>= 0.40.2)
+
+PATH
   remote: extensions/testimonials_engine
   specs:
     testimonials_engine (1.0.0)
@@ -448,6 +454,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   koala (= 1.9.0)
   listen (>= 3.0.5, < 3.2)
+  news_engine!
   puma (~> 3.11)
   rails (~> 5.2.0)
   sass-rails (~> 5.0)
