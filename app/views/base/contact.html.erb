@@ -1,0 +1,68 @@
+<h1>Contact Us</h1>
+
+<div class="column w380">
+
+  <div class="vcard">
+    <span class="org fn"><%= t :company_name %></span>
+    <span><%= "(#{I18n.t(:vat_number)})" if I18n.t(:vat_number).present? %></span>
+    <p class="adr">
+    <span class="street-address"><%= t :street_address %></span>
+    <span class="locality"><%= t :locality %></span>
+    <span class="region"><%= t :region %></span>
+    <span class="postal-code"><%= t :postal_code %></span>
+    <span class="country"><%= t :country %></span>
+    </p>
+    <span class="tel"><%= t :telephone %></span>
+    <%= mail_to t(:contact_email), nil, class: 'email', target: '_blank' %>
+  </div>
+
+  <% if aus? %>
+    <p>The SoulPad office is manned Mon, Tues and Thursday from 10am to 3pm. We are often on site outside of these hours so feel free to leave a voice mail or send a message and we'll get back to you promptly.</p>
+    <p>Please note we do not hold stock at this address.</p>
+    <p>It is not possible to collect stock from the SoulPad warehouse at this time.</p>
+  <% elsif us? %>
+    <p>Most stock is shipped directly from our warehouse at a different address.</p>
+    <p>Collections can be arranged by prior arrangement. Please make contact with us first to make sure we have particular stock available.</p>
+  <% else %>
+    <p>The SoulPad offices and <a href="http://soulpad.co.uk/faqs/soulpad-showroom-details">Showroom</a> are at the above address. We do not hold stock at this address.</p>
+    <p>The SoulPad warehouse is a 5 min drive from the Showroom at a different address.</p>
+    <p>Collections are possible from the SoulPad warehouse (by prior arrangement).</p>
+  <% end %>
+</div>
+
+<div class="column w540">
+
+  <%= form_tag(main_app.contact_url, {:class => "contact_form"}) do %>
+
+    <fieldset>
+      <div>
+        <%= label_tag :full_name, 'Full name <span class="required">*</span>'.html_safe %>
+        <%= text_field_tag :full_name, nil, {:class => "required friendly_form"} %>
+      </div>
+      <div>
+        <%= label_tag :email_address, 'Email address <span class="required">*</span>'.html_safe %>
+        <%= text_field_tag :email_address, nil, {:class => "required friendly_form", :type => "email"} %>
+      </div>
+      <div>
+        <%= label_tag :message_subject, 'Message subject <span class="required">*</span>'.html_safe %>
+        <%= text_field_tag :message_subject, nil, {:class => "required friendly_form"} %>
+      </div>
+      <div>
+        <%= label_tag :message, 'Message <span class="required">*</span>'.html_safe %>
+        <%= text_area :message, nil, :class => "required friendly_form" %>
+      </div>
+      <div class="honeypot">
+        <%= label_tag :content%>
+        <%= text_field_tag :content, nil, {tabindex: '-1'} %>
+        <span class="help">Do not fill in this field.</span>
+      </div>
+      <div>
+        <%= submit_tag "Email our friendly team", :title => "Contact Us" -%>
+      </div>
+    </fieldset>
+
+  <% end -%>
+
+  <p class="required"><span>*</span> Required field</p>
+
+</div>
