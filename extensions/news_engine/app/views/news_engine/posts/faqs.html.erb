@@ -1,23 +1,25 @@
-<input type="hidden" name="locale" value="
-<%= I18n.locale %>
-<%= Time.zone %>
-<%= Time.zone.name %>
-<%= Time.zone.now %>
-<%= Time.current %>
-<%= Date.current %>
-">
-<div class="column w220">
-  <%= render :partial => "/base/page_menu" %>
-</div>
+<div class="row">
+  <input type="hidden" name="locale" value="
+  <%= I18n.locale %>
+  <%= Time.zone %>
+  <%= Time.zone.name %>
+  <%= Time.zone.now %>
+  <%= Time.current %>
+  <%= Date.current %>
+  ">
+  <div class="col-sm-3">
+    <%= render :partial => "/base/page_menu" %>
+  </div>
 
-<div class="column w700">
+  <div class="col-sm-9">
 
-  <h1><%= title_without_site_name %></h1>
+    <h1><%= title_without_site_name %></h1>
 
-  <ul class="faq_List">
-  <% @posts.each do |faq| %>
-    <li><%= link_to faq.title, faq_url(:id => faq) %></li>
-  <% end %>
-  </ul>
+    <ul class="faq_List">
+    <% @posts.each do |faq| %>
+      <li><%= link_to faq.title, faq_url(:id => faq) %></li>
+    <% end %>
+    </ul>
 
+  </div>
 </div>
