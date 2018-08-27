@@ -5,12 +5,12 @@
 		<%= f.text_field :title %>
 	</div>
 
-	<% unless f.object.new_record? %>
+	<%# unless f.object.new_record? #%>
 		<div>
 			<%= f.label :permalink %>
 			<%= f.text_field :permalink %>
 		</div>
-	<% end %>
+	<%# end #%>
 
 	<div>
 		<%= f.label :body %>

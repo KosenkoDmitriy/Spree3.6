@@ -17,8 +17,6 @@ class Post < ActiveRecord::Base
 	scope :published, -> { where(["posts.published_on <= ?", Time.current]) }
 	scope :unpublished, -> { where(["posts.published_on IS NULL OR posts.published_on > ?", Time.current]) }
 
-	# attr_accessible :title, :body, :post_type, :published_on, :body_extended, :permalink
-
 	validates_presence_of :title, :message => "can't be blank"
 	validates_presence_of :permalink, :message => "can't be blank"
 

@@ -24,7 +24,7 @@ class NewsEngine::Admin::PostsController < Spree::Admin::BaseController
     end
   end
   def create
-    @post = Post.new(params[:post])
+    @post = Post.new(post_params)
 
     respond_to do |format|
       if @post.save
@@ -47,11 +47,12 @@ class NewsEngine::Admin::PostsController < Spree::Admin::BaseController
         format.html  # new.html.erb
     end
   end
+
   def update
     @post = Post.find_by_permalink(params[:id])
 
     respond_to do |format|
-      if @post.update_attributes(params[:post])
+      if @post.update_attributes(post_params)
         format.html  { redirect_to(admin_post_url(@post),
           :notice => 'Post was successfully updated.') }
         #format.json  { head :no_content }
@@ -97,9 +98,14 @@ class NewsEngine::Admin::PostsController < Spree::Admin::BaseController
 
   def picker_index
   end
+
   def picker_gallery
     @gallery = Gallery.find params[:gallery_id]
     render :partial => "picker_gallery", :locals => {:gallery => @gallery}
   end
 
+  private
+  def post_params
+    params.require(:post).permit(:title, :body, :post_type, :published_on, :body_extended, :permalink)
+  end
 end
