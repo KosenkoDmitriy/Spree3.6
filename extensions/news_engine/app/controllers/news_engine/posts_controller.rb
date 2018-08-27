@@ -1,6 +1,6 @@
 class NewsEngine::PostsController < Spree::BaseController
 
-	before_filter do
+	before_action do
 		@selected_nav = :news
 	end
 
