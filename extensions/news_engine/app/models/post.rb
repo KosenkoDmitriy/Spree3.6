@@ -10,12 +10,12 @@ class Post < ActiveRecord::Base
 	  1
   end
 
-	scope :news, -> { where(conditions: {post_type: POST_TYPES[:news]}) }
-	scope :articles, -> { where(conditions: {post_type: POST_TYPES[:articles]}) }
-	scope :faqs, -> { where(conditions: {post_type: POST_TYPES[:faqs]}) }
+	scope :news, -> { where(post_type: POST_TYPES[:news]) }
+	scope :articles, -> { where(post_type: POST_TYPES[:articles]) }
+	scope :faqs, -> { where(post_type: POST_TYPES[:faqs]) }
 
-	scope :published, -> { where(conditions: ["posts.published_on <= ?", Time.current]) }
-	scope :unpublished, -> { where(conditions: ["posts.published_on IS NULL OR posts.published_on > ?", Time.current]) }
+	scope :published, -> { where(["posts.published_on <= ?", Time.current]) }
+	scope :unpublished, -> { where(["posts.published_on IS NULL OR posts.published_on > ?", Time.current]) }
 
 	# attr_accessible :title, :body, :post_type, :published_on, :body_extended, :permalink
 
