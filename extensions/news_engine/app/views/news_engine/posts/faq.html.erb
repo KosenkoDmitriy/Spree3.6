@@ -1,15 +1,17 @@
-<div class="col-sm-3">
-	<%= render :partial => "/base/page_menu" %>
-</div>
+<div class="row">
+	<div class="col-sm-3">
+		<%= render :partial => "/base/page_menu" %>
+	</div>
 
-<div class="col-sm-9">
+	<div class="col-sm-9">
 
-	<%= link_to "Back to FAQs »", faqs_url, :class => "more back_link" %>
+		<%= link_to "Back to FAQs »", faqs_url, :class => "more back_link" %>
 
-	<h1><%= title_without_site_name %></h1>
+		<h1><%= title_without_site_name %></h1>
 
-	<%= raw @post.body %>
+		<%= raw @post.body %>
 
-	<%= raw @post.body_extended %>
+		<%= raw @post.body_extended %>
 
+	</div>
 </div>
