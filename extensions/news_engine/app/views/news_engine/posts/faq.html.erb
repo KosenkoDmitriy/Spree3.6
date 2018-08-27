@@ -1,11 +1,11 @@
-<div class="column w220">
+<div class="col-sm-3">
 	<%= render :partial => "/base/page_menu" %>
 </div>
 
-<div class="column w700">
-	
+<div class="col-sm-9">
+
 	<%= link_to "Back to FAQs »", faqs_url, :class => "more back_link" %>
-	
+
 	<h1><%= title_without_site_name %></h1>
 
 	<%= raw @post.body %>
