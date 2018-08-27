@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   #match "faqs" => 'base#faqs' # Overriden by news section
   match "warranty" => 'base#warranty', via: [:get]
   match "shipping" => 'base#shipping', via: [:get]
-  match "contact" => 'base#contact', via: [:get]
+  match "contact" => 'base#contact', via: [:get, :post]
   match "returns" => 'base#returns_policy', via: [:get]
   match "projects" => 'base#projects', via: [:get]
   match "schedule" => redirect("/"), via: [:get]
