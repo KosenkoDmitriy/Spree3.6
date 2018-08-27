@@ -1,19 +1,21 @@
-<h1>Contact Us</h1>
-
-<div class="column w380">
+<div class="row contactus">
+  <div class="col-sm-6">
+  <h1>Contact Us</h1>
 
   <div class="vcard">
-    <span class="org fn"><%= t :company_name %></span>
-    <span><%= "(#{I18n.t(:vat_number)})" if I18n.t(:vat_number).present? %></span>
+    <p class="org fn"><%= t :company_name %></p>
+    <p><%= "(#{I18n.t(:vat_number)})" if I18n.t(:vat_number).present? %></p>
     <p class="adr">
-    <span class="street-address"><%= t :street_address %></span>
-    <span class="locality"><%= t :locality %></span>
-    <span class="region"><%= t :region %></span>
-    <span class="postal-code"><%= t :postal_code %></span>
-    <span class="country"><%= t :country %></span>
+    <p class="street-address"><%= t :street_address %></p>
+    <p class="locality"><%= t :locality %></p>
+    <p class="region"><%= t :region %></p>
+    <p class="postal-code"><%= t :postal_code %></p>
+    <p class="country"><%= t :country %></p>
     </p>
-    <span class="tel"><%= t :telephone %></span>
-    <%= mail_to t(:contact_email), nil, class: 'email', target: '_blank' %>
+    <ul class="contact">
+      <li><span class="tel"><%= t :telephone %></span></li>
+      <li><span class=""><%= mail_to t(:contact_email), nil, class: 'email', target: '_blank' %></span></li>
+    </ul>
   </div>
 
   <% if aus? %>
@@ -30,39 +32,40 @@
   <% end %>
 </div>
 
-<div class="column w540">
+<div class="col-sm-6">
 
   <%= form_tag(main_app.contact_url, {:class => "contact_form"}) do %>
 
     <fieldset>
-      <div>
+      <div class="form-group">
         <%= label_tag :full_name, 'Full name <span class="required">*</span>'.html_safe %>
-        <%= text_field_tag :full_name, nil, {:class => "required friendly_form"} %>
+        <%= text_field_tag :full_name, nil, {:class => "required friendly_form form-control"} %>
       </div>
-      <div>
+      <div class="form-group">
         <%= label_tag :email_address, 'Email address <span class="required">*</span>'.html_safe %>
-        <%= text_field_tag :email_address, nil, {:class => "required friendly_form", :type => "email"} %>
+        <%= text_field_tag :email_address, nil, {:class => "required friendly_form form-control", :type => "email"} %>
       </div>
-      <div>
+      <div class="form-group">
         <%= label_tag :message_subject, 'Message subject <span class="required">*</span>'.html_safe %>
-        <%= text_field_tag :message_subject, nil, {:class => "required friendly_form"} %>
+        <%= text_field_tag :message_subject, nil, {:class => "required friendly_form form-control"} %>
       </div>
-      <div>
+      <div class="form-group">
         <%= label_tag :message, 'Message <span class="required">*</span>'.html_safe %>
-        <%= text_area :message, nil, :class => "required friendly_form" %>
+        <%= text_area :message, nil, :class => "required friendly_form form-control" %>
       </div>
       <div class="honeypot">
         <%= label_tag :content%>
-        <%= text_field_tag :content, nil, {tabindex: '-1'} %>
+        <%= text_field_tag :content, nil, {class: 'form-control', tabindex: '-1'} %>
         <span class="help">Do not fill in this field.</span>
       </div>
-      <div>
-        <%= submit_tag "Email our friendly team", :title => "Contact Us" -%>
+      <div class="form-group">
+        <%= submit_tag "Email our friendly team", {:title => "Contact Us", class: 'btn btn-success btn-lg'} %>
       </div>
     </fieldset>
 
-  <% end -%>
+  <% end %>
 
   <p class="required"><span>*</span> Required field</p>
 
+</div>
 </div>
