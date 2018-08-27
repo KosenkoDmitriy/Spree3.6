@@ -4,17 +4,13 @@ Edit
 
 <%= form_for [:admin, @post] do |f| %>
 
-  <div class="row">
-    <%= render :partial => "form", :locals => { :f => f } %>
+<div class="row">
+  <%= render :partial => "form", :locals => { :f => f } %>
+
+  <div class="form-actions" data-hook="buttons">
+   <%= button Spree.t('actions.update'), 'update', 'submit', {class: 'btn-update btn-success', data: { disable_with: "#{ Spree.t(:saving) }..." }} %>
+   <span class="or"><%= Spree.t(:or) %></span>
+   <%= button_link_to Spree.t('actions.cancel'), admin_post_url, icon: 'remove' %>
   </div>
-
-  <fieldset class="no-border-top">
-       <div class="form-buttons filter-actions actions" data-hook="buttons">
-       <%= f.submit %>
-       <span class="or"><%= Spree.t(:or) %></span>
-
-       <%= link_to "Cancel", admin_post_url(@post), :class => 'button' %>
-      </div>
- </fieldset>
-
+</div>
 <% end %>

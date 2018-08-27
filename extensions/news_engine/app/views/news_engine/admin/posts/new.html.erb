@@ -1,4 +1,6 @@
-<h1></h1>
+<% content_for :page_title do %>
+	Create Post
+<% end %>
 
 <%= form_for [:admin, @post] do |f| %>
 
@@ -7,10 +9,11 @@
   </div>
 
   <div class="row">
-    <fieldset class="submit">
-      <%= f.submit %>
-      <%= link_to "Cancel", admin_posts_url %>
-    </fieldset>
+    <div class="form-actions" data-hook="buttons">
+      <%= button Spree.t('actions.create'), 'ok', 'submit', {class: 'btn-success', data: { disable_with: "#{ Spree.t(:saving) }..." }} %>
+      <span class="or"><%= Spree.t(:or) %></span>
+      <%= button_link_to Spree.t('actions.cancel'), admin_posts_url, icon: 'remove' %>
+    </div>
   </div>
 
 <% end %>

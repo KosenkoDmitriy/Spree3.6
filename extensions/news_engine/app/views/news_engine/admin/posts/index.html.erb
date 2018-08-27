@@ -23,9 +23,9 @@
 				<td><%= post.title %></td>
 				<td><%= post.post_type %></td>
 				<td><%= post.published_on.to_s(:default) if post.published? %></td>
-				<td><%= link_to "Unpublish", unpublish_admin_post_url(post), :method => :put if post.published? %></td>
-				<td><%= link_to "Edit", edit_admin_post_url(post) %></td>
-				<td><%= link_to "Delete", admin_post_url(post), :method => :delete, :confirm => "Are you sure you want to delete '#{post.title}'" %></td>
+				<td><%= link_to "Unpublish", unpublish_admin_post_url(post), class: 'btn btn-sm btn-primary icon icon-delete with-tip', :method => :put if post.published? %></td>
+				<td><%= link_to "Edit", edit_admin_post_url(post), class: 'btn btn-sm btn-success icon icon-edit with-tip' %></td>
+				<td><%= link_to "Delete", admin_post_url(post), :method => :delete, class: 'btn btn-sm btn-danger icon icon-trash with-tip', :confirm => "Are you sure you want to delete '#{post.title}'" %></td>
 			</tr>
 		<% end %>
 	</tbody>

@@ -37,7 +37,7 @@ class NewsEngine::Admin::PostsController < Spree::Admin::BaseController
         #format.json  { render :json => @post.errors,
         #	:status => :unprocessable_entity }
       end
-      end
+    end
   end
 
   def edit
