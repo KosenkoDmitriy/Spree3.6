@@ -92,10 +92,8 @@ gem 'instagram', '1.1.6'
 
 # start local/internal
 gem 'testimonials_engine', require: 'testimonials_engine', path: 'extensions/testimonials_engine'
-
 gem 'features_engine', require: 'features_engine', path: 'extensions/features_engine' # https://github.com/DynamoMTL/spree_features
-# TODO: resolve dependency for affiliate_engine gem
-# gem "affiliate_engine", :require => "affiliate_engine", :path => "extensions/affiliate_engine" # https://github.com/spree-contrib/spree_affiliate
+gem 'affiliate_engine', require: 'affiliate_engine', path: 'extensions/affiliate_engine' # https://github.com/spree-contrib/spree_affiliate
 # TODO: will fix a NameError: uninitialized constant Photo
 # gem 'watermark_engine', :require => "watermark_engine", :path => "extensions/watermark_engine" # https://github.com/azimuth/spree_watermark
 
