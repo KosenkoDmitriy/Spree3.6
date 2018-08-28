@@ -25,7 +25,6 @@ class OfferImage < ActiveRecord::Base
 
   validates_presence_of :image
   validates_attachment_size :image, :less_than => 1.megabytes
-  attr_accessible :image, :caption
 
   def upload_from_url(url)
     self.image = URI.parse(url)

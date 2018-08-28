@@ -10,7 +10,7 @@ class AffiliateEngine::Admin::OffersController < Spree::Admin::BaseController
   end
 
   def create
-    @offer = Offer.new(params[:offer])
+    @offer = Offer.new(offer_params)
     respond_to do |format|
       if @offer.save
         format.html  { redirect_to(admin_offers_url, :notice => 'Offer was successfully created.') }
@@ -29,7 +29,7 @@ class AffiliateEngine::Admin::OffersController < Spree::Admin::BaseController
     @offer = Offer.find(params[:id])
 
     respond_to do |format|
-      if @offer.update_attributes(params[:offer])
+      if @offer.update_attributes(offer_params)
         format.html  { redirect_to(admin_offers_url,	:notice => 'Offer was successfully updated.') }
       else
         format.html  { render :action => "edit" }
@@ -50,4 +50,9 @@ class AffiliateEngine::Admin::OffersController < Spree::Admin::BaseController
 		end
 	end
 
+  private
+  def offer_params
+    params.require(:offer).permit(:slug, :contact_tel, :address, :latitude, :longitude, :postcode, :offer, :title, :location, :contact_email, :enabled, :view_by_appt, :description, :image, :website, :offer_images_attributes)
+    # offer_images :image, :caption
+  end
 end

@@ -30,4 +30,5 @@ class AffiliateEngine::OffersController < Spree::BaseController
       format.html # index.html.erb
     end
   end
+
 end
