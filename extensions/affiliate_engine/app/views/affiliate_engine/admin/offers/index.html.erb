@@ -29,8 +29,8 @@
         <td><%= offer.contact_tel %></td>
         <td><%= mail_to offer.contact_email %></td>
         <td><%= offer.offer_images.count %></td>
-        <td><%= link_to "Edit", edit_admin_offer_url(offer) %></td>
-        <td><%= link_to "Delete", admin_offer_url(offer), :method => :delete, :confirm => "Are you sure you want to delete this offer?" %></td>
+        <td><%= button_link_to Spree.t('actions.edit'), edit_admin_offer_url(offer), icon: 'edit', class: 'btn btn-primary btn-sm with-tip' %></td>
+        <td><%= button_link_to Spree.t('actions.delete'), admin_offer_url(offer), icon: 'remove', class: 'btn btn-danger btn-sm with-tip', method: :delete, confirm: "Are you sure you want to delete this tag?" %></td>
       </tr>
     <% end %>
   </tbody>
