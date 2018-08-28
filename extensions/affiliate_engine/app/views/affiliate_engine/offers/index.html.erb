@@ -28,7 +28,9 @@
               <div class="media-body">
                 <h3 class="media-heading"><a href="<%= offer_path(offer.slug) %>"><%= truncate(offer.title, length:60) %></a></h4>
                 <h4 id="offerheader"><%= offer.location %></h4>
-                <p id="offerdescr"><%= truncate(offer.description_text, length: 220)%></p>
+                <p id="offerdescr">
+                  <%= truncate(offer.description_text, length: 220)%>
+                </p>
                 <a href="<%= offer_path(offer.id) %>"><p id="readmore">More Details</p></a>
               </div>
             </li>

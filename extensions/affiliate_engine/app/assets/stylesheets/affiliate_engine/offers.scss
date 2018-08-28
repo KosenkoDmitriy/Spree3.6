@@ -1,5 +1,6 @@
 #offerlist {
   .offer {
+    padding: 10px;
     background: #eeeee3;
     img {
       border: 5px solid #fff;
@@ -20,6 +21,7 @@
     p#readmore {
       float: right;
       color: #585652;
+      padding-right: 5px;
     }
     a:hover p#readmore{
       color: #f47402;

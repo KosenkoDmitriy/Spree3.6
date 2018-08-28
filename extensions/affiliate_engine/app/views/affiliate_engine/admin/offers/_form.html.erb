@@ -79,24 +79,21 @@
 
   <div class="col-sm-4">
 
-    <div class="field">
-      <%= f.fields_for :offer_images do |b| %>
-      <ul>
-        <% unless b.object.new_record? %>
-          <li> <%= link_to(image_tag(b.object.image.url(:thumb)),b.object.image.url(:original))%></li>
-          <li> Delete? <%= b.check_box :_destroy %></li>
-        <% end %>
-       </ul>
+       <%= f.fields_for :offer_images do |b| %>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <% unless b.object.new_record? %>
+            <%= link_to(image_tag(b.object.image.url(:thumb), class: 'img-responsive'),b.object.image.url(:original))%>
+            Delete? <%= b.check_box :_destroy %>
+          <% end %>
+
           <%= b.label :image, "Image File" %>
-          <br />
           <%= b.file_field :image %>
-          <br />
-        <br />
+
           <%= b.label :caption, "Image Caption" %>
-        <br />
           <%= b.text_field :caption %>
-          <br/>
-          <br/>
+         </div>
+       </div>
       <% end %>
     </div>
   </div>
