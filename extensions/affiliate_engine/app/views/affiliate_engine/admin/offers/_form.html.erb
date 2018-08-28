@@ -104,9 +104,9 @@
   <div class="col-xs-12">
     <fieldset class="no-border-top" style="clear:both;">
       <div class="form-buttons filter-actions actions" data-hook="buttons">
-        <%= f.submit %>
+        <%= f.submit(class: 'btn btn-success') %>
         <span class="or"><%= Spree.t(:or) %></span>
-        <%= link_to "Cancel", admin_offers_url, :class => "button" %>
+        <%= link_to 'Cancel', admin_offers_url, class: 'btn btn-default' %>
       </div>
     </fieldset>
   </div>
