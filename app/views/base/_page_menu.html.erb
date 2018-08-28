@@ -13,7 +13,7 @@
 		<li role="presentation"><%= link_to "Videos", main_app.videos_url, :class => (controller.action_name == "videos" ? "active" : ""), :title => "SoulPad " %></li>
 
 		<%= content_tag :li, role: "presentation" do %>
-			<%= link_to "Offers", affiliate_engine.offers_url, :class => (controller.action_name == "offers" ? "active" : ""), :title => "SoulPad offers" %>
+    	<%= link_to "Offers", affiliate_engine.offers_url, :class => (controller.action_name == "offers" || "index" ? "active" : ""), :title => "SoulPad offers" %>
 		<% end if uk? %>
 
 		<li role="presentation"><%= link_to "SoulPad Hire", main_app.rentals_url, :class => (controller.action_name == "rentals" ? "active" : ""), :title => "SoulPad Hire" %></li>
