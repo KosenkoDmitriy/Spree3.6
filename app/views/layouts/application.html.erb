@@ -24,15 +24,17 @@
         <%= render partial: 'shared/header' %>
       </div>
       <div class="container-fluid">
-        <div class="row">
-          <% if flash[:error] %>
-            <div class="alert alert-danger" role="alert"><%= flash[:error] %></div>
-        	<% end %>
+        <!-- <div class="row">
+          <div class="col-xs-12">
+            <% if flash[:error] %>
+              <div class="alert alert-danger" role="alert"><%= flash[:error] %></div>
+          	<% end %>
 
-        	<% if self.notice %>
-            <div class="alert alert-info" role="alert"><%= self.notice %></div>
-        	<% end %>
-        </div>
+          	<% if self.notice %>
+              <div class="alert alert-info" role="alert"><%= self.notice %></div>
+          	<% end %>
+          </div>
+        </div> -->
         <div class="row" data-hook="">
           <%= spree_breadcrumbs(@taxon) %>
 
@@ -40,7 +42,7 @@
           <div class="col-sm-3">
             <%= render partial: 'shared/categories' if content_for? :sidebar %>
           </div>
-          
+
           <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook>
             <%= flash_messages %>
             <%= yield %>
