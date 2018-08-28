@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_27_084313) do
+ActiveRecord::Schema.define(version: 2018_08_28_090623) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -97,6 +97,25 @@ ActiveRecord::Schema.define(version: 2018_08_27_084313) do
     t.string "thumb"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "offers", force: :cascade do |t|
+    t.boolean "enabled"
+    t.string "title"
+    t.string "location"
+    t.text "description"
+    t.text "offer"
+    t.boolean "view_by_appt"
+    t.string "contact_email"
+    t.string "contact_tel"
+    t.string "website"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "postcode"
+    t.text "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string "slug"
   end
 
   create_table "posts", force: :cascade do |t|
