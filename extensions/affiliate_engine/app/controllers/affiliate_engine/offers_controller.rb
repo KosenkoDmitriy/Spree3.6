@@ -1,5 +1,7 @@
 class AffiliateEngine::OffersController < Spree::BaseController
-
+  before_action do
+    @selected_nav = :about
+  end
   def index
     @query = Offer.ransack(params[:q])
     @query.sorts = ['created_at desc', 'title asc'] if @query.sorts.empty?

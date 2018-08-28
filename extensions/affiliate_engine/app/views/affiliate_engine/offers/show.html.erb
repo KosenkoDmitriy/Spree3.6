@@ -2,12 +2,12 @@
 <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
 <div class="row">
 <div class="col-sm-3">
-  <%= render :partial => "base/page_menu" %>
+  <%= render partial: 'base/page_menu' %>
 </div>
 
 <div class="col-sm-9">
 
-  <h1><%= link_to("#{@offer.title}", @offer.website, :target=>'_blank')%></h1>
+  <h1><%= link_to("#{@offer.title}", @offer.website, target: '_blank')%></h1>
   <h2><%= @offer.location %></h2>
 
   <div id="showoffer">
@@ -18,9 +18,9 @@
     <div id="imagelist">
       <ul>
         <% @offer.offer_images.each do |i| %>
-            <li class="offerimg">
-              <%= link_to(image_tag(i.image(:small), alt: i.caption, :class=>"photo"), i.image(:large), :class=>" zoom cboxElement")%>
-            </li>
+          <li class="offerimg">
+            <%= link_to(image_tag(i.image(:small), alt: i.caption, class: 'photo'), i.image(:large), class: 'zoom cboxElement')%>
+          </li>
         <% end %>
       </ul>
     </div>
@@ -35,7 +35,7 @@
       <p id="offercontact">
         <%= @offer.address %><br/>
         Telephone: <%= @offer.contact_tel%><br/>
-        <%= link_to "#{@offer.website}", @offer.website, :target=>'_blank' %>
+        <%= link_to "#{@offer.website}", @offer.website, target: '_blank' %>
       </p>
 
       <div id="map_container">
