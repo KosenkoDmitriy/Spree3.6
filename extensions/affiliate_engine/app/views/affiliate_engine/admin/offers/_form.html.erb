@@ -1,109 +1,114 @@
-<div class="nine columns">
-
+<% content_for :page_actions do %>
+  <%= button_link_to Spree.t(:back_to_resource_list, resource: plural_resource_name(Offer)), admin_offers_url, icon: 'arrow-left', class: 'btn-success' %>
+<% end %>
+<div class="row">
   <%= form_for [:admin, @offer], :html => { :multipart => true } do |f| %>
 
-  <%= f.field_container :enabled do %>
+  <div class="col-sm-8">
+    <%= f.field_container :enabled do %>
       <%= f.label :enabled, "Enabled? " %>
       <%= f.check_box :enabled %><br />
       <%= f.error_message_on :enabled %>
-  <% end %>
+    <% end %>
 
-  <%=f.field_container :title do %>
-    <%= f.label :title, "Affiliate Name" %>
-    <br /><span>e.g. Bob's Camping Field</span>
-    <br /><%= f.text_field :title, :size => 60 %>
-    <%= f.error_message_on :title %>
-  <% end %>
+    <%=f.field_container :title do %>
+      <%= f.label :title, "Affiliate Name" %>
+      <br /><span>e.g. Bob's Camping Field</span>
+      <br /><%= f.text_field :title, :size => 60 %>
+      <%= f.error_message_on :title %>
+    <% end %>
 
 
-  <%=f.field_container :address do %>
+    <%=f.field_container :address do %>
       <%= f.label :address %><br/>
       <%= f.text_area :address, :rows => "3", :cols => "60" %>
+    <% end %>
 
-  <% end %>
-
-  <%=f.field_container :postcode do %>
+    <%=f.field_container :postcode do %>
       <%= f.label :postcode, "Post Code" %><br />
       <%= f.text_field :postcode %><br/>
+      <%= f.error_message_on :postcode %>
       Latitude: <%= @offer.latitude %>, Longitude: <%= @offer.longitude %>
-  <% end %>
+    <% end %>
 
-  <%=f.field_container :location do %>
-    <%= f.label :location %>
-    <br /><span>Use county name if in UK. Else use country.</span>
-    <br /><%= f.text_field :location, :size => 50 %>
-    <%= f.error_message_on :location %>
-  <% end %>
+    <%=f.field_container :location do %>
+      <%= f.label :location %>
+      <br /><span>Use county name if in UK. Else use country.</span>
+      <br /><%= f.text_field :location, :size => 50 %>
+      <%= f.error_message_on :location %>
+    <% end %>
 
-  <%=f.field_container :description do %>
-    <%= f.label :description, "Affiliate Description" %><br />
-    <span>Use description from affiliate's website as a basis for this.</span>
-    <%= f.text_area :description, :class => "tinymce" %>
-    <%= tinymce %>
-    <%= f.error_message_on :description %>
-  <% end %>
+    <%=f.field_container :description do %>
+      <%= f.label :description, "Affiliate Description" %><br />
+      <span>Use description from affiliate's website as a basis for this.</span>
+      <%= f.text_area :description, :class => "tinymce" %>
+      <%= tinymce %>
+      <%= f.error_message_on :description %>
+    <% end %>
 
-  <%=f.field_container :offer do %>
-    <%= f.label :offer, "Mention SoulPad for..." %><br />
-    <%= f.text_field :offer, :size => 60 %>
-  <% end %>
+    <%=f.field_container :offer do %>
+      <%= f.label :offer, "Mention SoulPad for..." %><br />
+      <%= f.text_field :offer, :size => 60 %>
+    <% end %>
 
-  <%=f.field_container :view_by_appt do %>
-    <%= f.label :view_by_appt, "Can View by Appt?" %>
-    <%= f.check_box :view_by_appt %><br />
-    <%= f.error_message_on :view_by_appt %>
-  <% end %>
+    <%=f.field_container :view_by_appt do %>
+      <%= f.label :view_by_appt, "Can View by Appt?" %>
+      <%= f.check_box :view_by_appt %><br />
+      <%= f.error_message_on :view_by_appt %>
+    <% end %>
 
-  <%=f.field_container :website do %>
+    <%=f.field_container :website do %>
       <%= f.label :website, "Website" %><br />
       <%= f.url_field :website, :size => 60 %>
-  <% end %>
+      <%= f.error_message_on :website %>
+    <% end %>
 
-  <%=f.field_container :contact_tel do %>
+    <%=f.field_container :contact_tel do %>
       <%= f.label :contact_tel, "Telephone" %><br />
       <%= f.text_field :contact_tel, :size => 60 %>
-  <% end %>
+      <%= f.error_message_on :contact_tel %>
+    <% end %>
 
-  <%=f.field_container :contact_email do %>
+    <%=f.field_container :contact_email do %>
       <%= f.label :contact_email, "Email" %><br />
       <%= f.text_field :contact_email, :size => 60 %>
-  <% end %>
+      <%= f.error_message_on :contact_email %>
+    <% end %>
 
-</div>
+  </div>
 
-<div class="five columns">
+  <div class="col-sm-4">
 
-  <div class="field">
-    <%= f.fields_for :offer_images do |b| %>
-    <ul>
+    <div class="field">
+      <%= f.fields_for :offer_images do |b| %>
+      <ul>
         <% unless b.object.new_record? %>
           <li> <%= link_to(image_tag(b.object.image.url(:thumb)),b.object.image.url(:original))%></li>
           <li> Delete? <%= b.check_box :_destroy %></li>
         <% end %>
-     </ul>
-
-        <%= b.label :image, "Image File" %>
+       </ul>
+          <%= b.label :image, "Image File" %>
+          <br />
+          <%= b.file_field :image %>
+          <br />
         <br />
-        <%= b.file_field :image %>
+          <%= b.label :caption, "Image Caption" %>
         <br />
-      <br />
-        <%= b.label :caption, "Image Caption" %>
-      <br />
-        <%= b.text_field :caption %>
-        <br/>
-        <br/>
-
-    <% end %>
-  </div>
-
-
-  <fieldset class="no-border-top" style="clear:both;">
-    <div class="form-buttons filter-actions actions" data-hook="buttons">
-      <%= f.submit %>
-      <span class="or"><%= Spree.t(:or) %></span>
-      <%= link_to "Cancel", admin_offers_url, :class => "button" %>
+          <%= b.text_field :caption %>
+          <br/>
+          <br/>
+      <% end %>
     </div>
-  </fieldset>
-  <% end %>
-
   </div>
+
+  <div class="col-xs-12">
+    <fieldset class="no-border-top" style="clear:both;">
+      <div class="form-buttons filter-actions actions" data-hook="buttons">
+        <%= f.submit %>
+        <span class="or"><%= Spree.t(:or) %></span>
+        <%= link_to "Cancel", admin_offers_url, :class => "button" %>
+      </div>
+    </fieldset>
+  </div>
+  <% end %>
+</div>
