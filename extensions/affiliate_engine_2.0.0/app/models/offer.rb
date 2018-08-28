@@ -1,5 +1,5 @@
 class Offer < ActiveRecord::Base
-  # attr_accessible :slug, :contact_tel, :address, :latitude, :longitude, :postcode, :offer, :title, :location, :contact_email, :enabled, :view_by_appt, :description, :image, :website, :offer_images_attributes
+  attr_accessible :slug, :contact_tel, :address, :latitude, :longitude, :postcode, :offer, :title, :location, :contact_email, :enabled, :view_by_appt, :description, :image, :website, :offer_images_attributes
 
   has_many :offer_images, :dependent => :destroy
 
