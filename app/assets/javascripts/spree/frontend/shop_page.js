@@ -7,5 +7,11 @@
 			$(this).toggleClass('current');
 			return false;
 		});
+
+    //Contact form
+		$('form.contact_form').validate({
+			errorElement: "span",
+			errorClass: "error"
+		});
   });
 })(jQuery);

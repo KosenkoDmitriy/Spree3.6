@@ -1,0 +1,52 @@
+.contactus {
+  .vcard {
+    p {
+      margin-bottom: 0px;
+    }
+    ul.contact {
+      padding-left: 0;
+      padding-bottom: 15px;
+    }
+  }
+
+  // form
+  .contact_form {
+    .honeypot {
+    position: absolute;
+    left: -9999px;
+  }
+  .friendly_form {
+    background-color: #eeeee3;
+  }
+
+  label {
+    font-weight: normal;
+  }
+  input:focus, textarea:focus {
+    border: 1px solid #f47402;
+  }
+  input.error {
+    background: #fdf3f3;
+    border: 1px solid #e77777;
+  }
+  .btn-success {
+    background-color: #f47402;
+    border: 0;
+    text-transform: uppercase;
+    &:hover {
+      background-color: #ca6103;
+    }
+  }
+  span.error {
+    color: #e77777;
+  }
+}
+
+  p.required {
+    text-align: right;
+  }
+  p.required span, span.required {
+    color: #f47402;
+  }
+
+}
