@@ -41,7 +41,7 @@ class BaseController < Spree::BaseController
 	def events
 		uk_only!
 		self.title = "Events"
-		@selected_nav = :events
+		@selected_nav = :about
 	end
 
 	def rentals
