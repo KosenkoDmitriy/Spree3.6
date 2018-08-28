@@ -3,14 +3,13 @@
 <% end %>
 
 <% content_for :page_actions do %>
-  <li>
-    <%= button_link_to Spree.t(:new_offer), new_admin_offer_url, :icon => 'icon-plus', :id => 'admin_new_offer' %>
-  </li>
+  <%= button_link_to Spree.t(:new_offer), new_admin_offer_url, icon: 'plus', class: 'btn-success', id: 'admin_new_offer' %>
 <% end %>
 
+<% if @offers.present? && @offers.any? %>
 <%= paginate @offers %>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
@@ -38,4 +37,9 @@
 </table>
 
 <%= paginate @offers %>
-
+<% else %>
+  <div class="alert alert-info no-objects-found">
+    <%= Spree.t(:no_resource_found, resource: plural_resource_name(Offer)) %>
+    <%= link_to Spree.t(:add_one), new_admin_offer_url %>!
+  </div>
+<% end %>
