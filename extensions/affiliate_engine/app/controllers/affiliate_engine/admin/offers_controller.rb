@@ -10,7 +10,11 @@ class AffiliateEngine::Admin::OffersController < Spree::Admin::BaseController
   end
 
   def create
+    @offer = Offer.new#(offer_params)
+    6.times {@offer.offer_images.build}
     @offer = Offer.new(offer_params)
+
+    # debug(offer_params)
     respond_to do |format|
       if @offer.save
         format.html  { redirect_to(admin_offers_url, :notice => 'Offer was successfully created.') }
@@ -27,7 +31,9 @@ class AffiliateEngine::Admin::OffersController < Spree::Admin::BaseController
 
   def update
     @offer = Offer.find(params[:id])
+    # (6 - @offer.offer_images.count).times {@offer.offer_images.build}
 
+    # byebug(@offer)
     respond_to do |format|
       if @offer.update_attributes(offer_params)
         format.html  { redirect_to(admin_offers_url,	:notice => 'Offer was successfully updated.') }
@@ -52,7 +58,6 @@ class AffiliateEngine::Admin::OffersController < Spree::Admin::BaseController
 
   private
   def offer_params
-    params.require(:offer).permit(:slug, :contact_tel, :address, :latitude, :longitude, :postcode, :offer, :title, :location, :contact_email, :enabled, :view_by_appt, :description, :image, :website, :offer_images_attributes)
-    # offer_images :image, :caption
+    params.require(:offer).permit(:slug, :contact_tel, :address, :latitude, :longitude, :postcode, :offer, :title, :location, :contact_email, :enabled, :view_by_appt, :description, :image, :website, offer_images_attributes: [:id, :image, :caption, :_destroy])
   end
 end
