@@ -10,16 +10,12 @@ class AffiliateEngine::Admin::OffersController < Spree::Admin::BaseController
   end
 
   def create
-    @offer = Offer.new#(offer_params)
-    6.times {@offer.offer_images.build}
     @offer = Offer.new(offer_params)
-
-    # debug(offer_params)
     respond_to do |format|
       if @offer.save
-        format.html  { redirect_to(admin_offers_url, :notice => 'Offer was successfully created.') }
+        format.html  { redirect_to(admin_offers_url, notice: 'Offer was successfully created.') }
       else
-        format.html  { render :action => "new" }
+        format.html  { render action: 'new' }
       end
     end
   end
@@ -31,14 +27,11 @@ class AffiliateEngine::Admin::OffersController < Spree::Admin::BaseController
 
   def update
     @offer = Offer.find(params[:id])
-    # (6 - @offer.offer_images.count).times {@offer.offer_images.build}
-
-    # byebug(@offer)
     respond_to do |format|
-      if @offer.update_attributes(offer_params)
-        format.html  { redirect_to(admin_offers_url,	:notice => 'Offer was successfully updated.') }
+      if @offer.update_attributes!(offer_params)
+        format.html  { redirect_to(admin_offers_url,	notice: 'Offer was successfully updated.') }
       else
-        format.html  { render :action => "edit" }
+        format.html  { render action: 'edit' }
       end
     end
   end
@@ -49,9 +42,9 @@ class AffiliateEngine::Admin::OffersController < Spree::Admin::BaseController
 
 		respond_to do |format|
 			if @offer.destroy
-        format.html { redirect_to admin_offers_url, :notice => "Offer was successfully deleted." }
+        format.html { redirect_to admin_offers_url, notice: 'Offer was successfully deleted.' }
 			else
-        format.html { redirect_to admin_offers_url(@offer), :error => "Offer was not deleted." }
+        format.html { redirect_to admin_offers_url(@offer), error: 'Offer was not deleted.' }
 			end
 		end
 	end
