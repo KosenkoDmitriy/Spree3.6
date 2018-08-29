@@ -15,14 +15,13 @@
     <p class="offermention">Mention 'SoulPad' when booking for... <br/><%= @offer.offer %></p>
     <p id="offerdetails"><%= @offer.description.html_safe %></p>
 
-    <div id="imagelist"><div class="row">
+    <div id="imagelist" class="row">
       <% @offer.offer_images.each do |i| %>
         <div class="col-sm-4">
           <%= link_to(image_tag(i.image(:small), alt: i.caption, class: 'photo img-responsive'), i.image(:large), class: 'zoom cboxElement')%>
         </div>
       <% end %>
     </div>
-  </div>
 
     <div id="details">
 
