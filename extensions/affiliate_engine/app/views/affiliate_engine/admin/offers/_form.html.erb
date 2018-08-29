@@ -1,11 +1,10 @@
 <% content_for :page_actions do %>
   <%= button_link_to Spree.t(:back_to_resource_list, resource: plural_resource_name(Offer)), admin_offers_url, icon: 'arrow-left', class: 'btn-success' %>
 <% end %>
+<%= form_for [:admin, @offer], :html => { :multipart => true } do |f| %>
+
 <div class="row">
-  <%= form_for [:admin, @offer], :html => { :multipart => true } do |f| %>
-  <div class="col-xs-12 text-right">
-    <%= f.submit(class: 'btn btn-success') %>
-  </div>
+
   <div class="col-sm-8">
     <%= f.field_container :enabled do %>
       <%= f.label :enabled, "Enabled? " %>
@@ -80,7 +79,11 @@
   </div>
 
   <div class="col-sm-4">
-
+    <div class="text-right">
+      <%= f.submit(class: 'btn btn-success') %>
+      <span class="or"><%= Spree.t(:or) %></span>
+      <%= link_to 'Cancel', admin_offers_url, class: 'btn btn-default' %>
+    </div><br>
        <%= f.fields_for :offer_images do |b| %>
       <div class="panel panel-default">
         <div class="panel-body">
@@ -99,7 +102,7 @@
       <% end %>
     </div>
   </div>
-
+<div class="row">
   <div class="col-xs-12">
     <fieldset class="no-border-top" style="clear:both;">
       <div class="form-buttons filter-actions actions" data-hook="buttons">
@@ -109,5 +112,5 @@
       </div>
     </fieldset>
   </div>
-  <% end %>
 </div>
+<% end %>
