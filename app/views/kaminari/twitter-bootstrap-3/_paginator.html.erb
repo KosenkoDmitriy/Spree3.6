@@ -9,6 +9,7 @@
 <% pagination_class ||= '' %>
 
 <%= paginator.render do %>
+<div class="container-fluid pagination_content">
   <ul class="pagination <%= pagination_class %>">
     <%= first_page_tag unless current_page.first? %>
     <%= prev_page_tag unless current_page.first? %>
@@ -22,4 +23,5 @@
     <%= next_page_tag unless current_page.last? %>
     <%= last_page_tag unless current_page.last? %>
   </ul>
+</div>
 <% end %>

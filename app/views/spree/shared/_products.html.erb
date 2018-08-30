@@ -17,11 +17,7 @@
 </div>
 
 <% if products.respond_to?(:total_pages) %>
-<div class="container-fluid">
-  <div class="row pagination_content">
-    <%= paginate products, theme: 'twitter-bootstrap-3' %>
-  </div>
-</div>
+  <%= paginate products, theme: 'twitter-bootstrap-3' %>
 <% end %>
 
 <% if products.any? %>
@@ -31,7 +27,5 @@
 <% end %>
 
 <% if products.respond_to?(:total_pages) %>
-<div class="pagination_content">
-  <%= paginate products, theme: 'twitter-bootstrap-3' %>
-</div>
+ <%= paginate products, theme: 'twitter-bootstrap-3' %>
 <% end %>

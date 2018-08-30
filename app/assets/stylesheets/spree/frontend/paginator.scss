@@ -1,11 +1,18 @@
 .pagination_content {
   border-top: 1px solid #ebe3d9;
   border-bottom: 1px solid #ebe3d9;
+  margin-bottom: 15px;
+  padding: 0;
 }
 .pagination {
   float: right;
+  margin: 10px 0;
+
   li a {
     border: 0;
+    background-color: #eeeee3;
+    border-radius: 100%;
+    margin-left: 5px;
   }
   li.active a, li a:hover {
     background-color: #f47402;
