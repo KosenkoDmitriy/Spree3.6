@@ -35,7 +35,7 @@
   background-color: #f47402;
   color: #fff;
   text-transform: uppercase;
-  &:hover {
+  &:hover, &:focus {
     color: #fff;
     background-color: #ca6103;
   }
