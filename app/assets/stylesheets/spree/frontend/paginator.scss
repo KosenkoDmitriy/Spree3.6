@@ -1,0 +1,26 @@
+.pagination_content {
+  border-top: 1px solid #ebe3d9;
+  border-bottom: 1px solid #ebe3d9;
+}
+.pagination {
+  float: right;
+  li a {
+    border: 0;
+  }
+  li.active a, li a:hover {
+    background-color: #f47402;
+    color: #fff;
+    border: 0;
+    border-radius: 100%;
+  }
+  li.active a:hover {
+    background-color: #a85001;
+    cursor: pointer;
+  }
+  li.first, li.prev, li.next_page, li.last {
+    a {
+      border-radius: 10px;
+    }
+  }
+
+}

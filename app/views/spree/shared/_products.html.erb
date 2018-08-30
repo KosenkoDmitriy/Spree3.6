@@ -16,6 +16,14 @@
   <% end %>
 </div>
 
+<% if products.respond_to?(:total_pages) %>
+<div class="container-fluid">
+  <div class="row pagination_content">
+    <%= paginate products, theme: 'twitter-bootstrap-3' %>
+  </div>
+</div>
+<% end %>
+
 <% if products.any? %>
   <div id="products" class="row" data-hook>
     <%= render partial: 'spree/products/product', collection: products, locals: { taxon: @taxon } %>
@@ -23,5 +31,7 @@
 <% end %>
 
 <% if products.respond_to?(:total_pages) %>
+<div class="pagination_content">
   <%= paginate products, theme: 'twitter-bootstrap-3' %>
+</div>
 <% end %>

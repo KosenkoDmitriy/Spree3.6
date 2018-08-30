@@ -40,27 +40,9 @@ h2, h3 {
       font-size: 0.8em
     }
   }
-  .pagination_content {
-    border-top: 1px solid #ebe3d9;
-    border-bottom: 1px solid #ebe3d9;
 
-    .pagination {
-      float: right;
-      a {
-        border: 0;
-      }
-      li.active > a, a:hover {
-        // background: url(/assets/site/pagination_background.png) no-repeat;
-        background-color: #f47402;
-        color: #fff;
-        border: 0;
-        border-radius: 100%;
-      }
-      li.last a {
-        border-radius: 10px;
-      }
-    }
-  }
+  @import "paginator";
+
 }
 #about {
 
