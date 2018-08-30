@@ -1,14 +1,17 @@
 class OfferImage < ActiveRecord::Base
   belongs_to :offer
+
+  # start local image settings
   has_attached_file :image,
                     styles: { thumb: "100x100#", small: "200x200#", large: "650x650#" },
                     default_style: :main,
-                    # default_url: "/spree/features/:style/missing.png",
                     default_url: "/assets/:style/missing.png",
                     url: "/spree/offers/:id/:style/:basename.:extension",
                     path: ":rails_root/public/spree/offers/:id/:style/:basename.:extension"
-
   do_not_validate_attachment_file_type :image
+  # end local image settings
+
+  # start AWS image settings
   # has_attached_file :image,
                     # :styles => { :thumb => "100x100#",
                     #              :small => "200x200#",
@@ -32,6 +35,7 @@ class OfferImage < ActiveRecord::Base
 
   # validates_presence_of :image
   # validates_attachment_size :image, :less_than => 1.megabytes
+  # end AWS image settings
 
   def upload_from_url(url)
     self.image = URI.parse(url)
