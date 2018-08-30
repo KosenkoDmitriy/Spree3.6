@@ -22,17 +22,22 @@
   }
   li a {
     color: #585652;
+    background-color: #d2d1bb;
+    &:hover {
+      background-color: #bbbaa1;
+    }
   }
   li a.sub-menu {
-    background-image: url(/assets/site/cat_menu_green_down.png);
     background-repeat: no-repeat;
     background-position: 97% 11px;
-    background-color: #d2d1bb;
+    background-color: #bbbaa1;
+    background-image: url($cat_menu_uncollapsed);
+    &.collapsed {
+      background-color: #d2d1bb;
+      background-image: url($cat_menu_collapsed);
+    }
   }
-  li a.current {
-    background-image: url(/assets/site/cat_menu_green_up.png);
-  }
-  li a.parent:hover, li a.parent.current, li.current a {
+  li.current a.sub-menu {
     background-color: #bbbaa1;
   }
   li#sale a {
@@ -46,7 +51,6 @@
     list-style: none;
     background-color: #edecda;
     padding: 0;
-    display: none;
     li {
       &.current_sub a {
         font-weight: bold;

@@ -1173,7 +1173,7 @@ table th {
 
 #page_nav li {
     list-style: none;
-    margin-bottom: 1px
+    margin-top: 1px;
 }
 
 #page_nav li.title {
