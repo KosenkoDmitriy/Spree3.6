@@ -30,4 +30,18 @@
   }
 }
 
+.btn-orange {
+  border: 0;
+  background-color: #f47402;
+  color: #fff;
+  text-transform: uppercase;
+  &:hover {
+    background-color: #ca6103;
+  }
+}
+
+.cart-item-price, .cart-item-total {
+  color: #585652;
+}
+
 @import "paginator";
