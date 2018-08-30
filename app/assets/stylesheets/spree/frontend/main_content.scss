@@ -5,6 +5,17 @@
     padding: 8px 10px;
     border: unset;
   }
+
+  .cart-item-price, .cart-item-total {
+    color: #585652;
+  }
+
+  .alert-danger, .alert-danger {
+    background-color: #c22;
+    color: #fff;
+    padding: 6px 10px;
+  }
+  
 }
 #content {
 h1 {
