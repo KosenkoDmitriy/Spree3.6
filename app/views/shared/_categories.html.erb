@@ -7,10 +7,15 @@
 	<li class="title">Shop by...</li>
     <% taxonomy.root.children.each do |taxon| %>
       <li <%= "class=current title" if @taxon and ([@taxon] + @taxon.ancestors).include?(taxon) %>>
-        <a href=" <%=taxon.children.empty? ? seo_url(taxon) : "#collapseTaxon#{taxon.id}" %>" aria-controls="collapseTaxon<%= taxon.id %>" role="button" data-toggle="collapse" aria-expanded="false"
-          class="collapsed <%=taxon.children.empty? ? "parent" : "parent sub-menu" %>">
-          <%= taxon.name %>
-        </a>
+        <% if taxon.children.empty? %>
+          <%= link_to taxon.name, seo_url(taxon), class: "parent" %>
+        <% else %>
+          <a href="#collapseTaxon<%= taxon.id %>" aria-controls="collapseTaxon<%= taxon.id %>" role="button" data-toggle="collapse" aria-expanded="false"
+            class="collapsed parent sub-menu">
+            <%= taxon.name %>
+          </a>
+        <% end %>
+
         <% unless taxon.children.empty? %>
         <div id="collapseTaxon<%= taxon.id %>" class="collapse <%= "in" if @taxon and ([@taxon] + @taxon.ancestors).include?(taxon) %>">
           <ul class="shop_nav_sub">
