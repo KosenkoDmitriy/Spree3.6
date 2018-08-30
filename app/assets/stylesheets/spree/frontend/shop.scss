@@ -7,6 +7,9 @@
 @import "shop_sidebar";
 
 .product-list-item {
+  img {
+    display: unset;
+  }
   font-size: 0.9em;
   .product-body {
     height: 255px;
@@ -27,6 +30,7 @@
   }
   .product-footer {
     padding: 5px;
+    // background-color: transparent;
   }
 }
 
