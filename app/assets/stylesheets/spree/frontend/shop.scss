@@ -45,7 +45,10 @@
     background-color: #ece6dd;
     color: #88857f;
     font-weight: bold;
-    font-size: 1.2em;
+    // font-size: 1.2em;
+    margin-right: 10px;
+    border-color: #ece6dd;
+    border-bottom: 0;
   }
   .nav li.active a, .nav > li a:hover {
     background-color: unset;
