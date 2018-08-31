@@ -1,0 +1,22 @@
+<% if !@product.taxons.blank? %>
+  <%
+      related_products = @product.taxons.first.products.active.related_to(@product)
+    %>
+  <% unless related_products.empty? %>
+    <div id="taxon_crumbs">
+      <h3>Related Products</h3>
+     <% related_products.each do |product| %>
+      <%= render partial: 'spree/products/product', locals: { taxon: @product.taxons.first,  product: product } %>
+      <%# next !Spree::Config[:show_zero_stock_products] || !product.has_stock? %>
+      <!-- <li id="product_<%= product.id %>" class="item">
+      <%= link_to product_image(product), product, :class => "photo" %>
+      <h3><%= link_to raw(product.name), product, :class => 'fn url' %></h3>
+      <%= link_to "#{product_price_starts_at(product)}", product, :class => "price" %>
+      <div class="description"><%= truncate_html raw(product.description), :length => 90 %></div>
+      <%= link_to "Product details »", product, :class => "more" %> -->
+      <!-- </li> -->
+    <% end %>
+
+    </div>
+  <% end %>
+<% end %>
