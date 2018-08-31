@@ -34,6 +34,12 @@
     // background-color: transparent;
   }
 }
+#product-variants {
+  .list-group {
+    list-style: none;
+    color: #f47402;
+  }
+}
 #product-images #main-image {
   .panel-body {
     padding: 0px;
