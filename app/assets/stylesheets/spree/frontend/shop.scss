@@ -11,6 +11,7 @@
     display: unset;
   }
   font-size: 0.9em;
+
   .product-body {
     min-height: 320px;
     padding: 5px;
@@ -33,7 +34,11 @@
     // background-color: transparent;
   }
 }
-
+#product-images #main-image {
+  .panel-body {
+    padding: 0px;
+  }
+}
 .btn-orange {
   border: 0;
   background-color: #f47402;
@@ -44,5 +49,7 @@
     background-color: #ca6103;
   }
 }
+
+
 @import "checkout";
 @import "paginator";
