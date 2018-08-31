@@ -11,10 +11,25 @@
       <div class="col-md-6 col-sm-6" data-hook="product_left_part">
         <div data-hook="product_left_part_wrap">
           <div id="product-description" data-hook="product_description">
-            <h1 class="product-title" itemprop="name"><%= @product.name %></h1>
+            <h1 class="product-title" itemprop="name"><%= @product.try(:name) %></h1>
 
-            <div class="well" itemprop="description" data-hook="description">
-              <%= product_description(@product) %>
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active"><a href="#product_description" aria-controls="product_description" role="tab" data-toggle="tab">Description</a></li>
+              <li role="presentation"><a href="#description_details" aria-controls="description_details" role="tab" data-toggle="tab">Details</a></li>
+              <li role="presentation"><a href="#description_technique" aria-controls="description_technique" role="tab" data-toggle="tab">Technical</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active well" id="product_description" itemprop="description" data-hook="description">
+                <%= product_description(@product) %>
+              </div>
+              <div role="tabpanel" class="tab-pane well" id="description_technique" itemprop="description_technique" data-hook="description_technique">
+                <%= @product.try(:description_technique).try(:html_safe) %>
+              </div>
+              <div role="tabpanel" class="tab-pane well" id="description_details" itemprop="description_details" data-hook="description_details">
+                <%= @product.try(:description_details).try(:html_safe)  %>
+              </div>
             </div>
 
           </div>
@@ -57,6 +72,6 @@
   <% end %>
   </div>
   <div class="col-xs-12">
-    <%= render partial: 'taxons_related' %>
+    <%#= render partial: 'taxons_related' #%>
   </div>
 </div>

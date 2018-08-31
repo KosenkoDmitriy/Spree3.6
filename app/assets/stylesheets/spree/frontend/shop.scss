@@ -40,6 +40,18 @@
     color: #f47402;
   }
 }
+#product-description {
+  .nav > li a {
+    background-color: #ece6dd;
+    color: #88857f;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  .nav li.active a, .nav > li a:hover {
+    background-color: unset;
+    color: #585652
+  }
+}
 #product-images {
   #main-image {
     .panel-body {
