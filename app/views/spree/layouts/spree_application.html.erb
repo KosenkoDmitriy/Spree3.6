@@ -40,7 +40,7 @@
 
           <%#= render partial: 'spree/shared/sidebar' if content_for? :sidebar #%>
           <div class="col-sm-3">
-            <%= render partial: 'shared/categories' if content_for? :sidebar %>
+            <%= render partial: 'base/shared/categories' if content_for? :sidebar %>
           </div>
 
           <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-9" %>" data-hook>
