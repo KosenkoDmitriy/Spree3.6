@@ -40,9 +40,15 @@
     color: #f47402;
   }
 }
-#product-images #main-image {
-  .panel-body {
-    padding: 0px;
+#product-images {
+  #main-image {
+    .panel-body {
+      border: 5px solid #dbdac4;
+      padding: 0px;
+    }
+  }
+  .thumbnail {
+    border: 5px solid #dbdac4;
   }
 }
 .btn-orange {
