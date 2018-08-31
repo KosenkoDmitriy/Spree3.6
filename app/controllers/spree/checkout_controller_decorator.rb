@@ -1,6 +1,6 @@
 Spree::CheckoutController.class_eval do
 
-	before_action :check_for_terms_agreement, :only => [:update]
+	# before_action :check_for_terms_agreement, :only => [:update]
 
 	def check_for_terms_agreement
 		@order.agreed_to_terms = params[:order][:agreed_to_terms] if params[:order] && params[:order].has_key?(:agreed_to_terms)
