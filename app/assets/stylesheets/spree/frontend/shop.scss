@@ -41,6 +41,17 @@
   }
 }
 #product-description {
+  .tab-content > .tab-pane {
+    background: unset;
+  }
+  .well {
+    margin-top: -1px;
+    padding: 15px 0;
+    border: 0px;
+    border-top: 1px solid #ece6dd;
+    -webkit-box-shadow: unset;
+    box-shadow: unset;
+  }
   .nav > li a {
     background-color: #ece6dd;
     color: #88857f;
@@ -51,7 +62,7 @@
     border-bottom: 0;
   }
   .nav li.active a, .nav > li a:hover {
-    background-color: unset;
+    background-color: #fff;
     color: #585652
   }
 }
