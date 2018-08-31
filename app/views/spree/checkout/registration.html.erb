@@ -2,13 +2,10 @@
 
 <h1><%= Spree.t(:checkout) %></h1>
 
-<%# render partial: 'spree/shared/login' #%>
-<%#= render template: 'spree/user_sessions/new' #%>
-
 <div id="registration" class="row" data-hook>
 
   <%# render partial: 'spree/shared/login' #%>
-    <%= render template: 'spree/user_sessions/new' %>
+  <%= render template: 'spree/user_sessions/new' %>
 
   <div id="account">
     <%= render :partial => 'new_user' %>
