@@ -1,8 +1,8 @@
 Spree::Product.class_eval do
 
-	attr_accessible :main_price, :sale_price
+	# attr_accessible :main_price, :sale_price
 
-	delegate_belongs_to :master, :main_price, :sale_price, :is_on_sale?
+	# delegate_belongs_to :master, :main_price, :sale_price, :is_on_sale?
 
 	before_validation do
   		self.price = if self.sale_price.blank?
@@ -23,6 +23,7 @@ Spree::Product.class_eval do
 	def cheapest_price
 		variants_including_master.map(&:price).min
 	end
+
 	def cheapest_main_price
 		variants_including_master.map(&:main_price).min
 	end

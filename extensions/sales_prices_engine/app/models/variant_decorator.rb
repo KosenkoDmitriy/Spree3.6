@@ -1,6 +1,6 @@
 Spree::Variant.class_eval do
 
-	attr_accessible :main_price, :sale_price
+	# attr_accessible :main_price, :sale_price
 
 	before_validation do
 		self.price = if self.sale_price.blank?
