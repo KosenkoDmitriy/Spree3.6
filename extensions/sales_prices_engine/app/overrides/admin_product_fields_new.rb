@@ -1,11 +1,7 @@
 Deface::Override.new(virtual_path: "spree/admin/products/new",
-          #            :replace => "erb[loud]:contains('f.field_container :price do')",
-					# :closing_selector => "erb[silent]:contains('end')",
-          #            :name => "sales_price_new_product") do
-# <<TXT
-# TXT
-# end
-insert_after: "erb[loud]:contains('text_field :price')",
+name: "sales_price_new_product",
+# insert_after: "erb[loud]:contains('text_field :price')",
+replace: "[data-hook='new_product_price']",
 text: "
 <%= f.field_container :main_price do %>
 	<%= f.label :main_price, Spree.t('main_price')%> <span class='required'>*</span><br />
