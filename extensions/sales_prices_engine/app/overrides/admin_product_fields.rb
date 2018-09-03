@@ -1,6 +1,7 @@
 Deface::Override.new(virtual_path: "spree/admin/products/_form",
 name: "sales_price",
-insert_after: "erb[loud]:contains('f.field_container :price')",
+# insert_after: "erb[loud]:contains('f.field_container :price')",
+insert_before: 'div[data-hook=admin_product_form_price]',
 # replace: "[data-hook='admin_product_form_price']",
 text: "
 <%= f.field_container :main_price do %>
