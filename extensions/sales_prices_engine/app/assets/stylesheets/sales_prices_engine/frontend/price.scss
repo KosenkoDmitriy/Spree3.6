@@ -3,15 +3,21 @@
 }
 .prices, #cart-form {
   background-color: #f5f0e9;
-  background-color: wheat;
   padding: 10px;
   border-top: 1px solid #ffffff;
 }
 .prices {
   font-weight: bold;
   font-size: 1.3em;
-  span.price {
+  .price {
     color: #585652;
+  }
+  .sale {
+    color: #d33;
+  }
+  .strike {
+    text-decoration: line-through;
+    font-weight: normal;
   }
 }
 h4.product-section-title {
