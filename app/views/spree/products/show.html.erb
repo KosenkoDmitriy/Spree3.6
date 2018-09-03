@@ -46,7 +46,9 @@
       <div class="col-md-6 col-sm-5" data-hook="product_right_part">
         <div data-hook="product_right_part_wrap">
           <div class="prices">
+            <% if @product.is_on_sale? %>
             <span class="price"><%= product_price_starts_at(@product) %></span>
+            <% end %>
           </div>
 
           <div id="cart-form" data-hook="cart_form">
