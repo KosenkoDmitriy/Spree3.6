@@ -18,7 +18,7 @@ Spree::ProductsHelper.class_eval do
 	end
 
   def price_with_tax_for_product price, product
-    #Spree::TaxRate.where(tax_category_id: v.tax_category_id, zone_id: Spree::Zone.default_tax.id).first.amount.to_f + 1) * v.price
+    # Spree::TaxRate.where(tax_category_id: v.tax_category_id, zone_id: Spree::Zone.default_tax.id).first.amount.to_f + 1) * v.price
     (Spree::TaxRate.where(tax_category_id: product.tax_category_id, zone_id: Spree::Zone.default_tax || Spree::Zone.first).first.try(:amount).try(:to_f) || 0 + 1) * price unless price.nil?
   end
 

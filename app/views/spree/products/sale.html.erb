@@ -1,0 +1,10 @@
+<%= render :partial => "shared/breadcrumb" %>
+<div class="row">
+	<div class="col-sm-3">
+		<%= render :partial => "shared/categories" %>
+	</div>
+
+	<div class="col-sm-9 products_index">
+		<%= render "/spree/shared/products", {:products => @products} %>
+	</div>
+</div>

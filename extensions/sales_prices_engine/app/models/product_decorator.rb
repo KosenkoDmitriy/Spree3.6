@@ -1,8 +1,10 @@
 Spree::Product.class_eval do
 
 	# attr_accessible :main_price, :sale_price
-
 	# delegate_belongs_to :master, :main_price, :sale_price, :is_on_sale?
+
+	belongs_to :spree_variant #Spree::Variant
+	delegate :main_price, :sale_price, :is_on_sale?, to: :spree_variant #Spree::Variant
 
 	before_validation do
   		self.price = if self.sale_price.blank?
