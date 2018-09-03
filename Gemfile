@@ -105,7 +105,8 @@ gem 'affiliate_engine', require: 'affiliate_engine', path: 'extensions/affiliate
 # gem 'spree_last_address', :require => "spree_last_address", :path => "extensions/spree-last-address"
 # gem 'spree_last_address', :require => "spree_last_address", :path => "extensions/spree_last_address" # git://github.com/TylerRick/spree_last_address.git
 
-gem 'sales_prices_engine', require: 'sales_prices_engine', path: 'extensions/sales_prices_engine'
+#gem 'sales_prices_engine', require: 'sales_prices_engine', path: 'extensions/sales_prices_engine'
+gem 'spree_sales_prices_engine', require: 'spree_sales_prices_engine', path: 'extensions/spree_sales_prices_engine'
 
 # gem 'spree_static_content', github: 'spree/spree_static_content', branch: '2-0-stable'
 # gem 'spree_static_content', github: 'spree-contrib/spree_static_content'#, branch: '3-0-stable' # for spree 3.0 and 2.x only

@@ -30,10 +30,12 @@ PATH
       spree_core (>= 0.40.2)
 
 PATH
-  remote: extensions/sales_prices_engine
+  remote: extensions/spree_sales_prices_engine
   specs:
-    sales_prices_engine (0.50.2)
-      spree_core (>= 0.50.2)
+    spree_sales_prices_engine (0.0.1.alpha)
+      spree_backend (>= 3.1.0, < 4.0)
+      spree_core (>= 3.1.0, < 4.0)
+      spree_extension
 
 PATH
   remote: extensions/testimonials_engine
@@ -618,12 +620,12 @@ DEPENDENCIES
   news_engine!
   puma (~> 3.11)
   rails (~> 5.2.0)
-  sales_prices_engine!
   sass-rails (~> 5.0)
   selenium-webdriver
   spree (~> 3.6.1)
   spree_auth_devise (~> 3.3)
   spree_gateway (~> 3.3)
+  spree_sales_prices_engine!
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3

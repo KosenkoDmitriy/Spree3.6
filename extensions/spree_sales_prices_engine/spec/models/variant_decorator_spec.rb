@@ -23,5 +23,16 @@ describe Spree::Variant do
       expect(result.amount.to_f).to eq(expected.amount.to_f)
       expect(result.currency).to eq(expected.currency)
     end
+
+    it "returns the main price if sale price is empty" do
+      variant = create(:variant, price: 15.00)
+      expected = Spree::Price.new(variant_id: variant.id, currency: "USD", amount: variant.main_price)
+
+      result = variant.price_in("USD")
+
+      expect(result.variant_id).to eq(expected.variant_id)
+      expect(result.amount.to_f).to eq(expected.amount.to_f)
+      expect(result.currency).to eq(expected.currency)
+    end
   end
 end
