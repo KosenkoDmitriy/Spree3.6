@@ -6,7 +6,7 @@ Spree::Product.class_eval do
 	belongs_to :spree_variant
 	# delegate :main_price, :main_price=, :sale_price, :sale_price=, :is_on_sale?, to: :spree_variant, allow_nil: true
 
-	delegate :main_price, :main_price=, :sale_price, :sale_price=, to: :master#, allow_nil: true
+	delegate :main_price, :main_price=, :sale_price, :sale_price=, to: :master, allow_nil: true
 
 	before_validation do
 		self.price = if self.sale_price.blank?
