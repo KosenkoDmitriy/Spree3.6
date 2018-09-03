@@ -2,6 +2,7 @@ require 'spree_core'
 
 module SalesPricesEngine
   class Engine < Rails::Engine
+    engine_name "sales_prices_engine"
 
     config.autoload_paths += %W(#{config.root}/lib)
 
