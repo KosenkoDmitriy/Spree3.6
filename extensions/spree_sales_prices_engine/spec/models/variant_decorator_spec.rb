@@ -25,9 +25,6 @@ describe Spree::Variant do
       expect(result.variant_id).to eq(expected.variant_id)
       expect(result.amount.to_f).to eq(expected.amount.to_f)
       expect(result.currency).to eq(expected.currency)
-
-      expect(variant.sale_price).to eq(0.00)
-      expect(variant.is_on_sale?).to eq(true)
     end
 
     it "returns the main price if sale price is blank" do
@@ -82,6 +79,9 @@ describe Spree::Variant do
 
     it "it is not on sale ?" do
       variant = create(:variant, sale_price: '')
+      expect(variant.is_on_sale?).to eq(false)
+      variant = create(:variant, sale_price: nil)
+      expect(variant.is_on_sale?).to eq(false)
       expect(variant.is_on_sale?).to eq(false)
     end
   end

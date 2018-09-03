@@ -6,7 +6,7 @@ Spree::Variant.class_eval do
 
 	before_validation do
 		self.price = if self.sale_price.blank?
-			self.main_price if self.main_price.present?
+			self.main_price = self.main_price.present? ? self.main_price : 0
 		else
 			self.sale_price
     end
