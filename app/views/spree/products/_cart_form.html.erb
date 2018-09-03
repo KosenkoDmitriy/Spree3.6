@@ -4,9 +4,9 @@
 
       <div id="product-variants" class="col-md-8">
 
-        <h3 class="product-section-title">
+        <h4 class="product-section-title">
           <%= Spree.t(:variants) %>
-        </h3>
+        </h4>
 
         <ul class="list-group">
           <% @product.variants_and_option_values(current_currency).each_with_index do |variant, index| %>

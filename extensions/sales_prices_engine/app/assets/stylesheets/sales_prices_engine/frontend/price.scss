@@ -1,14 +1,19 @@
-a.price {
-  color: #585652;
-  font-weight: bold;
-  font-size: 1.3em;
-}
-
 #product-variants {
   border-bottom: 1px solid #ffffff;
 }
 .prices, #cart-form {
   background-color: #f5f0e9;
-  padding: 15px;
+  background-color: wheat;
+  padding: 10px;
   border-top: 1px solid #ffffff;
+}
+.prices {
+  font-weight: bold;
+  font-size: 1.3em;
+  span.price {
+    color: #585652;
+  }
+}
+h4.product-section-title {
+  margin-top: 0px;
 }

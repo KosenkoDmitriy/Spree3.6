@@ -46,7 +46,7 @@
       <div class="col-md-6 col-sm-5" data-hook="product_right_part">
         <div data-hook="product_right_part_wrap">
           <div class="prices">
-            <%= link_to "#{product_price_starts_at(@product)}", @product, class: "price from" %>
+            <span class="price"><%= product_price_starts_at(@product) %></span>
           </div>
 
           <div id="cart-form" data-hook="cart_form">
