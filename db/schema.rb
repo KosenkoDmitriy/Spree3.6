@@ -1304,8 +1304,8 @@ ActiveRecord::Schema.define(version: 2018_08_31_160929) do
     t.datetime "updated_at", null: false
     t.datetime "discontinue_on"
     t.datetime "created_at", null: false
-    t.float "main_price"
-    t.float "sale_price"
+    t.float "main_price", default: 0
+    t.float "sale_price", default: 0
     t.index ["deleted_at"], name: "index_spree_variants_on_deleted_at"
     t.index ["discontinue_on"], name: "index_spree_variants_on_discontinue_on"
     t.index ["is_master"], name: "index_spree_variants_on_is_master"
