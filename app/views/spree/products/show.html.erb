@@ -47,7 +47,28 @@
         <div data-hook="product_right_part_wrap">
           <div class="prices">
             <% if @product.is_on_sale? %>
-            <span class="price"><%= product_price_starts_at(@product) %></span>
+              <!-- <span class="price sale"><%= product_price_starts_at(@product) %></span> -->
+              <% if !@product.sale_price.nil? %>
+                <strong class="price sale">
+                  <span class=""><%= product_price_starts_at(@product) %>
+                  <span class="strike"><%= @product.try(:cheapest_main_price) %></span>
+                  <%#= content_tag(:span, Spree::Money.new(price_with_tax_for_product(@product.cheapest_main_price, @product), { :currency => current_currency }), :class => "strike") #%>
+                </strong>
+              <% else %>
+              <span class="price sale"><%= product_price_starts_at(@product) %></span>
+                <!-- <% @product.variants.each do |variant| %>
+                  <% if variant.sale_price %>
+                    <strong class="price sale">
+                      <%= content_tag(:span, product_price_starts_at(@product), :class => "strike") %>
+                      <%= content_tag(:span, Spree::Money.new(price_with_tax_for_product(variant.sale_price, variant), { :currency => current_currency })) %>
+                    </strong>
+                  <% end %>
+                <% end %> -->
+              <% end %>
+            <% else %>
+              <span class="price"><%= product_price_starts_at(@product) %></span>
+              <span class="price strike">
+              </span>
             <% end %>
           </div>
 

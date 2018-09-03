@@ -1,6 +1,6 @@
 Deface::Override.new(virtual_path: 'spree/admin/variants/_form',
 name: 'sales_price',
-insert_after: 'div[data-hook=price]',
+insert_before: 'div[data-hook=price]',
 # replace: 'div[data-hook=price]',
 text: "
 <div class='form-group' data-hook='main_price'>
