@@ -4,7 +4,7 @@ insert_before: 'div[data-hook=price]',
 # replace: 'div[data-hook=price]',
 text: "
 <div class='form-group' data-hook='main_price'>
-	<%= f.label :main_price, Spree.t(:main_price) %>
+	<%= f.label :main_price, Spree.t(:main_price) %> <span class='required'>*</span>
 	<%= f.text_field :main_price, value: number_with_precision(@variant.main_price, unit: '', precision: 2), class: 'form-control' %>
 </div>
 <div class='form-group' data-hook='sale_price'>
