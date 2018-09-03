@@ -2,5 +2,13 @@ a.price {
   color: #585652;
   font-weight: bold;
   font-size: 1.3em;
+}
+
+#product-variants {
+  border-bottom: 1px solid #ffffff;
+}
+.prices, #cart-form {
+  background-color: #f5f0e9;
   padding: 15px;
+  border-top: 1px solid #ffffff;
 }

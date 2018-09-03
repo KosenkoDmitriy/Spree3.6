@@ -1,10 +1,12 @@
 <%= form_for :order, url: populate_orders_path do |f| %>
   <div class="row" id="inside-product-cart-form" data-hook="inside_product_cart_form" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
     <% if @product.variants_and_option_values(current_currency).any? %>
-      <%= link_to "#{product_price_starts_at(@product)}", @product, class: "price" %>
 
       <div id="product-variants" class="col-md-8">
-        <h3 class="product-section-title"><%= Spree.t(:variants) %></h3>
+
+        <h3 class="product-section-title">
+          <%= Spree.t(:variants) %>
+        </h3>
 
         <ul class="list-group">
           <% @product.variants_and_option_values(current_currency).each_with_index do |variant, index| %>
