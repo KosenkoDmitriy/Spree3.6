@@ -21,7 +21,9 @@
                 </span>
                 <% if variant.is_on_sale? %>
                   <span class="strike"><%= Spree::Money.new price_with_tax_for_product(variant.main_price, variant.product), { :currency => current_currency } %></span>
-                  <span class="sale"><%= Spree::Money.new price_with_tax_for_product(variant.sale_price, variant.product), { :currency => current_currency } %></span>
+                  <strong>
+                    <span class="sale"><%= Spree::Money.new price_with_tax_for_product(variant.sale_price, variant.product), { :currency => current_currency } %></span>
+                  </strong>
                 <% else %>
                   <span class=""><%= Spree::Money.new price_with_tax_for_product(variant.price, variant.product), { :currency => current_currency } %></span>
                 <% end %>

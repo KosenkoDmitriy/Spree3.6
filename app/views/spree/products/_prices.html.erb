@@ -3,26 +3,18 @@
 </div> -->
 <div class="prices">
   <% if @product.is_on_sale? %>
-    <% if !@product.sale_price.nil? %>
+    <% if @product.sale_price.present? %>
       <strong class="price sale">
         <span class=""><%= product_price_starts_at(@product) %>
-        <!-- <span class="strike"><%= @product.try(:cheapest_main_price) %></span> -->
-        <span class="strike"><%=Spree::Money.new(price_with_tax_for_product(@product.cheapest_main_price, @product), { currency: current_currency }) %></p>
+        <span class="strike"><%= Spree::Money.new(price_with_tax_for_product(@product.max_price, @product), { currency: current_currency }) %></p>
       </strong>
     <% else %>
-    <span class="price sale"><%= product_price_starts_at(@product) %></span>
-      <% @product.variants.each do |variant| %>
-        <% if variant.sale_price %>
-          <strong class="price sale">
-            <%= content_tag(:span, product_price_starts_at(@product), :class => "strike") %>
-            <%= content_tag(:span, Spree::Money.new(price_with_tax_for_product(variant.sale_price, variant), { :currency => current_currency })) %>
-          </strong>
-        <% end %>
-      <% end %>
+      <strong class="price sale">
+        <span class=""><%= product_price_starts_at(@product) %>
+        <span class="strike"><%= Spree::Money.new(price_with_tax_for_product(@product.max_main_price, @product), { currency: current_currency }) %></p>
+      </strong>
     <% end %>
   <% else %>
     <span class="price"><%= product_price_starts_at(@product) %></span>
-    <span class="price strike">
-    </span>
   <% end %>
 </div>

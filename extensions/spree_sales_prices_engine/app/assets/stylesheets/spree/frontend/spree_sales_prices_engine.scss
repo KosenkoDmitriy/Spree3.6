@@ -4,6 +4,9 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
 */
 #product-variants {
   border-bottom: 1px solid #ffffff;
+  ul.list-group li label {
+    font-weight: normal;
+  }
 }
 div.prices, #cart-form {
   background-color: #f5f0e9;

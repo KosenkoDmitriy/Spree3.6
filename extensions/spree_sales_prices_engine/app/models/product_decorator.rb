@@ -19,4 +19,12 @@ Spree::Product.class_eval do
 	def cheapest_main_price
 		variants_including_master.map(&:main_price).min
 	end
+
+	def max_price
+		variants_including_master.map(&:price).max
+	end
+
+	def max_main_price
+		variants_including_master.map(&:main_price).max
+	end
 end
