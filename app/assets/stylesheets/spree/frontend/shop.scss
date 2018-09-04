@@ -72,9 +72,23 @@
       border: 5px solid #dbdac4;
       padding: 0px;
     }
+    cursor: pointer;
   }
   .thumbnail {
     border: 5px solid #dbdac4;
+  }
+  #imgModal {
+    .modal-content {
+      border: 5px solid #dbdac4;
+    }
+    .modal-header {
+      button.close {
+        opacity: 0.7;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
   }
 }
 .btn-orange {
