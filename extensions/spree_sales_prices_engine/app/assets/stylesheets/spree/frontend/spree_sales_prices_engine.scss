@@ -5,24 +5,25 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
 #product-variants {
   border-bottom: 1px solid #ffffff;
 }
-.prices, #cart-form {
+div.prices, #cart-form {
   background-color: #f5f0e9;
+  background-color: wheat;
   padding: 10px;
   border-top: 1px solid #ffffff;
 }
 .prices {
   font-weight: bold;
   font-size: 1.3em;
-  .price {
-    color: #585652;
-  }
-  .sale {
-    color: #d33;
-  }
-  .strike {
-    text-decoration: line-through;
-    font-weight: normal;
-  }
+}
+.price {
+  color: #585652;
+}
+.sale {
+  color: #d33;
+}
+.strike {
+  text-decoration: line-through;
+  font-weight: normal;
 }
 h4.product-section-title {
   margin-top: 0px;

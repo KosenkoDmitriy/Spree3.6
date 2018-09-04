@@ -1,8 +1,7 @@
 Spree::Product.class_eval do
 
-	belongs_to :spree_variant
+	# belongs_to :spree_variant
 	# delegate :main_price, :sale_price, :is_on_sale?, to: :spree_variant, allow_nil: true
-
 	delegate :main_price, :sale_price, :main_price=, :sale_price=, :is_on_sale?, to: :master, allow_nil: true
 
 	def self.sales
