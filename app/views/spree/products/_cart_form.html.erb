@@ -19,9 +19,13 @@
                 <span class="variant-description">
                   <%= variant_options variant %>
                 </span>
-                <% if variant_price variant %>
-                  <span class="price diff"><%= variant_price variant %></span>
+                <% if variant.is_on_sale? %>
+                  <span class="strike"><%= Spree::Money.new price_with_tax_for_product(variant.main_price, variant.product), { :currency => current_currency } %></span>
+                  <span class="sale"><%= Spree::Money.new price_with_tax_for_product(variant.sale_price, variant.product), { :currency => current_currency } %></span>
+                <% else %>
+                  <span class=""><%= Spree::Money.new price_with_tax_for_product(variant.price, variant.product), { :currency => current_currency } %></span>
                 <% end %>
+
                 <% unless variant.can_supply? %>
                   <span class="out-of-stock"><%= Spree.t(:out_of_stock) %></span>
                 <% end %>
@@ -37,13 +41,13 @@
     <% if @product.price_in(current_currency) && !@product.price.nil? %>
       <div data-hook="product_price" class="col-md-8">
         <div id="product-price">
-          <h6 class="product-section-title"><%= Spree.t(:price) %></h6>
+          <!-- <h6 class="product-section-title"><%= Spree.t(:price) %></h6>
           <div>
             <span class="lead price selling" itemprop="price" content="<%= @product.price_in(current_currency).amount.to_d %>">
               <%= display_price(@product) %>
             </span>
             <span itemprop="priceCurrency" content="<%= current_currency %>"></span>
-          </div>
+          </div> -->
 
           <% if @product.master.can_supply? %>
             <link itemprop="availability" href="https://schema.org/InStock" />
