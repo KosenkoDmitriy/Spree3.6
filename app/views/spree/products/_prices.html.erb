@@ -3,13 +3,13 @@
   <% if @product.is_on_sale? %>
     <% if @product.sale_price.present? %>
       <strong class="price sale">
-        <span class=""><%= product_price_starts_at(@product) %>
-        <span class="strike"><%= Spree::Money.new(price_with_tax_for_product(@product.max_price, @product), { currency: current_currency }) %></p>
+        <span class=""><%= product_price_starts_at(@product) %></span>
+        <span class="strike"><%= Spree::Money.new(price_with_tax_for_product(@product.max_price, @product), { currency: current_currency }) %></span>
       </strong>
     <% else %>
       <strong class="price sale">
-        <span class=""><%= product_price_starts_at(@product) %>
-        <span class="strike"><%= Spree::Money.new(price_with_tax_for_product(@product.max_main_price, @product), { currency: current_currency }) %></p>
+        <span class=""><%= product_price_starts_at(@product) %></span>
+        <span class="strike"><%= Spree::Money.new(price_with_tax_for_product(@product.max_main_price, @product), { currency: current_currency }) %></span>
       </strong>
     <% end %>
   <% else %>

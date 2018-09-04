@@ -61,7 +61,6 @@
 
         <% if @product.can_supply? %>
           <div class="add-to-cart">
-            <br />
             <div class="input-group">
               <%= number_field_tag :quantity, 1, class: 'title form-control', min: 1 %>
               <span class="input-group-btn">
