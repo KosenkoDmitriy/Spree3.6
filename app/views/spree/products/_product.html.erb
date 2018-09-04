@@ -11,14 +11,15 @@
           <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
         <% end %>
         <p class="">
-          <%#= link_to "#{product_price_starts_at(product)}", product, class: "price" #%>
-
           <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+
+            <%= render partial: 'spree/products/prices', locals: { product: product } %>
+            <!--
             <span class="price selling lead" itemprop="price" content="<%= (product.price_in(current_currency).amount.nil?)? 0 : product.price_in(current_currency).amount.to_d %>">
               <%= display_price(product) %>
-
             </span>
             <span itemprop="priceCurrency" content="<%= current_currency %>"></span>
+            -->
           </span>
         </p>
         <%= truncate_html raw(product.description), length: 90 %>

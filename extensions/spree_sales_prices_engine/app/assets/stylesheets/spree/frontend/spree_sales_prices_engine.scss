@@ -6,8 +6,11 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
   border-top: 1px solid #ffffff;
   border-bottom: 1px solid #ffffff;
   padding-top: 10px;
-  ul.list-group li label {
-    font-weight: normal;
+  ul.list-group {
+    margin-bottom: 0;
+    li label {
+      font-weight: normal;
+    }
   }
 }
 div.prices, #cart-form {
@@ -36,4 +39,12 @@ div.prices {
 }
 h4.product-section-title {
   margin-top: 0px;
+}
+
+.product-body {
+  div.prices {
+    padding: 0 !important;
+    font-size: 1.1em;
+    font-weight: normal;
+  }
 }
