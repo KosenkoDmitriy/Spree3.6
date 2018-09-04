@@ -27,6 +27,16 @@ describe Spree::Product do
     expect(product.is_on_sale?).to eq(false)
     expect(Spree::Product.sales.count).to eq(0)
   end
-  it 'get a cheapest price'
-  it 'get a cheapest main price'
+  it 'get a cheapest price' do
+    product = create(:product, price: 15)
+    variant = create(:variant, main_price: 13)
+    product.variants << variant
+    expect(product.cheapest_price).to eq(13)
+  end
+  it 'get a cheapest main price' do
+    product = create(:product, main_price: 15)
+    variant = create(:variant, main_price: 13)
+    product.variants << variant
+    expect(product.cheapest_main_price).to eq(13)
+  end
 end
