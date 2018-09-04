@@ -1,0 +1,1 @@
+ENV['SPREE_USE_PAPERCLIP'] = 'true'
