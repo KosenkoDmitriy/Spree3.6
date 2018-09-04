@@ -85,6 +85,10 @@
     .modal-header {
       button.close {
         opacity: 0.7;
+        background-color: #f47402;
+        padding: 4px 6px;
+        color: #fff;
+        text-shadow: 1px 0 0 #000;
         &:hover {
           opacity: 1;
         }
