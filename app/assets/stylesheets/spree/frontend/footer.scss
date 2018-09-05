@@ -8,23 +8,23 @@
   a {
     font-size: .75em;
   }
-
-  ul.pages {
+  .pages {
+    ul {
       padding-left: 0px;
-      padding-bottom: 10px;
+      // padding-bottom: 10px;
+      li {
+        font-size:18px;
+        display: inline;
+        font-family: 'Droid Sans', 'Helvetica Neue', Helvetica, arial, sans-serif;
+        margin: 0 15px 0 0;
+        text-transform: uppercase;
+      }
+    }
   }
 
   p {
       padding: 0px;
       margin: 0;
-  }
-
-  ul.pages li {
-    font-size:18px;
-    display: inline;
-    font-family: 'Droid Sans', 'Helvetica Neue', Helvetica, arial, sans-serif;
-    margin: 0 15px 0 0;
-    text-transform: uppercase;
   }
 
   .tel, .brochure, .email {
