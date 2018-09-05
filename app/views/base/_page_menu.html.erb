@@ -29,5 +29,8 @@
     <%= render :partial => "/base/about_brochure" %>
 
 		<li><%= link_to "Links", main_app.links_url, :class => (controller.action_name == "links" ? "active" : ""), :title => "SoulPad links" %></li>
+    <%#= render partial: 'spree/static_content/static_content_list', collection: Spree::Page.visible.sidebar_links, as: :page #%>
 	</ul>
+  <%#= render partial: 'spree/static_content/static_content_sidebar' #%>
+
 </div>
