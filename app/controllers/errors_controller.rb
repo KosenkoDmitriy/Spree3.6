@@ -16,6 +16,10 @@ class ErrorsController < Spree::BaseController
   end
 
   def error_500
-    # render file: "#{Rails.root}/public/500.html", layout: false, status: 500
+    render file: "#{Rails.root}/public/500.html", layout: false, status: 500
+    # respond_to do |format|
+    #   format.html { render status: 500 }
+    #   format.any  { render text: "500 Unprocessable Entity", status: 422 }
+    # end
   end
 end
