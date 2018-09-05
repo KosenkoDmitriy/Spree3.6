@@ -2,10 +2,12 @@
   margin-bottom: 18px;
   ul {
     margin: 0;
+    list-style: none;
   }
   li {
     background-color: #d2d1bb;
     color: #585652;
+    text-transform: capitalize;
     &.title {
       background-color: #585652;
       color: #fff;
@@ -14,13 +16,30 @@
       padding: 7px 10px;
     }
   }
-  li a {
+  .pages-list li a, li a {
     color: #585652;
     background-color: #d2d1bb;
     &:hover {
       background-color: #bbbaa1;
     }
   }
+  
+  // spree static content styles
+  .pages-list {
+    @extend .nav;
+  }
+
+  .pages-list li {
+    border-bottom: 2px solid #fff;
+  }
+
+  h4.pages-root {
+    @extend li.title;
+    margin-bottom: 2px;
+    padding: 10px;
+  }
+  // end spree static content styles
+
   li.current a {
     background-color: #bbbaa1;
   }

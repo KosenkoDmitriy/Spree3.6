@@ -8,29 +8,28 @@
     background-color: #d2d1bb;
     color: #585652;
     text-transform: capitalize;
-  }
-  li.title {
-    background-color: #585652;
-    color: #fff;
-    font-size: 1.154em;
-    font-weight: bold;
-    padding: 7px 10px;
+    &.title {
+      background-color: #585652;
+      color: #fff;
+      font-size: 1.154em;
+      font-weight: bold;
+      padding: 7px 10px;
+    }
   }
   .pages-list li a, li a {
     color: #585652;
     background-color: unset;
-  }
-  .pages-list li a:hover, .pages-list li a.active,
-  li a:hover, li a.active {
-    background-color: #f47402;
-    color: #fff;
+    &:hover, &.active {
+      background-color: #f47402;
+      color: #fff;
+    }
   }
 
   // spree static content styles
-  // .list-group {
   .pages-list {
     @extend .nav;
   }
+
   .pages-list li {
     border-bottom: 2px solid #fff;
   }
@@ -40,5 +39,6 @@
     margin-bottom: 2px;
     padding: 10px;
   }
+  // end spree static content styles
 
 }
