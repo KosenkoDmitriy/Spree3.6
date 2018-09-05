@@ -9,7 +9,9 @@ Bundler.require(*Rails.groups)
 module SoulPadSpree36
   class Application < Rails::Application
 
+
     config.to_prepare do
+
       # Load application's model / class decorators
       Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|
         Rails.configuration.cache_classes ? require(c) : load(c)
@@ -51,6 +53,9 @@ module SoulPadSpree36
     config.assets.enabled = true
     config.assets.prefix = "/assets"
     config.serve_static_assets = true
+
+    # Enable paperclip
+    # config.use_paperclip = true # doesn't work
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
