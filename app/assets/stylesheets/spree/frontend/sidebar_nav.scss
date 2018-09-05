@@ -2,24 +2,40 @@
   margin-bottom: 18px;
   ul {
     margin: 0;
+    list-style: none;
   }
   li {
     background-color: #d2d1bb;
     color: #585652;
+    text-transform: capitalize;
   }
-  li.title {
+  .pages-root, li.title {
     background-color: #585652;
     color: #fff;
     font-size: 1.154em;
     font-weight: bold;
     padding: 7px 10px;
   }
-  li a {
+  h4.pages-root {
+    margin-bottom: 2px;
+    padding: 10px;
+  }
+  .list-group li a, li a {
     color: #585652;
     background-color: unset;
   }
+  .list-group li a:hover, .list-group li a.active,
   li a:hover, li a.active {
     background-color: #f47402;
     color: #fff;
+  }
+
+  // spree static content styles
+  // .list-group {
+  .pages-list {
+    @extend .nav;
+  }
+  .pages-list li {
+    border-bottom: 2px solid #fff;
   }
 }
