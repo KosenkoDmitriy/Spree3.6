@@ -6,9 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Spree::Core::Engine.load_seed if defined?(Spree::Core)
-# Spree::Auth::Engine.load_seed if defined?(Spree::Auth)
+Spree::Core::Engine.load_seed if defined?(Spree::Core)
+Spree::Auth::Engine.load_seed if defined?(Spree::Auth)
 
+if Rails.env.development?
+puts "loading facebook messages"
 [{ "created_at":"2011-03-16 16:32:14", "updated_at":"2011-03-16 16:32:14", "fb_id":"7845355665_10150108002825666", "fb_type":"status", "fb_created_at":"2011-03-16 12:58:00", "from":"Jason Regan", "from_fb_id":"1633508404", "application":"Facebook for iPhone", "application_fb_id":"6628568379", "to":"", "to_fb_id":"", "message":"Wowsers, that's what I call free and fast. My 4000-ease has arrived, 2 days after ordering it. Thank you Soulpad, it will be getting a trial run on Saturday in the garden to make sure all is well. Thanks again for such speedy delivery", "link":"", "picture":""},
  { "created_at":"2011-03-16 16:32:14", "updated_at":"2011-03-16 16:32:14", "fb_id":"7845355665_10150106411110666", "fb_type":"status", "fb_created_at":"2011-03-14 15:11:43", "from":"Jason Regan", "from_fb_id":"1633508404", "application":"Facebook for iPhone", "application_fb_id":"6628568379", "to":"", "to_fb_id":"", "message":"Couldnt wait any longer, went ahead and ordered a 4000-ease this afternoon, hopefully there will be a soul filled tent winging its way to me any day", "link":"", "picture":""},
  { "created_at":"2011-03-16 16:32:14", "updated_at":"2011-03-16 16:32:14", "fb_id":"7845355665_10150105860565666", "fb_type":"status", "fb_created_at":"2011-03-13 21:51:04", "from":"Jason Regan", "from_fb_id":"1633508404", "application":"", "application_fb_id":"", "to":"", "to_fb_id":"", "message":"right then , advice time again all, i have the pennies saved and i am going to buy an ease, however i dont know wether to go for the 4000 or the 5000. There is only me and the misses. you guys think a 4000 will be big enough?", "link":"", "picture":""},
@@ -26,7 +28,7 @@
   item.save ? "item created: #{item}" : "item failed: #{item}"
 end
 
-
+puts "loading twitter messages"
 [{ "created_at":"2012-10-09 08:23:32", "updated_at":"2012-10-09 08:23:32", "twitter_id":"255258315725078528", "twitter_created_at":"2012-10-08 10:48:19", "from":"soulpad", "from_image":"http://a0.twimg.com/profile_images/1773060406/logo_web_address_3_normal.jpg", "message":"Epic! Love the off-grid power supply. RT @markphelan: Our @soulpad on tour in the highlands\u00e2\u20ac\u00a6 http://t.co/kBc4sq9h", "link":""},
  { "created_at":"2012-10-09 08:23:32", "updated_at":"2012-10-09 08:23:32", "twitter_id":"254204849846095874", "twitter_created_at":"2012-10-05 13:02:13", "from":"soulpad", "from_image":"http://a0.twimg.com/profile_images/1773060406/logo_web_address_3_normal.jpg", "message":"That's the spirit. RT @zenderbygirl Just bought myself a @soulpad from a friend selling hers ! BRING ON AUTUMN! #soulpad", "link":""},
  { "created_at":"2012-10-09 08:23:32", "updated_at":"2012-10-09 08:23:32", "twitter_id":"253491476145770496", "twitter_created_at":"2012-10-03 13:47:32", "from":"soulpad", "from_image":"http://a0.twimg.com/profile_images/1773060406/logo_web_address_3_normal.jpg", "message":"\u00e2\u20ac\u0153Alright\u00e2\u20ac\u009d by Supergrass is my new jam.  \u00e2\u2122\u00ab http://t.co/kEQh3Nkm (via @mmmichelleleigh)", "link":""},
@@ -46,7 +48,8 @@ end
    end
  end
 
- [{ "insta_id":"1423266003500003790_2178794454", "uploaded_at":"2017-01-08 14:42:30", "title":"#Children's entertainment does not need to be #digital. These guys are really enjoying themselves making #music.", "link":"https://www.instagram.com/p/BPAdOOvgfHO/", "thumb":"https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/c18.0.550.550/15877374_1328102477261887_1602575731202719744_n.jpg?ig_cache_key=MTQyMzI2NjAwMzUwMDAwMzc5MA%3D%3D.2.c", "created_at":"2017-01-09 10:07:39", "updated_at":"2017-01-09 10:07:39"},
+puts "loading instagram photos"
+[{ "insta_id":"1423266003500003790_2178794454", "uploaded_at":"2017-01-08 14:42:30", "title":"#Children's entertainment does not need to be #digital. These guys are really enjoying themselves making #music.", "link":"https://www.instagram.com/p/BPAdOOvgfHO/", "thumb":"https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/c18.0.550.550/15877374_1328102477261887_1602575731202719744_n.jpg?ig_cache_key=MTQyMzI2NjAwMzUwMDAwMzc5MA%3D%3D.2.c", "created_at":"2017-01-09 10:07:39", "updated_at":"2017-01-09 10:07:39"},
   { "insta_id":"1422432063918869143_2178794454", "uploaded_at":"2017-01-07 11:05:37", "title":"This is how to spend the #weekend #glamping.", "link":"https://www.instagram.com/p/BO9fmz_AoqX/", "thumb":"https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/15802410_1823159944593851_4968835956661551104_n.jpg?ig_cache_key=MTQyMjQzMjA2MzkxODg2OTE0Mw%3D%3D.2", "created_at":"2017-01-09 10:07:39", "updated_at":"2017-01-09 10:07:39"},
   { "insta_id":"1421863492859815918_2178794454", "uploaded_at":"2017-01-06 16:15:58", "title":"A little more #bunting just in time for the #weekend.", "link":"https://www.instagram.com/p/BO7eVA7AWfu/", "thumb":"https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/c164.0.461.461/15802364_369839636714929_1350179757555187712_n.jpg?ig_cache_key=MTQyMTg2MzQ5Mjg1OTgxNTkxOA%3D%3D.2.c", "created_at":"2017-01-09 10:07:39", "updated_at":"2017-01-09 10:07:39"},
   { "insta_id":"1421142938972327093_2178794454", "uploaded_at":"2017-01-05 16:24:21", "title":"Bunting on a #soulpad #belltent.", "link":"https://www.instagram.com/p/BO46fk0gAy1/", "thumb":"https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/15802626_1279370618786968_7829047085012877312_n.jpg?ig_cache_key=MTQyMTE0MjkzODk3MjMyNzA5Mw%3D%3D.2", "created_at":"2017-01-09 10:07:39", "updated_at":"2017-01-09 10:07:39"},
@@ -60,4 +63,5 @@ end
 ].each do |params|
   item = InstaPhoto.new(params)
   item.save ? "item created: #{item}" : "item failed: #{item}"
+end
 end
