@@ -107,10 +107,7 @@ gem 'watermark_engine', require: 'watermark_engine', path: 'extensions/watermark
 
 gem 'spree_sales_prices_engine', require: 'spree_sales_prices_engine', path: 'extensions/spree_sales_prices_engine'
 
-# gem 'spree_static_content', github: 'spree/spree_static_content', branch: '2-0-stable'
-# gem 'spree_static_content', github: 'spree-contrib/spree_static_content'#, branch: '3-0-stable' # for spree 3.0 and 2.x only
 # -- start spree_static_content for Spree >= 3.1 (we need them all because of broken dependency on globalize)
-# TODO: will fix a search feature
 gem 'globalize', github: 'globalize/globalize'#, branch: '3-0-stable'
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
 gem 'spree_globalize', github: 'spree-contrib/spree_globalize', branch: 'master'
