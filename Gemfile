@@ -94,14 +94,13 @@ gem 'instagram', '1.1.6'
 gem 'testimonials_engine', require: 'testimonials_engine', path: 'extensions/testimonials_engine'
 gem 'features_engine', require: 'features_engine', path: 'extensions/features_engine' # https://github.com/DynamoMTL/spree_features
 gem 'affiliate_engine', require: 'affiliate_engine', path: 'extensions/affiliate_engine' # https://github.com/spree-contrib/spree_affiliate
-# TODO: will fix a NameError: uninitialized constant Photo
 gem 'watermark_engine', require: 'watermark_engine', path: 'extensions/watermark_engine' # https://github.com/azimuth/spree_watermark
 
 # TODO will change to better_spree_paypal_express gem
 # gem "spree_paypal_express", :require => "spree_paypal_express", :path => "extensions/spree_paypal_express" # https://github.com/spree/spree_paypal_express
 #gem 'spree_paypal_express', :git => 'git://github.com/spree/spree_paypal_express.git', :branch => "1-3-stable" # latest 2-0-stable
 
-gem 'spree_last_address', require: 'spree_last_address', path: 'extensions/spree_last_address' # git://github.com/TylerRick/spree_last_address.git
+# gem 'spree_last_address', require: 'spree_last_address', path: 'extensions/spree_last_address' # git://github.com/TylerRick/spree_last_address.git
 gem 'spree_sales_prices_engine', require: 'spree_sales_prices_engine', path: 'extensions/spree_sales_prices_engine'
 
 # -- start spree_static_content for Spree >= 3.1 (we need them all because of broken dependency on globalize)
