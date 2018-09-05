@@ -1,25 +1,43 @@
-# encoding: utf-8
-$:.push File.expand_path("../lib", __FILE__)
-require "spree_last_address/version"
+# encoding: UTF-8
+lib = File.expand_path('../lib/', __FILE__)
+$LOAD_PATH.unshift lib unless $LOAD_PATH.include?(lib)
+
+require 'spree_last_address/version'
 
 Gem::Specification.new do |s|
+  s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_last_address'
   s.version     = SpreeLastAddress.version
-  s.summary     = "Prefill address with last-used address"
-  s.description = "During checkout, causes the address to be prefilled with the address from their most recent order or the user's saved address."
+  s.summary     = 'Add extension summary here'
+  s.description = 'Add (optional) extension description here'
+  s.required_ruby_version = '>= 2.2.7'
 
-  s.authors     = ['Tyler Rick', 'Torsten Rüger']
-  s.email       = 'tyler.rick@k3integrations.com'
+  s.author    = 'You'
+  s.email     = 'you@example.com'
+  s.homepage  = 'https://github.com/your-github-handle/spree_last_address'
+  s.license = 'BSD-3-Clause'
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  # s.files       = `git ls-files`.split("\n").reject { |f| f.match(/^spec/) && !f.match(/^spec\/fixtures/) }
+  s.require_path = 'lib'
+  s.requirements << 'none'
 
-  s.require_paths = ["lib"]
-  s.platform      = Gem::Platform::RUBY
+  spree_version = '>= 3.1.0', '< 4.0'
+  s.add_dependency 'spree_core', spree_version
+  s.add_dependency 'spree_backend', spree_version
+  s.add_dependency 'spree_extension'
 
-  s.add_dependency('spree_core', '~> 2.0')
-
-  # Soft requirement if using Spree > 1.2, since spree_auth_devise is now what provides
-  # user.bill_address association:
-  #s.add_development_dependency('spree_auth_devise', '~> 1.2')
+  s.add_development_dependency 'appraisal'
+  s.add_development_dependency 'capybara'
+  s.add_development_dependency 'capybara-screenshot'
+  s.add_development_dependency 'coffee-rails'
+  s.add_development_dependency 'database_cleaner'
+  s.add_development_dependency 'factory_bot'
+  s.add_development_dependency 'ffaker'
+  s.add_development_dependency 'mysql2'
+  s.add_development_dependency 'rspec-rails'
+  s.add_development_dependency 'sass-rails'
+  s.add_development_dependency 'selenium-webdriver'
+  s.add_development_dependency 'sqlite3'
+  s.add_development_dependency 'pg', '~> 0.18'
+  s.add_development_dependency 'simplecov'
 end
