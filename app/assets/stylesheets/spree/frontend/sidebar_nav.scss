@@ -15,6 +15,7 @@
       font-weight: bold;
       padding: 7px 10px;
     }
+
   }
   .pages-list li a, li a {
     color: #585652;
@@ -32,6 +33,11 @@
 
   .pages-list li {
     border-bottom: 2px solid #fff;
+  }
+
+  .pages-list li.current a {
+    background-color: #f47402;
+    color: #fff;
   }
 
   h4.pages-root {
