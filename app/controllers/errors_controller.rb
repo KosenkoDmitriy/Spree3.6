@@ -16,6 +16,6 @@ class ErrorsController < Spree::BaseController
   end
 
   def error_500
-    render file: "#{Rails.root}/public/500.html", layout: false, status: 500
+    # render file: "#{Rails.root}/public/500.html", layout: false, status: 500
   end
 end
