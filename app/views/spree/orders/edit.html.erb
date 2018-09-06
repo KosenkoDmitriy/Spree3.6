@@ -5,8 +5,16 @@
 
   <% if @order.line_items.empty? %>
     <div data-hook="empty_cart">
-      <div class="alert alert-info"><%= Spree.t(:your_cart_is_empty) %></div>
-      <p><%= link_to Spree.t(:continue_shopping), products_path, class: 'btn btn-default' %></p>
+      <!--<div class="alert alert-info"><%= Spree.t(:your_cart_is_empty) %></div>-->
+      <!--<p><%= link_to Spree.t(:continue_shopping), products_path, class: 'btn btn-default' %></p>-->
+      <div id="main_content" class="text-center">
+        <div id="error404">
+          <div>
+            <p style="font-size:1.4em">It looks like your basket is empty. That can't be right!
+              Why not <%= link_to Spree.t(:continue_shopping), products_path, class: 'btn btn-default' %> </p>
+          </div>
+        </div>
+      </div>
     </div>
   <% else %>
     <div data-hook="outside_cart_form">
