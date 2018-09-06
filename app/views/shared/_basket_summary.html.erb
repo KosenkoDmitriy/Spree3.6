@@ -3,7 +3,8 @@
     <b><span class="glyphicon glyphicon-shopping-cart"></span></b>
     Your cart:
     <b>
-      <%= pluralize(simple_current_order.item_count, "item") %>
+      <%= simple_current_order.item_count %>
+      <%= 'item'.pluralize(simple_current_order.item_count) %>
       <span class="glyphicon glyphicon-triangle-bottom"></span>
       <!--<span class="glyphicon glyphicon-triangle-bottom basket_arrow"></span>-->
       <!--<span class="caret"></span>-->
