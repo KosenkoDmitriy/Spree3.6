@@ -1,4 +1,5 @@
 class ErrorsController < Spree::BaseController
+  include Spree::Core::ControllerHelpers::Order # for link_to_cart
 
   def error_404
     self.title = "404"
