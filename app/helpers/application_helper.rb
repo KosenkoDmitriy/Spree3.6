@@ -48,13 +48,13 @@ module ApplicationHelper
   def lang_icon(locale)
     case locale.to_s
     when 'en-GB'
-      image_tag("/assets/site/uk.png")
+      image_tag("site/uk.png")
     when 'en-AU'
-      image_tag("/assets/site/au.png")
+      image_tag("site/au.png")
     when 'en-US'
-      image_tag("/assets/site/us.png")
+      image_tag("site/us.png")
     else # en-US locale by default
-      image_tag("/assets/site/us.png")
+      image_tag("site/us.png")
     end
   end
 
