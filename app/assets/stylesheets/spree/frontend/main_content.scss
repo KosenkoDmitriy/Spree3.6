@@ -56,7 +56,9 @@ h2, h3 {
 
 }
 #about {
-
+  background-color: #f5f0e9;
+  padding: 10px;
+  min-height: 215px;
 }
 #video {
   img.img-responsive {
@@ -72,7 +74,8 @@ h2, h3 {
   #video-footer {
     padding: 5px 10px;
     color: #fff;
-    background: #f47402 asset-url($ic_youtube) no-repeat 10px 100%;
+    //background: #f47402 asset-url($ic_youtube) no-repeat 10px 100%;
+    background-color: #f47402;
     span {
       float: right;
     }
@@ -92,7 +95,7 @@ h2, h3 {
     background: #585652 asset-url($quote) no-repeat 95% 90%;
     font-style: italic;
     font-size: 1em;
-    min-height: 217px;
+    min-height: 215px;
     p {
       margin-bottom: 5px;
     }

@@ -9,9 +9,11 @@
 </div>
 
 <div class="row">
-  <div id="about" class="col-xs-12 col-sm-4">
-    <h2>About SoulPad</h2>
-    <%= truncate_html DynamicDatum.render_by_tag("about_soulpad"), length: 320, omission: ' ... ' + link_to("read more", main_app.about_url) %>
+  <div class="col-xs-12 col-sm-4">
+    <div id="about">
+      <h2>About SoulPad</h2>
+      <%= truncate_html DynamicDatum.render_by_tag("about_soulpad"), length: 320, omission: ' ... ' + link_to("read more", main_app.about_url) %>
+    </div>
   </div>
   <div id="video" class="col-xs-12 col-sm-4">
     <%= link_to "http://www.youtube.com/user/soulpadtents", target: '_blank' do %>
