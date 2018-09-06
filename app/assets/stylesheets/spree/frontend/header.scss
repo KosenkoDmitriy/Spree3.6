@@ -24,6 +24,9 @@
 
     }
     // for new site_selector helper
+    .btn-default:hover, .btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle {
+      background-color: #fff;
+    }
     .dropdown {
       li {
         text-transform: none;
@@ -32,7 +35,14 @@
         border-color: transparent;
         min-width: 160px;
         width: 100%;
+        text-align: left;
+        .caret {
+          right: 10px;
+          position: absolute;
+          top: 15px;
+        }
       }
+
       ul.dropdown-menu {
         background-color: #eeeee3;
         li {
