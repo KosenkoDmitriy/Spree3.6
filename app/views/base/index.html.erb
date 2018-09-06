@@ -1,63 +1,64 @@
 <div class="row">
-	<%= render partial: 'reviews_widget' %>
+  <%= render partial: 'reviews_widget' %>
 </div>
 
 <div class="row">
-	<div class="col-xs-12">
-		<%= render partial: 'features_engine/features', locals: {features: @features} %>
-	</div>
+  <div class="col-xs-12">
+    <%= render partial: 'features_engine/features', locals: {features: @features} %>
+  </div>
 </div>
 
 <div class="row">
-	<div id="about" class="col-xs-12 col-sm-4">
-		<h2>About SoulPad</h2>
-		<%= truncate_html DynamicDatum.render_by_tag("about_soulpad"), length: 320, omission: ' ... ' + link_to("read more", main_app.about_url) %>
-	</div>
-	<div id="video" class="col-xs-12 col-sm-4">
-		<%= link_to "http://www.youtube.com/user/soulpadtents", target: '_blank' do %>
-		<div id="video-title">How to put up a SoulPad&reg; tent</div>
-		<%= image_tag("site/you_tube.jpg", class: 'img-responsive', alt: '') %>
-		<div id="video-footer"><%= image_tag 'site/you_tube_icon.png' %><span>Our YouTube Channel »</span></div>
-		<% end %>
-	</div>
+  <div id="about" class="col-xs-12 col-sm-4">
+    <h2>About SoulPad</h2>
+    <%= truncate_html DynamicDatum.render_by_tag("about_soulpad"), length: 320, omission: ' ... ' + link_to("read more", main_app.about_url) %>
+  </div>
+  <div id="video" class="col-xs-12 col-sm-4">
+    <%= link_to "http://www.youtube.com/user/soulpadtents", target: '_blank' do %>
+        <div id="video-title">How to put up a SoulPad&reg; tent</div>
+        <%= image_tag("site/you_tube.jpg", class: 'img-responsive', alt: '') %>
+        <div id="video-footer"><%= image_tag 'site/you_tube_icon.png' %><span>Our YouTube Channel »</span></div>
+    <% end %>
+  </div>
 
-	<div id="testimonials" class="col-xs-12 col-sm-4">
-		<% if @testimonial %>
-		<blockquote>
-		  <p><%= truncate_html @testimonial.body,  :length => 310, :omission => " ... " + link_to("read more", testimonials_engine.testimonials_url) %></p>
-		  <p><cite><%= @testimonial.name %></cite></p>
-		</blockquote>
+  <div id="testimonials" class="col-xs-12 col-sm-4">
+    <% if @testimonial %>
+        <blockquote>
+          <p><%= truncate_html @testimonial.body, :length => 310, :omission => " ... " + link_to("read more", testimonials_engine.testimonials_url) %></p>
 
-		<%= link_to "See more testimonials »", testimonials_engine.testimonials_url, :class => "more" %>
-		<% else %>
-          <blockquote><p>testimonials are not found</p></blockquote>
-		<% end %>
-	</div>
+          <p><cite><%= @testimonial.name %></cite></p>
+        </blockquote>
+
+        <%= link_to "See more testimonials »", testimonials_engine.testimonials_url, :class => "more" %>
+    <% else %>
+        <blockquote><p>testimonials are not found</p></blockquote>
+    <% end %>
+  </div>
 </div>
 
 <div class="row products_title">
-	<div class="col-xs-12">
-		<h3> Products </h3>
-		<%= link_to 'See all products »', products_url, class: 'more' %>
-	</div>
+  <div class="col-xs-12">
+    <h3> Products </h3>
+    <%= link_to 'See all products »', products_url, class: 'more' %>
+  </div>
 </div>
 <div class="row products">
-	<% get_taxonomies.each do |taxonomy| %>
-    <% taxonomy.root.children.each do |taxon| %>
-		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
-			<%= link_to seo_url(taxon) do %>
-				<% if taxon.icon %>
-					<%= image_tag(main_app.url_for(taxon.icon.try(:attachment, :normal)), class: 'img-responsive', alt: "#{taxon.try(:name)}") %>
-					<%#= image_tag taxon.icon.try(:url, :normal), class: 'img-responsive', alt: "#{taxon.try(:name)}" #%>
-					<%#= image_tag taxon.icon.try(:attachment, :normal), class: 'img-responsive', alt: "#{taxon.try(:name)}" #%>
-		    <% else %>
-		      <%= image_tag("site/soulpad_logo.png", class: 'img-responsive', alt: "#{taxon.name}") %>
-		    <% end %>
-				 <p><%= taxon.name %></p>
-			<% end %>
-		</div>
+  <% get_taxonomies.each do |taxonomy| %>
+      <% taxonomy.root.children.each do |taxon| %>
+          <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+            <%= link_to seo_url(taxon) do %>
+                <% if taxon.icon %>
+                    <%= image_tag(main_app.url_for(taxon.icon.try(:attachment, :normal)), class: 'img-responsive', alt: "#{taxon.try(:name)}") %>
+                    <%#= image_tag taxon.icon.try(:url, :normal), class: 'img-responsive', alt: "#{taxon.try(:name)}" #%>
+                    <%#= image_tag taxon.icon.try(:attachment, :normal), class: 'img-responsive', alt: "#{taxon.try(:name)}" #%>
+                <% else %>
+                    <%= image_tag("site/soulpad_logo.png", class: 'img-responsive', alt: "#{taxon.name}") %>
+                <% end %>
+                <p><%= taxon.name %></p>
+            <% end %>
+          </div>
+      <% end %>
   <% end %>
-<% end %>
 </div>
 
 <!-- exclude news from home page
@@ -67,17 +68,20 @@
 	<h3>News</h3>
 
 	<ul class="hfeed">
-		<% if @posts.present? %>
-		<% @posts.each do |post| %>
+
+<% if @posts.present? %>
+    <% @posts.each do |post| %>
 			<li class="hentry">
 				<h2 class="entry-title"><%= link_to post.title, news_engine.post_url(:id => post), :rel => "bookmark" %></h2>
 				<abbr class="published"><%= post.published_on.to_s(:long) %></abbr>
 				<div class="entry-content"><%= raw truncate(post.body, :length => 180) %></div>
 				<p><%= link_to "Read more »", news_engine.post_url(:id => post), :class => "more", :rel => "bookmark" %>
 			</li>
-		<% end %>
-		<% else %>
+
+    <% end %>
+<% else %>
 			<li>posts are not found</li>
-		<% end %>
+
+<% end %>
 	</ul>
 </div> -->

@@ -1,24 +1,24 @@
 <% content_for(:header) do %>
-  <script src="https://widget.reviews.io/dropdown/dist.js"></script>
+    <script src="https://widget.reviews.io/dropdown/dist.js"></script>
 <% end %>
 
 <div id="dropdown-240" style="width:100%; align:center;">
 </div>
 <% content_for(:header) do %>
-<meta name="turbolinks-cache-control" content="no-cache">
-<script type="text/javascript">
-  function run_after_turbo() {
-    dropdownWidget('dropdown-240', {
-      store: 'soulpad-co-uk',
-      primaryClr: '#f47e27',
-      neutralClr: '#f4f4f4',
-      textClr: '#000',
-      height: 250,
-      numReviews: 8,
-      direction: 'down'
-    });
-  }
-// $(document).ready(run_after_turbo);
-$(document).on("turbolinks:load", run_after_turbo);
-</script>
+    <meta name="turbolinks-cache-control" content="no-cache">
+    <script type="text/javascript">
+        function run_after_turbo() {
+            dropdownWidget('dropdown-240', {
+                store: 'soulpad-co-uk',
+                primaryClr: '#f47e27',
+                neutralClr: '#f4f4f4',
+                textClr: '#000',
+                height: 250,
+                numReviews: 8,
+                direction: 'down'
+            });
+        }
+        // $(document).ready(run_after_turbo);
+        $(document).on("turbolinks:load", run_after_turbo);
+    </script>
 <% end %>

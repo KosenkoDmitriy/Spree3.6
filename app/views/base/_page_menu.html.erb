@@ -1,36 +1,30 @@
 <div id="page_nav" class="page_nav">
   <ul class="nav nav-pills nav-stacked">
-		<li role="presentation" class="title">About SoulPad</li>
-		<li role="presentation"><%= link_to "About", main_app.about_url, :class => (controller.action_name == "about" ? "active" : ""), :title => "About SoulPad" %></li>
-		<li role="presentation"><%= link_to "FAQ", news_engine.faqs_url, :class => (["faqs", "faq", "show"].include?(request.try(:fullpath).try(:split, '/').try(:second)) && (title_without_site_name != "SoulPad Showroom Details") ? "active" : ""), :title => "SoulPad FAQ" %></li>
-		<li role="presentation"><%= link_to "Testimonials", testimonials_engine.testimonials_url, :class => (controller.controller_name == "testimonials" ? "active" : ""), :title => "Read our testimonials" %></li>
+    <li role="presentation" class="title">About SoulPad</li>
+    <li role="presentation"><%= link_to "About", main_app.about_url, :class => (controller.action_name == "about" ? "active" : ""), :title => "About SoulPad" %></li>
+    <li role="presentation"><%= link_to "FAQ", news_engine.faqs_url, :class => (["faqs", "faq", "show"].include?(request.try(:fullpath).try(:split, '/').try(:second)) && (title_without_site_name != "SoulPad Showroom Details") ? "active" : ""), :title => "SoulPad FAQ" %></li>
+    <li role="presentation"><%= link_to "Testimonials", testimonials_engine.testimonials_url, :class => (controller.controller_name == "testimonials" ? "active" : ""), :title => "Read our testimonials" %></li>
 
-		<%= content_tag :li, role: "presentation" do %>
-			<%= link_to "Events", main_app.events_url, role: "presentation", :class => (controller.action_name == "events" ? "active" : ""), :title => "Events" %></li>
-		<% end if uk? %>
+    <%= content_tag :li, role: "presentation" do %>
+        <%= link_to "Events", main_app.events_url, role: "presentation", :class => (controller.action_name == "events" ? "active" : ""), :title => "Events" %></li>
+    <% end if uk? %>
 
-		<li role="presentation"><%= link_to "Press", main_app.press_url, :class => (controller.action_name == "press" ? "active" : ""), :title => "SoulPad Press" %></li>
-		<li role="presentation"><%= link_to "Videos", main_app.videos_url, :class => (controller.action_name == "videos" ? "active" : ""), :title => "SoulPad " %></li>
+    <li role="presentation"><%= link_to "Press", main_app.press_url, :class => (controller.action_name == "press" ? "active" : ""), :title => "SoulPad Press" %></li>
+    <li role="presentation"><%= link_to "Videos", main_app.videos_url, :class => (controller.action_name == "videos" ? "active" : ""), :title => "SoulPad " %></li>
 
-		<%= content_tag :li, role: "presentation" do %>
-      <%#=request.filtered_parameters.try(:[], :action)#%>
-      <%#=request.filtered_parameters.try(:[], :controller)#%>
-      <%#=request.fullpath.split('/').second#%>
-    	<%= link_to "Offers", affiliate_engine.offers_url, :class => (request.try(:fullpath).try(:split, '/').try(:second) == "offers" ? "active" : ""), :title => "SoulPad offers" %>
-		<% end if uk? %>
+    <%= content_tag :li, role: "presentation" do %>
+        <%= link_to "Offers", affiliate_engine.offers_url, :class => (request.try(:fullpath).try(:split, '/').try(:second) == "offers" ? "active" : ""), :title => "SoulPad offers" %>
+    <% end if uk? %>
 
-		<li role="presentation"><%= link_to "SoulPad Hire", main_app.rentals_url, :class => (controller.action_name == "rentals" ? "active" : ""), :title => "SoulPad Hire" %></li>
-		<li role="presentation"><%= link_to "Leave No Trace", main_app.leave_no_trace_url, :class => (controller.action_name == "leave_no_trace" ? "active" : ""), :title => "Leave No Trace" %></li>
+    <li role="presentation"><%= link_to "SoulPad Hire", main_app.rentals_url, :class => (controller.action_name == "rentals" ? "active" : ""), :title => "SoulPad Hire" %></li>
+    <li role="presentation"><%= link_to "Leave No Trace", main_app.leave_no_trace_url, :class => (controller.action_name == "leave_no_trace" ? "active" : ""), :title => "Leave No Trace" %></li>
 
-		<%= content_tag :li, role: "presentation" do %>
-			<%= link_to "Showroom", "http://soulpad.co.uk/faqs/soulpad-showroom-details", :class => (title_without_site_name == "SoulPad Showroom Details" ? "active" : ""), :title => "Showroom" %></li>
-		<% end if uk? %>
+    <%= content_tag :li, role: "presentation" do %>
+        <%= link_to "Showroom", "http://soulpad.co.uk/faqs/soulpad-showroom-details", :class => (title_without_site_name == "SoulPad Showroom Details" ? "active" : ""), :title => "Showroom" %></li>
+    <% end if uk? %>
 
     <%= render :partial => "/base/about_brochure" %>
 
-		<li><%= link_to "Links", main_app.links_url, :class => (controller.action_name == "links" ? "active" : ""), :title => "SoulPad links" %></li>
-    <%#= render partial: 'spree/static_content/static_content_list', collection: Spree::Page.visible.sidebar_links, as: :page #%>
-	</ul>
-  <%#= render partial: 'spree/static_content/static_content_sidebar' #%>
-
+    <li><%= link_to "Links", main_app.links_url, :class => (controller.action_name == "links" ? "active" : ""), :title => "SoulPad links" %></li>
+  </ul>
 </div>
