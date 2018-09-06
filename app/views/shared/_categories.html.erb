@@ -1,50 +1,49 @@
-
 <div id="product_nav" class="shop_nav">
 
-<% @taxon ||= @product.taxons.first if @product %>
-<% get_taxonomies.each do |taxonomy| %>
-  <ul class="nav nav-pills nav-stacked">
-	<li class="title">Shop by...</li>
-    <% taxonomy.root.children.each do |taxon| %>
-      <li <%= "class=current title" if @taxon and ([@taxon] + @taxon.ancestors).include?(taxon) %>>
-        <% if taxon.children.empty? %>
-          <%= link_to taxon.name, seo_url(taxon), class: "parent" %>
-        <% else %>
-          <a href="#collapseTaxon<%= taxon.id %>" aria-controls="collapseTaxon<%= taxon.id %>" role="button" data-toggle="collapse" aria-expanded="false"
-            class="collapsed parent sub-menu">
-            <%= taxon.name %>
-          </a>
+  <% @taxon ||= @product.taxons.first if @product %>
+  <% get_taxonomies.each do |taxonomy| %>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="title">Shop by...</li>
+        <% taxonomy.root.children.each do |taxon| %>
+            <li <%= "class=current title" if @taxon and ([@taxon] + @taxon.ancestors).include?(taxon) %>>
+              <% if taxon.children.empty? %>
+                  <%= link_to taxon.name, seo_url(taxon), class: "parent" %>
+              <% else %>
+                  <a href="#collapseTaxon<%= taxon.id %>" aria-controls="collapseTaxon<%= taxon.id %>" role="button" data-toggle="collapse" aria-expanded="false"
+                     class="collapsed parent sub-menu">
+                    <%= taxon.name %>
+                  </a>
+              <% end %>
+
+              <% unless taxon.children.empty? %>
+                  <div id="collapseTaxon<%= taxon.id %>" class="collapse <%= "in" if @taxon and ([@taxon] + @taxon.ancestors).include?(taxon) %>">
+                    <ul class="shop_nav_sub">
+                      <% taxon.children.each do |sub_taxon| %>
+                          <li<%= " class=current_sub" if @taxon and ([@taxon] + @taxon.ancestors).include?(sub_taxon) %>><%= link_to sub_taxon.name, seo_url(sub_taxon) %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+              <% end %>
+            </li>
         <% end %>
 
-        <% unless taxon.children.empty? %>
-        <div id="collapseTaxon<%= taxon.id %>" class="collapse <%= "in" if @taxon and ([@taxon] + @taxon.ancestors).include?(taxon) %>">
-          <ul class="shop_nav_sub">
-            <% taxon.children.each do |sub_taxon| %>
-              <li<%= " class=current_sub" if @taxon and ([@taxon] + @taxon.ancestors).include?(sub_taxon) %>><%= link_to sub_taxon.name, seo_url(sub_taxon) %></li>
+        <% if false %>
+            <%#  Spree::ProductGroup.find_by_permalink("clearance").tap do |clearance_group| #%>
+            <% Spree::ProductGroup.find_by(permalink: "clearance").tap do |clearance_group| %>
+                <% unless clearance_group.products.empty? %>
+                    <li id="clearance" <%= "class=current" if params[:product_group_name] == "clearance" %>>
+                      <%= link_to clearance_group.name, pg_search_url(:product_group_name => clearance_group.permalink), :class => "parent" %>
+                    </li>
+                <% end %>
             <% end %>
-          </ul>
-        </div>
         <% end %>
-      </li>
-    <% end %>
 
-    <% if false %>
-	  <%#  Spree::ProductGroup.find_by_permalink("clearance").tap do |clearance_group| #%>
-	  <%  Spree::ProductGroup.find_by(permalink: "clearance").tap do |clearance_group| %>
-		<% unless clearance_group.products.empty? %>
-			<li id="clearance" <%= "class=current" if params[:product_group_name] == "clearance" %>>
-				<%= link_to clearance_group.name, pg_search_url(:product_group_name => clearance_group.permalink), :class => "parent" %>
-			</li>
-		<% end %>
-	<% end %>
-<% end %>
+        <% if Spree::Product.try(:sales) && Spree::Product.sales.count > 0 %>
+            <li id="sale" <%= "class=current" if controller.action_name == "sale" %>>
+              <%= link_to "Sale & Clearance", main_app.sale_url, :class => "parent" %>
+            </li>
+        <% end %>
 
-	<% if Spree::Product.try(:sales) && Spree::Product.sales.count > 0 %>
-		<li id="sale" <%= "class=current" if controller.action_name == "sale" %>>
-				<%= link_to "Sale & Clearance", main_app.sale_url, :class => "parent" %>
-			</li>
-	<% end %>
-
-	</ul>
-<% end %>
+      </ul>
+  <% end %>
 </div>

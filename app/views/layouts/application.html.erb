@@ -1,63 +1,66 @@
 <!DOCTYPE html>
 <html lang="<%= I18n.locale %>">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <%= raw meta_data_tags %>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= raw meta_data_tags %>
 
-    <link rel="shortcut icon" href="/favicon.ico">
-    <title><%= title %></title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title><%= title %></title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= yield(:header) %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= yield(:header) %>
 
-  </head>
-  <head data-hook="inside_head">
-    <%= render partial: 'spree/shared/head' %>
-  </head>
-  <body id="soulpad">
-    <div id="container">
-      <div id="spree-header">
-        <%= render partial: 'shared/header' %>
-      </div>
-      <div class="container-fluid">
-        <!-- <div class="row">
+</head>
+<head data-hook="inside_head">
+  <%= render partial: 'spree/shared/head' %>
+</head>
+<body id="soulpad">
+<div id="container">
+  <div id="spree-header">
+    <%= render partial: 'shared/header' %>
+  </div>
+  <div class="container-fluid">
+    <!-- <div class="row">
           <div class="col-xs-12">
             <% if flash[:error] %>
               <div class="alert alert-danger" role="alert"><%= flash[:error] %></div>
-          	<% end %>
 
-          	<% if self.notice %>
+    <% end %>
+
+
+    <% if self.notice %>
               <div class="alert alert-info" role="alert"><%= self.notice %></div>
-          	<% end %>
+
+    <% end %>
           </div>
         </div> -->
-        <div class="row" data-hook="">
-          <%= spree_breadcrumbs(@taxon) %>
+    <div class="row" data-hook="">
+      <%= spree_breadcrumbs(@taxon) %>
 
-          <%#= render partial: 'spree/shared/sidebar' if content_for? :sidebar #%>
-          <div class="col-sm-3">
-            <%= render partial: 'shared/categories' if content_for? :sidebar %>
-          </div>
-
-          <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-9" %>" data-hook>
-            <%= flash_messages %>
-            <%= yield %>
-          </div>
-
-          <%= yield :templates %>
-        </div>
+      <%#= render partial: 'spree/shared/sidebar' if content_for? :sidebar #%>
+      <div class="col-sm-3">
+        <%= render partial: 'shared/categories' if content_for? :sidebar %>
       </div>
-      <div class="container-fluid social_network">
-        <div class="row">
-          <%= render "shared/social_network" %>
-        </div>
+
+      <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-9" %>" data-hook>
+        <%= flash_messages %>
+        <%= yield %>
       </div>
-      <%= render "spree/shared/footer" %>
+
+      <%= yield :templates %>
     </div>
-    <%= yield(:js) %>
-  </body>
+  </div>
+  <div class="container-fluid social_network">
+    <div class="row">
+      <%= render "shared/social_network" %>
+    </div>
+  </div>
+  <%= render "spree/shared/footer" %>
+</div>
+<%= yield(:js) %>
+</body>
 </html>

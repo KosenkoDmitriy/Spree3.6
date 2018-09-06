@@ -4,21 +4,22 @@
       <%= image_tag "site/facebook_icon.png" %>
       <%#= image_tag asset_path("site/facebook_icon.png") #%>
     </span>
+
     <div class="media-body">
       <h3 class="media-heading">Facebook</h3>
     </div>
   </div>
   <ul class="social_content list-group">
-		<% FacebookMessage.try(:limit, 20).try(:order, "fb_created_at DESC").try(:each) do |item| %>
-    <% next if item.message.blank? && item.link.blank? && item.picture.blank? %>
-			<li>
-				<%= link_to(image_tag(item.picture), item.link, {:target => "_blank"}) if item.fb_type == "photo" && item.picture.present? %>
-				<%= link_to(item.from, "http://www.facebook.com/profile.php?id=#{item.from_fb_id}", {:target => "_blank"}) %> <%= item.message %>
-			</li>
-		<% end %>
-	</ul>
+    <% FacebookMessage.try(:limit, 20).try(:order, "fb_created_at DESC").try(:each) do |item| %>
+        <% next if item.message.blank? && item.link.blank? && item.picture.blank? %>
+        <li>
+          <%= link_to(image_tag(item.picture), item.link, {:target => "_blank"}) if item.fb_type == "photo" && item.picture.present? %>
+          <%= link_to(item.from, "http://www.facebook.com/profile.php?id=#{item.from_fb_id}", {:target => "_blank"}) %> <%= item.message %>
+        </li>
+    <% end %>
+  </ul>
 
-	<%= link_to("Join us on Facebook", "http://www.facebook.com/pages/SoulPad/7845355665", {:class => "btn", :target => "_blank"}) %>
+  <%= link_to("Join us on Facebook", "http://www.facebook.com/pages/SoulPad/7845355665", {:class => "btn", :target => "_blank"}) %>
 </div>
 
 <div class="social_twitter col-xs-12 col-sm-4">
@@ -26,18 +27,19 @@
     <span class="media-left">
       <%= image_tag "site/twitter_icon.png" %>
     </span>
+
     <div class="media-body">
       <h3 class="media-heading">Twitter</h3>
     </div>
   </div>
   <ul class="social_content list-group">
-		<% TwitterMessage.try(:limit, 9).try(:order, "twitter_created_at DESC").each do |tweet| %>
-		<li>
-			<%= raw tweet.message %>
-			<span class="date"><%= tweet.twitter_created_at.to_s :long %></span>
-		</li>
-		<% end %>
-	</ul>
+    <% TwitterMessage.try(:limit, 9).try(:order, "twitter_created_at DESC").each do |tweet| %>
+        <li>
+          <%= raw tweet.message %>
+          <span class="date"><%= tweet.twitter_created_at.to_s :long %></span>
+        </li>
+    <% end %>
+  </ul>
 
   <%= link_to("Follow us on Twitter", "http://twitter.com/#!/soulpad", {:class => "btn", :target => "_blank"}) %>
 </div>
@@ -47,6 +49,7 @@
     <span class="media-left">
       <%= image_tag "site/insta_icon.png" %>
     </span>
+
     <div class="media-body">
       <h3 class="media-heading">Instagram</h3>
     </div>
@@ -54,11 +57,11 @@
 
   <div class="social_content row">
     <% InstaPhoto.try(:limit, 9).try(:order, "uploaded_at DESC").each do |photo| %>
-    <div class="col-xs-12 col-sm-4">
-      <%= link_to(image_tag(photo.thumb, class: "", alt: "#{photo.title}"), photo.link, {:target => "_blank", class: 'thumbnail'}) %>
-    </div>
+        <div class="col-xs-12 col-sm-4">
+          <%= link_to(image_tag(photo.thumb, class: "", alt: "#{photo.title}"), photo.link, {:target => "_blank", class: 'thumbnail'}) %>
+        </div>
     <% end %>
   </div>
 
-	<%= link_to("Our Instagram", "https://www.instagram.com/soulpadtents/", {:class => "btn", :target => "_blank"}) %>
+  <%= link_to("Our Instagram", "https://www.instagram.com/soulpadtents/", {:class => "btn", :target => "_blank"}) %>
 </div>
