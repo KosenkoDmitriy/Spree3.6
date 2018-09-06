@@ -1,8 +1,10 @@
 // Place all the styles related to the Errors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 #error404 {
-  background: url('/assets/site/mr_om.png') no-repeat top left;
+  background: asset-url("site/mr_om.png") no-repeat top left;
+  //background: asset_url("site/mr_om.png") no-repeat top left;
   height: 336px;
 }
 #error404 div {

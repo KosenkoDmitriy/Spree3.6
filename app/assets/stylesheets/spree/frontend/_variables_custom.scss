@@ -1,12 +1,16 @@
 // $gray-base: #f47402;
-$assets_path: '/assets/site/';
+
 $body-bg: #f5f0e9;
-$body-bg-img: '#{$assets_path}body_background.png';
-$ic-contact-phone: '#{$assets_path}icon_phone.png';
-$ic-contact-email: '#{$assets_path}icon_email.png';
-$ic-contact-brochure: '#{$assets_path}icon_brochure.png';
-$cart_arrow_header: '#{$assets_path}cart_arrow_header.png';
-$cart_icon_header: '#{$assets_path}cart_icon_header.png';
+$body-bg-img: 'site/body_background.png';
+$ic-contact-phone: 'site/icon_phone.png';
+$ic-contact-email: 'site/icon_email.png';
+$ic-contact-brochure: 'site/icon_brochure.png';
+$cart_arrow_header: 'site/cart_arrow_header.png';
+$cart_icon_header: 'site/cart_icon_header.png';
+
+$sites_arrow: 'site/sites_arrow.png';
+
+$soulpad_description_since_2007: 'site/soulpad_description_since_2007';
 
 //** Global textual link color.
 $link-color:            #f47402;
@@ -22,21 +26,26 @@ $navbar-height:                   35px;
 
 
 //** social_network section (facebook, twitter, instagram)
-$social_background: '#{$assets_path}social_background.jpg';
-$ic_facebook: '#{$assets_path}facebook_icon.png';
-$ic_twitter: '#{$assets_path}twitter_icon.png';
-$ic_facebook: '#{$assets_path}insta_icon.png';
-$ic_search: '#{$assets_path}search.png';
+$social_background: 'site/social_background.jpg';
+$ic_facebook: 'site/facebook_icon.png';
+$ic_twitter: 'site/twitter_icon.png';
+$ic_facebook: 'site/insta_icon.png';
+$ic_search: 'site/search.png';
 
 //** testimonials
-$speech_bubble: '#{$assets_path}speech_bubble.png';
-$quote: '#{$assets_path}quote.png';
+$speech_bubble: 'site/speech_bubble.png';
+$quote: 'site/quote.png';
 
-$ic_youtube: '#{assets_path}you_tube_icon.png';
-$quote_mark: '#{$assets_path}quote-mark.png';
+$ic_youtube: 'site/you_tube_icon.png';
+$quote_mark: 'site/quote-mark.png';
 
-$product_info: '#{$assets_path}product_info.png';
+$product_info: 'site/product_info.png';
 
 // shop left sidebar
-$cat_menu_collapsed: '#{$assets_path}cat_menu_green_down.png';
-$cat_menu_uncollapsed: '#{$assets_path}cat_menu_green_up.png';
+$cat_menu_collapsed: 'site/cat_menu_green_down.png';
+$cat_menu_uncollapsed: 'site/cat_menu_green_up.png';
+
+// lang selector
+$uk: 'site/uk.png';
+$us: 'site/us.png';
+$au: 'site/au.png';

@@ -2,7 +2,7 @@ body {
   color: #585652;
   // font: 81.3%/1.5 'Droid serif', Georgia, Times, 'Times New Roman', serif;
   font: 'Droid serif', Georgia, Times, 'Times New Roman', serif;
-  background: #f5f0e9 url($body-bg-img);
+  background: #f5f0e9 asset-url($body-bg-img);
 }
 
 // -- Spree Custom Header and Footer ---------------------
