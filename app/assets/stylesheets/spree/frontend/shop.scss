@@ -1,4 +1,3 @@
-
 .breadcrumb {
   border-bottom: 1px solid #ece6dd;
   text-transform: uppercase;
@@ -31,7 +30,6 @@
   }
   .product-footer {
     padding: 5px;
-    // background-color: transparent;
   }
 }
 #product-variants {
@@ -56,7 +54,6 @@
     background-color: #ece6dd;
     color: #88857f;
     font-weight: bold;
-    // font-size: 1.2em;
     margin-right: 10px;
     border-color: #ece6dd;
     border-bottom: 0;
@@ -108,6 +105,6 @@
 }
 
 
-@import "checkout";
-@import "paginator";
-@import 'spree/frontend/spree_sales_prices_engine.scss'
+@import 'checkout';
+@import 'paginator';
+@import 'spree/frontend/spree_sales_prices_engine.scss';

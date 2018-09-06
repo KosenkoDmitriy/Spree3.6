@@ -47,7 +47,6 @@ body {
   .nav a {
     background-color: #dbdac4;
     color: #585652;
-    // color: white;
 
     &.active, &:hover, &:focus {
       // background: rgba($gray-darker, 0.4);
@@ -88,10 +87,6 @@ body {
 .progress-steps {
   margin-top: $line-height-computed;
 }
-
-// h1 {
-//   margin-bottom: 30px;
-// }
 
 // Center cart line items
 table {
