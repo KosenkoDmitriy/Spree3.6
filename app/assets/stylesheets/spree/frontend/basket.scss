@@ -26,8 +26,13 @@
   }
   ol {
     padding-left: 0px;
+    li {
+      border-top: 1px solid #6c6a66;
+      padding: 10px;
+    }
     .total {
       list-style: none
     }
+
   }
 }
