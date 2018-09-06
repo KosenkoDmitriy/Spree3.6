@@ -76,9 +76,9 @@ gem 'instagram', '1.1.6'
 
 # custom spree extensions
 # # - external
-gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express'#, branch: '3-0-stable'
+gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express' # '3.3.0'
 # -- start spree_static_content for Spree >= 3.1 (we need them all because of broken dependency on globalize)
-gem 'globalize', github: 'globalize/globalize'#, branch: '3-0-stable'
+gem 'globalize', github: 'globalize/globalize'
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
 gem 'spree_globalize', github: 'spree-contrib/spree_globalize', branch: 'master'
 gem 'spree_static_content', github: 'spree-contrib/spree_static_content'
