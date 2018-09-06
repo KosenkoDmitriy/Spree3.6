@@ -1,8 +1,6 @@
 Spree::BaseController.class_eval do
   before_action :authenticate_mobile
 
-	include BasketSummary
-
 	layout "application"
 
   def authenticate_mobile
