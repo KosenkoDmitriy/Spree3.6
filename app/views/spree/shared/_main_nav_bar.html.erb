@@ -1,42 +1,78 @@
 <div class="row">
-<div class="col-xs-12">
-  <div id="main-nav-bar2" class="navbar">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed " data-toggle="collapse" data-target="#main-nav-bar" aria-expanded="false">
-        <!-- <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> -->
-      	<span class="glyphicon glyphicon-menu-hamburger"> Menu </span>
-      </button>
-    </div>
-    <div class="collapse navbar-collapse" id="main-nav-bar">
-    	<ul id="nav" class="nav navbar-nav">
-    		<li><%= link_to "Home", main_app.root_url, :class => (controller.controller_name == "base" && controller.action_name == "index") ? "active" : "parent", :title => "Return to homepage" %></li>
-    		<li><%= link_to "About", main_app.about_url, :class => (@selected_nav == :about ? "active" : "parent"), :title => "About SoulPad" %></li>
-    		<li><%= link_to "Shop", main_app.shop_url, :class => (@selected_nav == :shop || controller.controller_name == "products" || controller.controller_name == "taxons") ? "active" : "parent", :title => "Shop SoulPad" %></li>
-    		<li><%#TODO= link_to "News", news_engine.posts_url, :class => (@selected_nav == :news ? "active" : "parent"), :title => "Latest news" #%></li>
-    		<li><%#TODO= link_to "Gallery", galleries_engine.galleries_url, :class => (@selected_nav == :gallery ? "active" : "parent"), :title => "SoulPad gallery" #%></li>
-    		<li><%= link_to "Projects", main_app.projects_url, :class => (@selected_nav == :projects ? "active" : "parent"), :title => "SoulPad projects" %></li>
-    		<li><%= link_to "Contact", main_app.contact_url, :class => (@selected_nav == :contact ? "active" : "parent"), :title => "Contact SoulPad" %></li>
-    		<li><%#= link_to "Links", links_url, :class => controller.action_name == "links" ? "active" : "" #%></li>
-    	</ul>
-      <ul class="nav navbar-nav navbar-right" data-hook>
-        <li id="link-to-cart" data-hook>
-          <noscript>
-            <%#= link_to_cart #%>
-            <%= link_to "Cart", spree.cart_path %>
-          </noscript>
-          &nbsp;
-        </li>
-        <script>Spree.fetch_cart()</script>
-      </ul>
-    	<!-- <ul class="nav navbar-nav navbar-right">
-        <a>
-    		<%= render :partial => "shared/basket_summary" %>
-        </a>
-    	</ul> -->
+  <div class="col-xs-12">
+    <div id="main-nav-bar2" class="navbar">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed " data-toggle="collapse" data-target="#main-nav-bar" aria-expanded="false">
+          <!-- <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span> -->
+          <span class="glyphicon glyphicon-menu-hamburger"> Menu </span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="main-nav-bar">
+        <ul id="nav" class="nav navbar-nav">
+          <li><%= link_to "Home", main_app.root_url, :class => (controller.controller_name == "base" && controller.action_name == "index") ? "active" : "parent", :title => "Return to homepage" %></li>
+          <li><%= link_to "About", main_app.about_url, :class => (@selected_nav == :about ? "active" : "parent"), :title => "About SoulPad" %></li>
+          <li><%= link_to "Shop", main_app.shop_url, :class => (@selected_nav == :shop || controller.controller_name == "products" || controller.controller_name == "taxons") ? "active" : "parent", :title => "Shop SoulPad" %></li>
+          <li><%#TODO= link_to "News", news_engine.posts_url, :class => (@selected_nav == :news ? "active" : "parent"), :title => "Latest news" #%></li>
+          <li><%#TODO= link_to "Gallery", galleries_engine.galleries_url, :class => (@selected_nav == :gallery ? "active" : "parent"), :title => "SoulPad gallery" #%></li>
+          <li><%= link_to "Projects", main_app.projects_url, :class => (@selected_nav == :projects ? "active" : "parent"), :title => "SoulPad projects" %></li>
+          <li><%= link_to "Contact", main_app.contact_url, :class => (@selected_nav == :contact ? "active" : "parent"), :title => "Contact SoulPad" %></li>
+          <li><%#= link_to "Links", links_url, :class => controller.action_name == "links" ? "active" : "" #%></li>
+        </ul>
+        <!--<ul class="nav navbar-nav navbar-right" data-hook>-->
+        <!--<li id="link-to-cart" data-hook>-->
+        <!--<noscript>-->
+        <!--<%#= link_to_cart #%>-->
+        <!--<%= link_to "Cart", spree.cart_path %>-->
+        <!--</noscript>-->
+        <!--&nbsp;-->
+        <!--</li>-->
+        <!--<script>Spree.fetch_cart()</script>-->
+        <!--</ul>-->
+
+        <ul class="nav navbar-nav navbar-right" data-hook>
+          <li id="link-to-cart">
+            <%#= render partial: "shared/basket_summary" #%>
+
+            <div class="dropdown">
+              <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <b><span class="glyphicon glyphicon-shopping-cart"></span></b>
+                Your cart:
+                <b>
+                  <%= pluralize(@basket.line_items.inject(0) { |sum, item| sum + item.quantity }, "item") %>
+                  <!--<span class="glyphicon glyphicon-triangle-bottom basket_arrow"></span>-->
+                  <span class="caret"></span>
+                </b>
+              </button>
+              <!--<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">-->
+                <!--<li><a href="#">Action</a></li>-->
+                <!--<li><a href="#">Another action</a></li>-->
+                <!--<li><a href="#">Something else here</a></li>-->
+                <!--<li role="separator" class="divider"></li>-->
+                <!--<li><a href="#">Separated link</a></li>-->
+              <!--</ul>-->
+              <!--<div class="well">-->
+               <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <ol>
+                  <% @basket.line_items.each do |line_item| %>
+                      <li><b><%= line_item.quantity %></b> x <%= line_item.variant.name %>
+                        <b> <%= number_to_currency line_item.amount %></b></li>
+                  <% end %>
+                  <li class="total">
+                    Total: <b><%= number_to_currency @basket.total %></b>
+                  </li>
+                </ol>
+                <%= link_to "View cart »", spree.cart_path, :title => "Proceed to checkout", :class => "cart" %>
+                <%= link_to "Checkout »", spree.checkout_path, :title => "Proceed to checkout", :class => "checkout" %>
+              </div>
+            </div>
+
+          </li>
+
+        </ul>
+      </div>
     </div>
   </div>
-</div>
 </div>
