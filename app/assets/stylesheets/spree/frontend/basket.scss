@@ -1,6 +1,33 @@
 #link-to-cart {
-  .btn-dark {
+  min-width: 265px;
+  text-align: right;
+  .dropdown-menu {
+    padding: 5px;
+  }
+  .dark, .btn-dark {
     background-color: #585652;
     color: #fff;
+  }
+  .btn-dark {
+    text-transform: uppercase;
+  }
+  a.cart {
+    background-color: transparent;
+    color: #f47402;
+    text-transform: uppercase;
+    &:hover{
+      background-color: transparent;
+      color: #f47402;
+      text-decoration: underline;
+    }
+  }
+  b {
+    color: #f47402;
+  }
+  ol {
+    padding-left: 0px;
+    .total {
+      list-style: none
+    }
   }
 }

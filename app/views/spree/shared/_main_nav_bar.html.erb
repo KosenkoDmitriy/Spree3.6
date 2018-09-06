@@ -37,38 +37,40 @@
             <%#= render partial: "shared/basket_summary" #%>
 
             <div class="dropdown">
-              <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownBasket" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                 <b><span class="glyphicon glyphicon-shopping-cart"></span></b>
                 Your cart:
                 <b>
-                  <%= pluralize(@basket.line_items.inject(0) { |sum, item| sum + item.quantity }, "item") %>
-                  <!--<span class="glyphicon glyphicon-triangle-bottom basket_arrow"></span>-->
+                  <%= pluralize(simple_current_order.item_count, "item") %>
+                  <!--<span class="caret glyphicon basket_arrow"></span>-->
+                  <!--<span class="caret glyphicon glyphicon-triangle-bottom basket_arrow"></span>-->
                   <span class="caret"></span>
                 </b>
               </button>
-              <!--<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">-->
-                <!--<li><a href="#">Action</a></li>-->
-                <!--<li><a href="#">Another action</a></li>-->
-                <!--<li><a href="#">Something else here</a></li>-->
-                <!--<li role="separator" class="divider"></li>-->
-                <!--<li><a href="#">Separated link</a></li>-->
-              <!--</ul>-->
-              <!--<div class="well">-->
-               <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <ol>
-                  <% @basket.line_items.each do |line_item| %>
-                      <li><b><%= line_item.quantity %></b> x <%= line_item.variant.name %>
-                        <b> <%= number_to_currency line_item.amount %></b></li>
-                  <% end %>
-                  <li class="total">
-                    Total: <b><%= number_to_currency @basket.total %></b>
-                  </li>
-                </ol>
-                <%= link_to "View cart »", spree.cart_path, :title => "Proceed to checkout", :class => "cart" %>
-                <%= link_to "Checkout »", spree.checkout_path, :title => "Proceed to checkout", :class => "checkout" %>
-              </div>
-            </div>
 
+              <ul class="dropdown-menu dark" aria-labelledby="dropdownBasket">
+                <li class="row">
+                  <div class="col-sm-12">
+                    <ol>
+
+                      <% simple_current_order.line_items.each do |line_item| %>
+                          <li><b><%= line_item.quantity %></b> x <%= line_item.variant.name %>
+                            <b> <%= number_to_currency line_item.amount %></b></li>
+                      <% end %>
+                      <li class="total">
+                        Total: <b><%= number_to_currency simple_current_order.total %></b>
+                      </li>
+                    </ol>
+                  </div>
+                  <div class="col-sm-6">
+                    <%= link_to "View cart »", spree.cart_path, title: "Proceed to checkout", class: "cart" %>
+                  </div>
+                  <div class="col-sm-6">
+                    <%= button_to "Checkout »", spree.checkout_path, title: "Proceed to checkout", class: "btn btn-orange" %>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </li>
 
         </ul>
