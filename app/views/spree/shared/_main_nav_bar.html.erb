@@ -21,58 +21,10 @@
           <li><%= link_to "Contact", main_app.contact_url, :class => (@selected_nav == :contact ? "active" : "parent"), :title => "Contact SoulPad" %></li>
           <li><%#= link_to "Links", links_url, :class => controller.action_name == "links" ? "active" : "" #%></li>
         </ul>
-        <!--<ul class="nav navbar-nav navbar-right" data-hook>-->
-        <!--<li id="link-to-cart" data-hook>-->
-        <!--<noscript>-->
-        <!--<%#= link_to_cart #%>-->
-        <!--<%= link_to "Cart", spree.cart_path %>-->
-        <!--</noscript>-->
-        <!--&nbsp;-->
-        <!--</li>-->
-        <!--<script>Spree.fetch_cart()</script>-->
-        <!--</ul>-->
-
         <ul class="nav navbar-nav navbar-right" data-hook>
           <li id="link-to-cart">
-            <%#= render partial: "shared/basket_summary" #%>
-
-            <div class="dropdown">
-              <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownBasket" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                <b><span class="glyphicon glyphicon-shopping-cart"></span></b>
-                Your cart:
-                <b>
-                  <%= pluralize(simple_current_order.item_count, "item") %>
-                  <span class="glyphicon glyphicon-triangle-bottom"></span>
-                  <!--<span class="glyphicon glyphicon-triangle-bottom basket_arrow"></span>-->
-                  <!--<span class="caret"></span>-->
-                </b>
-              </button>
-
-              <ul class="dropdown-menu dark" aria-labelledby="dropdownBasket">
-                <li class="row">
-                  <div class="col-sm-12">
-                    <ol>
-
-                      <% simple_current_order.line_items.each do |line_item| %>
-                          <li><b><%= line_item.quantity %></b> x <%= line_item.variant.name %>
-                            <b> <%= number_to_currency line_item.amount %></b></li>
-                      <% end %>
-                      <li class="total">
-                        Total: <b><%= number_to_currency simple_current_order.total %></b>
-                      </li>
-                    </ol>
-                  </div>
-                  <div class="col-sm-6">
-                    <%= link_to "View cart »", spree.cart_path, title: "Proceed to checkout", class: "btn cart" %>
-                  </div>
-                  <div class="col-sm-6">
-                    <%= button_to "Checkout »", spree.checkout_path, title: "Proceed to checkout", class: "btn btn-orange" %>
-                  </div>
-                </li>
-              </ul>
-            </div>
+            <%= render partial: "shared/basket_summary" %>
           </li>
-
         </ul>
       </div>
     </div>
