@@ -37,7 +37,7 @@ h2, h3 {
   blockquote {
     border: 0;
     padding: 20px 0 0 20px;
-    background: url($quote_mark) no-repeat top left;
+    background: asset-url($quote_mark) no-repeat top left;
     font-style: italic;
     font-size: 1.1em;
     // margin-right: 30px;
@@ -72,7 +72,7 @@ h2, h3 {
   #video-footer {
     padding: 5px 10px;
     color: #fff;
-    background: #f47402 url($ic_youtube) no-repeat 10px 100%;
+    background: #f47402 asset-url($ic_youtube) no-repeat 10px 100%;
     span {
       float: right;
     }
@@ -84,12 +84,12 @@ h2, h3 {
 }
 // home page
 #testimonials {
-  background: url($speech_bubble) no-repeat 30px 99%;
+  background: asset-url($speech_bubble) no-repeat 30px 99%;
   color: #fff;
   blockquote {
     border: 0;
     padding: 20px;
-    background: #585652 url($quote) no-repeat 95% 90%;
+    background: #585652 asset-url($quote) no-repeat 95% 90%;
     font-style: italic;
     font-size: 1em;
     min-height: 217px;

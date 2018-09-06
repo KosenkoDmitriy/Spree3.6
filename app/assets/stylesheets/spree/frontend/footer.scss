@@ -38,11 +38,11 @@
   }
 
   .tel {
-    background-image: url($ic-contact-phone);
+    background-image: asset-url($ic-contact-phone);
   }
 
   .email {
-    background-image: url($ic-contact-email);
+    background-image: asset-url($ic-contact-email);
   }
 
   ul.contact {

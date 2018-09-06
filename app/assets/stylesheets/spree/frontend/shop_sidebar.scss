@@ -47,10 +47,10 @@
     background-repeat: no-repeat;
     background-position: 97% 11px;
     background-color: #bbbaa1;
-    background-image: url($cat_menu_uncollapsed);
+    background-image: asset-url($cat_menu_uncollapsed);
     &.collapsed {
       background-color: #d2d1bb;
-      background-image: url($cat_menu_collapsed);
+      background-image: asset-url($cat_menu_collapsed);
     }
   }
   li.current a.sub-menu {
