@@ -76,19 +76,13 @@ gem 'instagram', '1.1.6'
 
 # custom spree extensions
 # # - external
-# gem 'spree_features', github: 'DynamoMTL/spree_features' # for spree > 2.3
-# gem 'spree_affiliate', github: 'spree-contrib/spree_affiliate', branch: '2-2-stable'
-# gem 'spree_watermark'      # https://github.com/azimuth/spree_watermark
-# gem 'better_spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express', branch: '3-0-stable'
-# gem 'spree_last_address'    # https://github.com/TylerRick/spree_last_address
-# gem 'spree_sales', github: 'ronzalo/spree_sales', branch: '3-1-stable' # https://github.com/ronzalo/spree_sales
-# # -- start spree_static_content for Spree >= 3.1 (we need them all because of broken dependency on globalize)
-# gem 'globalize', github: 'globalize/globalize'
-# gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
-# gem 'spree_globalize', github: 'spree-contrib/spree_globalize', branch: 'master'
-# gem 'spree_static_content', github: 'spree-contrib/spree_static_content'
-# # -- end spree_static_content
-# # - end external
+gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express'#, branch: '3-0-stable'
+# -- start spree_static_content for Spree >= 3.1 (we need them all because of broken dependency on globalize)
+gem 'globalize', github: 'globalize/globalize'#, branch: '3-0-stable'
+gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
+gem 'spree_globalize', github: 'spree-contrib/spree_globalize', branch: 'master'
+gem 'spree_static_content', github: 'spree-contrib/spree_static_content'
+# -- end spree_static_content
 
 # start local/internal
 gem 'testimonials_engine', require: 'testimonials_engine', path: 'extensions/testimonials_engine'
@@ -96,19 +90,9 @@ gem 'features_engine', require: 'features_engine', path: 'extensions/features_en
 gem 'affiliate_engine', require: 'affiliate_engine', path: 'extensions/affiliate_engine' # https://github.com/spree-contrib/spree_affiliate
 gem 'watermark_engine', require: 'watermark_engine', path: 'extensions/watermark_engine' # https://github.com/azimuth/spree_watermark
 
-# gem "spree_paypal_express", :require => "spree_paypal_express", :path => "extensions/spree_paypal_express" # https://github.com/spree/spree_paypal_express
-# gem 'spree_paypal_express', :git => 'git://github.com/spree/spree_paypal_express.git', :branch => "1-3-stable" # latest 2-0-stable
-gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express'#, branch: '3-0-stable'
-
 # gem 'spree_last_address', require: 'spree_last_address', path: 'extensions/spree_last_address' # git://github.com/TylerRick/spree_last_address.git
 gem 'spree_sales_prices_engine', require: 'spree_sales_prices_engine', path: 'extensions/spree_sales_prices_engine'
 
-# -- start spree_static_content for Spree >= 3.1 (we need them all because of broken dependency on globalize)
-gem 'globalize', github: 'globalize/globalize'#, branch: '3-0-stable'
-gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
-gem 'spree_globalize', github: 'spree-contrib/spree_globalize', branch: 'master'
-gem 'spree_static_content', github: 'spree-contrib/spree_static_content'
-# -- end spree_static_content
 gem 'dynamic_content_management_engine', require: 'dynamic_content_management_engine', path: 'extensions/dynamic_content_management_engine'
 gem 'tinymce-rails', '~> 4.1.10' # 3.5.11, 4.1.10 and 4.2.1 support sprockets 3
 gem 'truncate_html', '0.9.3'
@@ -116,4 +100,4 @@ gem 'truncate_html', '0.9.3'
 
 # # we will use third party services such as Wordpress and Flick
 gem 'news_engine', require: 'news_engine', path: 'extensions/news_engine' # used in about > faq
-# gem "galleries_engine", :require => "galleries_engine", :path => "extensions/galleries_engine"
+# gem "galleries_engine", require: "galleries_engine", path: "extensions/galleries_engine"
