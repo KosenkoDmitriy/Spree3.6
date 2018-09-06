@@ -36,10 +36,11 @@
         min-width: 160px;
         width: 100%;
         text-align: left;
-        .caret {
-          right: 10px;
+        .glyphicon {
           position: absolute;
-          top: 15px;
+          right: 5px;
+          top: 12px;
+          color: #f47402;
         }
       }
 

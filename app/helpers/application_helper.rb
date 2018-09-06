@@ -80,7 +80,7 @@ module ApplicationHelper
     "<div class='dropdown sites'>
       <button class='btn btn-default dropdown-toggle' type='button' id='dropdownLangMenu' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>
       #{lang_icon(locale)} #{lang_label}
-      <span class='caret'></span>
+      <span class='glyphicon glyphicon-triangle-bottom'></span>
       </button>
       <ul class='dropdown-menu' aria-labelledby='dropdownLangMenu'>
       #{lang_others(locale)}
