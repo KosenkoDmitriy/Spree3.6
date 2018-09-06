@@ -11,6 +11,7 @@
   .btn-dark {
     text-transform: uppercase;
   }
+  a.checkout { @extend .btn-orange }
   a.cart {
     background-color: transparent;
     color: #f47402;
