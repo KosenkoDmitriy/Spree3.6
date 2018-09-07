@@ -349,6 +349,9 @@ en-US:
         reports: Reports
         users: Users
     administration: Administration
+    i_agree_to_the_terms_and_conditions: I agree to the terms and conditions
+    agree_to_continue: To continue, please read and agree to our
+    agree_to_terms_and_conditions: Agree to Terms and Conditions
     agree_to_privacy_policy: Agree to Privacy Policy
     agree_to_terms_of_service: Agree to Terms of Service
     all: All

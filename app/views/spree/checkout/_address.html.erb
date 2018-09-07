@@ -30,6 +30,24 @@
       <% end %>
     </div>
   </div>
+  <div class="col-xs-12">
+    <div class="panel panel-default" id="agreed_to_terms" data-hook>
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= Spree.t(:agree_to_terms_and_conditions) %></h3>
+      </div>
+      <div class="panel-body">
+        <p class="terms_text"><%= t :po_box_note %><br/><%= Spree.t(:agree_to_continue) %> <%= link_to "terms and conditions", main_app.terms_url %></p>
+
+        <p class="field checkbox">
+          <%= label_tag :order_agreed_to_terms, id: 'agreed_to_terms' do %>
+            <%= form.check_box :agreed_to_terms %>
+            <%#= check_box_tag 'order[agreed_to_terms]', '1', @order.agreed_to_terms? #%>
+            <%= Spree.t(:i_agree_to_the_terms_and_conditions) %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="well text-left form-buttons" data-hook="buttons">
