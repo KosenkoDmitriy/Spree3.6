@@ -28,7 +28,7 @@ Spree::Admin::ReportsController.class_eval do
 
     @user_data=[]
     @users.each do |u|
-      @user_data << {:email => u.email, :firstname => u.billing_address.firstname, :lastname => u.billing_address.lastname}
+      @user_data << {:email => u.email, :firstname => u.billing_address.firstname, :lastname => u.billing_address.lastname} if u.billing_address.present?
     end
   end
 

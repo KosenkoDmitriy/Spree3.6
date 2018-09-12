@@ -1,0 +1,48 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:sku_totals) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <%= link_to_with_icon 'arrow-left', Spree.t(:back_to_reports_list), spree.admin_reports_url, :class => 'btn btn-primary' %>
+<% end %>
+
+<% content_for :table_filter_title do %>
+  <%= Spree.t(:date_range) %>
+<% end %>
+
+<% content_for :table_filter do %>
+  <%= search_form_for @search, :url => spree.sku_totals_admin_reports_path  do |s| %>
+    <div class="date-range-filter field align-center">
+      <%= label_tag nil, t(:start), :class => 'inline' %>
+      <%= s.text_field :completed_at_gt, :class => 'datepicker datepicker-from', :value => datepicker_field_value(params[:q][:completed_at_gt]) %>
+
+      <span class="range-divider">
+          <i class="icon-arrow-right"></i>
+        </span>
+
+      <%= s.text_field :completed_at_lt, :class => 'datepicker datepicker-to', :value => datepicker_field_value(params[:q][:completed_at_lt]) %>
+      <%= label_tag nil, t(:end), :class => 'inline' %>
+    </div>
+
+    <div class="actions filter-actions">
+      <%= button t(:search), 'icon-search'  %>
+    </div>
+  <% end %>
+<% end %>
+
+<table class="table table-bordered admin-report" data-hook="sku_totals">
+  <thead>
+  <tr>
+    <th><%= Spree.t(:sku) %></th>
+    <th><%= Spree.t(:sku_qty) %></th>
+  </tr>
+  </thead>
+  <tbody>
+    <% @skus.each do |k, v| %>
+      <tr class="align-center">
+        <td><%= k %></td>
+        <td><%= v %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

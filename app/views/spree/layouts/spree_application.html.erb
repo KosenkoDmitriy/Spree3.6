@@ -18,7 +18,7 @@
   <head data-hook="inside_head">
     <%= render partial: 'spree/shared/head' %>
   </head>
-  <body id="soulpad">
+  <body id="soulpad" class="container">
     <div id="container">
       <div id="spree-header">
         <%= render partial: 'shared/header' %>
@@ -40,7 +40,7 @@
 
           <%#= render partial: 'spree/shared/sidebar' if content_for? :sidebar #%>
           <div class="col-sm-3">
-            <%= render partial: 'base/shared/categories' if content_for? :sidebar %>
+            <%= render partial: 'shared/categories' if content_for? :sidebar %>
           </div>
 
           <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-9" %>" data-hook>

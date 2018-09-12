@@ -44,8 +44,23 @@ Rails.application.routes.draw do
   mount NewsEngine::Engine, at: '/'
   mount AffiliateEngine::Engine, at: '/'
 
-  # mount Spree::Core::Engine, at: '/spree', as: :spree
   mount Spree::Core::Engine, at: '/', as: :spree
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+end
+Spree::Core::Engine.routes.prepend do
+  namespace :admin do
+    resources :reports, only: [:index] do
+      collection do
+        get :sales_total
+        post :sales_total
+        get :sales_total_inc_vat
+        post :sales_total_inc_vat
+        get :sku_totals
+        post :sku_totals
+        get :user_emails
+        post :user_emails
+      end
+    end
+  end
 end

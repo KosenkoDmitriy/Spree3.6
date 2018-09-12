@@ -13,9 +13,14 @@ Spree.config do |config|
   # Example:
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
+
 end
 
 Spree.user_class = "Spree::User"
+
+config = Rails.application.config
+config.spree.calculators.tax_rates << Spree::Calculator::SoulpadShippingTax
+config.spree.calculators.tax_rates << Spree::Calculator::SoulpadDefaultTax
 
 # Spree::Image.attachment_definitions[:attachment][:processors] = [:thumbnail, :watermark]
 # # Spree::Image.attachment_definitions[:attachment][:processors] = :watermark

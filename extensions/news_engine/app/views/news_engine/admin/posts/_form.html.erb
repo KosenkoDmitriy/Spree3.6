@@ -2,42 +2,50 @@
   <%= button_link_to Spree.t(:back_to_resource_list, resource: plural_resource_name(Post)), admin_posts_url, icon: 'arrow-left', class: 'btn-success' %>
 <% end %>
 
-<fieldset class="ten columns">
-
-	<div>
+<div class="row">
+<div class="col-lg-6">
+	<div class="form-group">
 		<%= f.label :title %>
-		<%= f.text_field :title %>
-	</div>
-
+		<%= f.text_field :title, class: 'form-control' %>
+  </div>
+</div>
+<div class="col-lg-6">
 	<%# unless f.object.new_record? #%>
-		<div>
+		<div class="form-group">
 			<%= f.label :permalink %>
-			<%= f.text_field :permalink %>
+			<%= f.text_field :permalink, class: 'form-control' %>
 		</div>
 	<%# end #%>
+</div>
+</div>
 
-	<div>
-		<%= f.label :body %>
-		<%= f.text_area :body, :class => "tinymce" %>
-	</div>
+<div class="row">
+  <div class="col-lg-6">
+  	<div class="form-group">
+  		<%= f.label :body %>
+  		<%= f.text_area :body, class: "tinymce" %>
+    </div>
+  </div>
+  <div class="col-lg-6">
+  	<div class="form-group">
+  		<%= f.label :body_extended %>
+  		<%= f.text_area :body_extended, class: "tinymce" %>
+  	</div>
+    <%= tinymce %>
+  </div>
+</div>
 
-	<div>
-		<%= f.label :body_extended %>
-		<%= f.text_area :body_extended, :class => "tinymce" %>
-	</div>
-  <%= tinymce %>
-
-	<div>
+	<div class="form-group">
 		<%= f.label :post_type, "Type" %>
-		<%= f.select :post_type, Post::POST_TYPES.collect{|k,v| v } %>
+		<%= f.select :post_type, Post::POST_TYPES.collect{|k,v| v }, {}, { class: 'form-control' } %>
 	</div>
 
-	<div>
+	<div class="form-inline">
 		<%= f.label :published_on %>
-		<%= f.date_select :published_on, :include_blank => true %>
+		<%= f.date_select :published_on, {}, { include_blank: true, class: 'form-control date-select' } %>
 	</div>
 
-</fieldset>
+</div>
 
 <!-- <fieldset id="photo_picker" class="four columns">
 	<%#= select_tag "picker_index", options_for_select(Gallery.find(:all, :order => "title").collect{|g| [g.title, g.id]}) #%>
@@ -74,4 +82,4 @@
 
 	</script>
 
-</fieldset>
+</div>

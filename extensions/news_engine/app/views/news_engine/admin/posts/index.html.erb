@@ -6,15 +6,14 @@
   <%= button_link_to Spree.t(:new), new_admin_post_url, :icon => 'plus', class: 'btn-success', :id => 'admin_new_news' %>
 <% end %>
 
+<% if @posts.present? && @posts.any? %>
 <table class="table">
 	<thead>
 		<tr>
 			<th>Title</th>
 			<th>Type</th>
 			<th>Published</th>
-			<th><!-- unpublish --></th>
-			<th><!-- Edit --></th>
-			<th><!-- Delete --></th>
+			<th class='actions'></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -23,12 +22,20 @@
 				<td><%= post.title %></td>
 				<td><%= post.post_type %></td>
 				<td><%= post.published_on.to_s(:default) if post.published? %></td>
-				<td><%= link_to "Unpublish", unpublish_admin_post_url(post), class: 'btn btn-sm btn-primary icon icon-delete with-tip', :method => :put if post.published? %></td>
-				<td><%= link_to "Edit", edit_admin_post_url(post), class: 'btn btn-sm btn-success icon icon-edit with-tip' %></td>
-				<td><%= link_to "Delete", admin_post_url(post), :method => :delete, class: 'btn btn-sm btn-danger icon icon-trash with-tip', :confirm => "Are you sure you want to delete '#{post.title}'" %></td>
+        <td class='actions actions-3 text-right'>
+          <%= link_to "Unpublish", unpublish_admin_post_url(post), class: 'btn btn-sm btn-primary icon icon-delete with-tip', :method => :put if post.published? %>
+          <%= link_to "Edit", edit_admin_post_url(post), class: 'btn btn-sm btn-success icon icon-edit with-tip' %>
+          <%= link_to "Delete", admin_post_url(post), :method => :delete, class: 'btn btn-sm btn-danger icon icon-trash with-tip', :confirm => "Are you sure you want to delete '#{post.title}'" %>
+        </td>
 			</tr>
 		<% end %>
 	</tbody>
 </table>
 
 <%= paginate @posts %>
+<% else %>
+  <div class="alert alert-info no-objects-found">
+    <%= Spree.t(:no_resource_found, resource: plural_resource_name(Post)) %>
+    <%= link_to Spree.t(:add_one), new_admin_post_url %>!
+  </div>
+<% end %>

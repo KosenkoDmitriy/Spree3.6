@@ -1,12 +1,12 @@
 Spree::ProductsController.class_eval do
   # helper 'spree/products'
-
-  # def index
-  #   @searcher = Spree::Config.searcher_class.new(params)
-  #   @searcher.current_user = try_spree_current_user
-  #   @searcher.current_currency = current_currency
-  #   @products = @searcher.retrieve_products#.order("spree_prices.amount DESC")
-  # end
+  def index
+    @taxonomies = Spree::Taxonomy.includes(root: :children)
+    @searcher = Spree::Config.searcher_class.new(params)
+    @searcher.current_user = try_spree_current_user
+    @searcher.current_currency = current_currency
+    @products = @searcher.retrieve_products.order("spree_prices.amount DESC")
+  end
 
   def image
     @image = @product.images.find(params[:image_id])

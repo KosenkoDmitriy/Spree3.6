@@ -1,13 +1,15 @@
 <div class="dropdown">
   <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownBasket" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    <b><span class="glyphicon glyphicon-shopping-cart"></span></b>
-    Your cart:
+    <span class="left">
+      <b><span class="glyphicon glyphicon-shopping-cart"></span></b>
+      Your cart:
+      <b>
+        <%= simple_current_order.item_count %>
+        <%= 'item'.pluralize(simple_current_order.item_count) %>
+      </b>
+    </span>
     <b>
-      <%= simple_current_order.item_count %>
-      <%= 'item'.pluralize(simple_current_order.item_count) %>
-      <span class="glyphicon glyphicon-triangle-bottom"></span>
-      <!--<span class="glyphicon glyphicon-triangle-bottom basket_arrow"></span>-->
-      <!--<span class="caret"></span>-->
+      <span class="glyphicon glyphicon-triangle-bottom right"></span>
     </b>
   </button>
   <ul class="dropdown-menu dark" aria-labelledby="dropdownBasket">
