@@ -1,14 +1,14 @@
-# Soulpad
+# ReadMe
 
-Soulpad is an ecommerce app built using spree commerce. the same code base is installed in multiple timezones, and uses ENV vars to detect the current timezone at runtime (these are set in the vhosts). The App makes heavy use of Rails Engines to provide additional functionality over the standard spree features.
+Spree3.6 is an ecommerce app built using spree commerce. The same code base is installed in multiple timezones, and uses ENV vars to detect the current timezone at runtime (these are set in the vhosts). The App makes heavy use of Rails Engines to provide additional functionality over the standard spree features.
 
 
 Development
 ----------------------
 
 ```shell
-git clone https://github.com/mvanio/SoulPad-2017
-cd SoulPad-2017
+git clone https://github.com/KosenkoDmitriy/Spree3.6
+cd Spree3.6
 bundle install
 bundle exec rake db:migrate
 bundle exec rake db:seed
